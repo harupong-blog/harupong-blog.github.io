@@ -59,6 +59,18 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 # page_asides:
 
 # ----------------------- #
+#   Theme - Octoflat      #
+#---------------------- #
+navigation:
+  - text: Home
+    url: /
+  - text: Archives
+    url: /archives/
+  - text: Feed
+    url: /feed/
+
+
+# ----------------------- #
 #   3rd Party Settings    #
 # ----------------------- #
 
