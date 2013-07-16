@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Git 解説書 Pro Git､日本語版電子書籍を公開します
+title: Git 解説書 Pro Git、日本語版電子書籍を公開します
 tags:
 - book
 - life
