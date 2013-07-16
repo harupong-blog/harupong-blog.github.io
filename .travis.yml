@@ -21,7 +21,7 @@ after_script:
 - rake deploy
 env:
   global:
-  - REPO="git@github.com:harupong/harupong.github.io.git"
+  - REPO="git@github.com:harupong/harupong.github.io"
   - secure: Ud/zhni/c5vuzmHvkrOyPfCz9Yi7EZ+hFjYjQLi6tFLg+EJvHer9R6VyxNvm2qDbAa+9uzst9OD6c1J9b22WlKbDudkyCrJv/eqF49qKzJHmwTL7EE8QjAC0VsHHRnmH93Dft6EFtr/tPgPoh1Ujw4nDsgToH7un6bndCCUuEos=
   - secure: bdda4n5yExTVhgj69ZUtDLORNb/F7wl8n3JXOaauU+McgRRzdfAck2yU1BkiELNs8/xzcRHY1/wgMjk5B9u8YPqx1H71oW49WdePhx+/YvlL4wS92SXC/GBIlqb54jSrIuwDaxaIuQFhxrtn5d6hOqb03DKCdY6e2ZsJHk7VVLU=
   - secure: OsyZtiFMs8Rx5/yyBqjU0m7RryKd13paI336GtfoaLqE40iIw7XLRC17JloincGh/gf/7iMAQK6OF4/3lnkCM5raVsLZXFE6Y9L3YAXarq1isQGo+xhL6P5ggVB1GZAM3QRZ/XbBl83nTkHJ5wiO5KJArEe195nsgDLL00WcSAs=
