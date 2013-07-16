@@ -15,7 +15,7 @@ before_script:
 script:
 - rake generate
 after_script:
-- git push origin :gh-pages
+# - git push origin :gh-pages
 - rake deploy
 env:
   global:
