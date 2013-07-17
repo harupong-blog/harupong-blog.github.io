@@ -12,6 +12,8 @@ before_script:
 - chmod 600 ~/.ssh/id_rsa
 - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - rake setup_github_pages[$REPO]
+# To reset the 'url' to the custom domain in '_config.yml' http://www.harimenon.com/blog/2013/01/27/auto-deploying-to-my-octopress-blog/
+- git checkout -- _config.yml
 script:
 - rake generate
 after_script:

@@ -61,7 +61,8 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 
 # ----------------------- #
 #   Theme - Octoflat      #
-#---------------------- #
+# ----------------------- #
+
 navigation:
   - text: Home
     url: /
