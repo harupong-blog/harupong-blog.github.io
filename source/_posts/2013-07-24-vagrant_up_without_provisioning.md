@@ -6,7 +6,9 @@ comments: true
 categories: blog
 ---
 
-    Vagrant up --no-provision
+{% codeblock %}
+$ Vagrant up --no-provision
+{% endcodeblock %}
 
 と、`--no-provision` を付けて VM をたちあげてやればいい。
 
