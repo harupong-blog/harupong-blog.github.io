@@ -6,6 +6,8 @@ comments: true
 categories: git
 ---
 
+ブログのテーマががっつり偏ってきた気がしますが、自分の興味関心のままに書いているので大目に見てくださいまし。
+
 なお、Mac 編はありませんのであしからず[^01]。
 
 ## やりたいこと
@@ -38,7 +40,7 @@ categories: git
 
 1. パソコン上に Git リポジトリを作る
 1. リポジトリ内のファイルをコミットする
-1. パソコン上のリポジトリをファイルサーバーのクローンする
+1. パソコン上のリポジトリをファイルサーバーにクローンする
 
 大きく分けると以上の3ステップです。順番に説明していきます。
 
@@ -48,29 +50,29 @@ categories: git
 ↑Git でバージョン管理するフォルダを作って[^03]
 
 ![](http://lh5.ggpht.com/-yVmkPsly7io/UfIMxJRywTI/AAAAAAAABAw/0eBBwbuSt7w/s512/ScreenClip%25252520%2525255B1%2525255D.jpeg)  
-↑SourceTree で追加すると
+↑SourceTree で Clone/New ボタンを押して出てくるウィンドウからそのフォルダを追加すると
 
 ![](http://lh5.ggpht.com/-qB2DpSylaG8/UfIMxNrOEeI/AAAAAAAABAs/Ql0ks-6Z3qE/s512/ScreenClip%25252520%2525255B2%2525255D.jpeg)  
 ↑Git リポジトリができあがります。SourceTree だとこんな表示
 
 ![](http://lh3.ggpht.com/-RAyCDPUtZb0/UfIMyQs7NlI/AAAAAAAABBE/DJwp8qAz-sM/s512/ScreenClip%25252520%2525255B3%2525255D.jpeg)  
-↑出来上がった Git リポジトリをエクスプローラーで表示させたところ
+↑出来上がった Git リポジトリをエクスプローラーで表示させたところ。 .git というフォルダができていれば OK 。
 
 ### リポジトリ内のファイルをコミットする
 
 ![](http://lh6.ggpht.com/-yHv4ai9VBpQ/UfIMyWaiBkI/AAAAAAAABBA/vD2l4k-WG7o/s512/ScreenClip%25252520%2525255B4%2525255D.jpeg)  
-↑作ったフォルダ内にバージョン管理したいファイルを作って
+↑フォルダ内にバージョン管理したいファイルを作って
 
 ![](http://lh3.ggpht.com/-Afr4nBJhiH4/UfIMykam5dI/AAAAAAAABBI/0DKEaCQDuRo/s512/ScreenClip%25252520%2525255B5%2525255D.jpeg)  
-↑ステージングエリアに追加して
+↑Add ボタンを使ってステージングエリアに追加して
 
 ![](http://lh5.ggpht.com/-_MTiFGyC_NA/UfIM0NJauxI/AAAAAAAABBU/YEo9i-xVC9U/s512/ScreenClip%25252520%2525255B6%2525255D.jpeg)  
-↑コミットっ！！
+↑Commit ボタンでコミットっ！！
 
 ![](http://lh5.ggpht.com/-FH5-9Nxo8mQ/UfIM0NpOizI/AAAAAAAABBY/4vx0RT76zNs/s512/ScreenClip%25252520%2525255B8%2525255D.jpeg)  
 ↑変更の履歴が残り、めでたくコミット完了です。
 
-### パソコン上のリポジトリをファイルサーバーのクローンする
+### パソコン上のリポジトリをファイルサーバーにクローンする
 
 ![](http://lh4.ggpht.com/-TE_asiXbFX8/UfIQbhXr9TI/AAAAAAAABBw/Z8JUDAX31K4/s512/ScreenClip.jpeg)  
 ↑SourceTree 画面右上の歯車アイコンをクリック、ターミナルを起動して
@@ -79,7 +81,6 @@ categories: git
 $ git clone --bare . //<サーバーの>/<リポジトリにしたい>/<フォルダ>.git
 $ git remote add origin //<サーバーの>/<リポジトリにしたい>/<フォルダ>.git
 {% endcodeblock %}
-
 ↑Git のコマンドを入力していきます。コマンドの内容を説明しておくと
 
 1. パソコン上に作成したリポジトリをサーバー上に複写
@@ -89,12 +90,14 @@ $ git remote add origin //<サーバーの>/<リポジトリにしたい>/<フ�
 
 また、パスの末尾が `.git` となっていますが、これは Git のお作法なのでそのようにしておきましょう。`<フォルダ>.git` という名前のファイルが作られるわけではないのでお間違いなく。
 
+続いて、ちゃんと追加できてるか確認しましょう。
+
 {% codeblock %}
 $ git remote show origin
 $ git push origin master
 {% endcodeblock %}
 
-↑ちゃんと追加できてるか確認しましょう。以下のように表示されれば
+これらのコマンドを実行して以下のように表示されれば
 
 {% codeblock %}
 $ git remote show origin
