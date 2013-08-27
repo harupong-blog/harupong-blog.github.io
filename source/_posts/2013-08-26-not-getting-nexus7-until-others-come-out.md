@@ -68,5 +68,51 @@ Amazon と Google は価格競争でやりあっていて、昨年は時系列�
 
 [8月28日国内発売](http://pc.watch.impress.co.jp/docs/news/20130826_612583.html)が発表された Nexus 7(2013)、併せて発表された価格を見ると1ドル≒120円前後で計算されている。直近のドル円レートが98円前後なので、為替レート変動分に合わせて社内レートも変えてるようだ。
 
-[^01]: [Nook HD](http://en.wikipedia.org/wiki/Nook_HD)(http://ja.wikipedia.org/wiki/Nook_Tablet) タブレットは[撤退が発表されてる](http://bgr.com/2013/06/25/barnes-noble-nook-hardware-licensing/)ので除外
-[^02]: このあと、Nook タブレットが値下げを発表した
+## 追記: かいま見える Google の海外戦略？
+
+<blockquote class="twitter-tweet"><p>Nexus7って、2012モデルが戦略的にあの割安価格にしているのかと思ったら、なんとかなるはずの為替レートの部分で2013モデルは割高に設定しているというのはなんでだ。</p>&mdash; gamella (@gamella) <a href="https://twitter.com/gamella/statuses/372102388569489408">August 26, 2013</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+気になったので、値段がすぐ出てきたイギリスで比較してみた。
+
+- 前機種 の Google 社内レートは日英変わらずドル高(GBPUSD:20%、USDJPY:25%)
+- Nexus 7(2013) は米ドル建ての値上げ幅よりポンド建てでの値上げ幅の方が広い[^03]
+
+為替レートが変わってないことを踏まえると、イギリス在住の方にはかなりの値上がり感。
+
+考えられるのは、
+
+1. 為替変動のリスクを過剰に見ている
+1. 値下げ余地を国外でより多く残したかった
+2. 国内価格を安くした分を国外価格に転嫁している
+
+**Don't be evil** 目線からすれば 1. であって欲しいけれど、Google のお膝元で話題になるのは 3. の国内価格だろうから皺寄せが国外に来ているのかな、と邪推してる。
+
+### Nexus 7(2012) イギリスでの価格
+
+機種|米ドル建て|ポンド建て
+---|---|---
+16GB WIFI|US$199|£159
+32GB WIFI|US$249|£199
+
+2012年7月末の GBPUSD レートが**1.5725**、上の表だと Google 社内レートは **1.2515** くらい。
+
+価格情報 → [Nexus 7 (2012 version) - Wikipedia, the free encyclopedia](http://en.wikipedia.org/wiki/Nexus_7_(2012_version))
+
+### Nexus 7(2013) イギリスでの価格
+
+機種|米ドル建て|ポンド建て
+---|---|---
+16GB WIFI|US$229|£199
+32GB WIFI|US$269|£239
+32GB LTE|US$349|£299
+
+2013年8月下旬の GBPUSD レートが**1.5575**、上の表ベースの Google 社内レートは **1.1500** くらい。
+
+価格情報 → [New Nexus 7 (2013) release date, price & specs | IT PRO](http://www.itpro.co.uk/mobile/20257/new-nexus-7-2013-release-date-price-specs)
+
+[^01]: [Nook HD](http://en.wikipedia.org/wiki/Nook_HD)(http://ja.wikipedia.org/wiki/Nook_Tablet) タブレットは[撤退が発表されてる](http://bgr.com/2013/06/25/barnes-noble-nook-hardware-licensing/)ので除外。
+
+[^02]: このあと、Nook タブレットが値下げを発表した。
+
+[^03]: 海外価格の方が高いのは日英変わらず。16GB WIFI モデルが30ドルに対して40ポンド、 32GB WIFI モデルは20ドルに対して40ポンドあがってる。
