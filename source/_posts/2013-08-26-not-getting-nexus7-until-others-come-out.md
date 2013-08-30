@@ -18,6 +18,8 @@ categories:
 
 ## 競合他者の新製品事情
 
+<!--more-->
+
 アメリカ国内市場で、Nexus 7 の競合と目されてる7インチクラスのタブレットは以下の2機種[^01]。
 
 - Amazon: [Kindle Fire HD](http://ja.wikipedia.org/wiki/Kindle_Fire_HD)
