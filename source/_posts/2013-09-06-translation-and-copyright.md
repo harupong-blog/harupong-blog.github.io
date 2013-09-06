@@ -54,9 +54,9 @@ categories:
 ということで、何か文章を書いて公開する際は、ぜひその辺を意識すると良いと思った。自分の文章のライセンスを示そう運動。そうすれば誰かがその文章をなんらかの用途で使いたくなったとき、モニョモニョしなくて済む。
 
 1. 個人ブログであってもきちっとライセンス表記する
-  2. COPYRIGHT all rights reserved 型 [これ](http://ozpa-h4.com/)とか[これ](http://goryugo.com/)とか[これ](http://rdp.blog52.fc2.com/)とか
-  2. [クリエイティブ・コモンズ・ライセンス](http://creativecommons.jp/licenses/)型 [yomoyomoさん作成のリスト](http://www.yamdas.org/column/technique/cctrans2.html)
-2. 引用・転載・翻訳のガイドラインを載せておく [これ](http://www.paulgraham.com/gfaq.html)とか
+  2. COPYRIGHT all rights reserved 型 ([これ](http://ozpa-h4.com/)とか[これ](http://goryugo.com/)とか[これ](http://rdp.blog52.fc2.com/)とか)
+  2. [クリエイティブ・コモンズ・ライセンス](http://creativecommons.jp/licenses/)型 ([yomoyomoさん作成のリスト](http://www.yamdas.org/column/technique/cctrans2.html))
+2. 引用・転載・翻訳のガイドラインを載せておく ([これ](http://www.paulgraham.com/gfaq.html)とか)
 
 とりあえず1. のいずれかで始めてみて、不都合があれば2.の方式にすればよさそう。このブログは当面 COPYRIGHT 表記にしておきます。
 
@@ -70,4 +70,4 @@ categories:
 
 [^01]: だいたい、1000単語の英日訳で10時間くらいかかる気がする
 
-[^01]: ごめんなさい。実際はつらいです。
+[^02]: ごめんなさい。実際はつらいです。
