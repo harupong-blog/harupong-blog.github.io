@@ -71,15 +71,15 @@ else a();
 
 先に2行目を見てみると、
 
-**1行目の条件に当てはまらない場合は関数 `a` を実行する**
+**1行目の条件に当てはまらない場合は関数 a を実行する**
 
-ということらしい。で、1行目の条件って何かというと、どうも Firefox のみが対象みたい。[setTimeout() ][28]というメソッドを使って、**Firefox のときだけ、0ミリセカンドの遅延を発生させたあとに関数 `a` を実行する**ってことになってる。
+ということらしい。で、1行目の条件って何かというと、どうも Firefox のみが対象みたい。[setTimeout() ][28]というメソッドを使って、**Firefox のときだけ、0ミリセカンドの遅延を発生させたあとに関数 a を実行する**ってことになってる。
 
 なんでこんなことしてるんだろ...不具合対策？
 
-ともかく、if - else 部分で関数 `a` を実行したいってのは分かった。で、肝心の関数 `a` ってなんなのよ！というのはこの次で。
+ともかく、if - else 部分で関数 a を実行したいってのは分かった。で、肝心の関数 a ってなんなのよ！というのはこの次で。
 
-## 直してみた(3) 関数 `a` の正体とは？変数宣言部分を眺める
+## 直してみた(3) 関数 a の正体とは？変数宣言部分を眺める
 
 javascript の変数宣言はカンマで区切れば一括してできるそうなので、カンマごとに改行してみる。
 
@@ -89,26 +89,24 @@ w=window,
 e=w.getSelection,
 k=d.getSelection,
 x=d.selection,
-
 s=(e?e():(k)?k():(x?x.createRange().text:0)),
 f='http://booklog.jp/blet',
 l=d.location,
 g=d.getElementById('ASIN'),
 a=(g?g.value:''),
-
 e=encodeURIComponent,
 p='?v=2&u='+e(l.href)+'&s='+e(s)+'&a='+e(a),
 u=f+p,
 a=function(){w.open(u,'_blank')};
 {% endcodeblock %}
 
-**関数 `a` キターーー！！ASIN キターーー！！**
+**関数 a キターーー！！ASIN キターーー！！**
 
 ということで、ググっと近づいてきた。
 
-### 関数 `a` の正体
+### 関数 a の正体
 
-上記14行目が関数 `a` の正体。`function()` で記述が始まる関数を匿名関数といい、このケースでは `{` 以降に続くその中身は `open` メソッド。新しいタブで `u` を開いてね、という意味みたい。
+上記14行目が関数 a の正体。`function()` で記述が始まる関数を匿名関数といい、このケースでは `{` 以降に続くその中身は `open` メソッド。新しいタブで `u` を開いてね、という意味みたい。
 
 んで、その `u` だけど、13行目にある `f+p`、つまり `http://booklog.jp/blet?v=2&u='+e(l.href)+'&s='+e(s)+'&a='+e(a)` のこと。URLクエリパラメータきましたよっ！！Kindle 本の場合だけ存在しなかった `a=` の部分を見てみると、`e(a)` となってる。
 
@@ -119,10 +117,10 @@ a=function(){w.open(u,'_blank')};
 
 で、とってきた要素使って10行目で条件分岐させてるのだけど、ここでよくある if 文じゃなくて `?:` を使ってる。これは、`?` の左側が `true` なら `:` の左側を、`false` なら `:` の右側を、という書き方。それを踏まえてさきほどの `e(a)` を読み直すと、
 
-- ASIN という ID の要素があればその値を `encodeURIComponent` でエンコードした
-- そんな要素がない場合は `''` を `encodeURIComponent` でエンコードした
+-  ID がASIN の要素があればその値を `encodeURIComponent` でエンコードした値
+- そんな要素がない場合は `''` を `encodeURIComponent` でエンコードした値
 
-が値が返ってくることになる。Kindle 本の場合URLクエリパラメータが `a=` だけで返ってきていたのは、10行目の条件分岐処理の結果のようだ。
+が返ってくることになる。これ、後者の場合は何も返ってこないことになる。Kindle 本の場合URLクエリパラメータが `a=` だけで返ってきていたのは、10行目の条件分岐処理の結果のようだ。
 
 ### 消えたASIN を探せ！
 
@@ -150,7 +148,7 @@ a=function(){w.open(u,'_blank')};
 2. `d.getElementsByName('ASIN.0')[0]` で取得した要素を代入する
 3. `?:` の条件分岐を、g の値か gk の値か、という分岐に変える
 
-という修正方法がパッと浮かんだのだけど、変数増やすのイマイチだなぁと一思案。[Pocket の bookmarklet](http://getpocket.com/add) にある `||` で論理和な以下の記述を見つけた。
+という修正方法がパッと浮かんだのだけど、変数増やすのイマイチだなぁと一思案。[Pocket の bookmarklet](http://getpocket.com/add) に、「 `||` で論理和」な以下の記述を見つけた。
 
 {% codeblock %}
 var o=t.getElementsByTagName('head')[0]||t.documentElement;
@@ -172,7 +170,7 @@ g=d.getElementById('ASIN')||d.getElementsByName('ASIN.0')[0],
 
 <a href="javascript:var d=document, w=window, e=w.getSelection, k=d.getSelection, x=d.selection, s=(e?e():(k)?k():(x?x.createRange().text:0)), f='http://booklog.jp/blet', l=d.location, g=d.getElementById('ASIN')||d.getElementsByName('ASIN.0')[0], a=(g?g.value:''), e=encodeURIComponent, p='?v=2&u='+e(l.href)+'&s='+e(s)+'&a='+e(a), u=f+p, a=function(){w.open(u,'_blank')};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0); else a(); void(0);">ブクログ bookmarklet Kindle 本対応版</a>
 
-## 直してみた(5) おまじない `void(0)` 部分 
+## 直してみた(5) おまじない void(0) 部分 
 
 ここまでで当初の目的は達成してるのだけど、せっかくなので最後の一文、
 
