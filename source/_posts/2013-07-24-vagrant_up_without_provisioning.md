@@ -6,6 +6,20 @@ comments: true
 categories: blog
 ---
 
+## 2013/09/13 追記
+
+2013/09/05 にリリースされた 1.3.0 から、
+
+> `vagrant up` will now only run provisioning by default the first time it is run.
+
+ということで、以下の workaround 的な方法は必要なくなったみたい。やったね！！
+
+詳しい日本語解説記事↓。
+
+[Vagrant 1.3.0 からは2回目以降の起動時にプロビジョニングが自動で走らないので注意 - 頭ん中](http://www.msng.info/archives/2013/09/vagrant-1-3-0-no-provision.php)
+
+---------------------
+
 {% codeblock %}
 $ Vagrant up --no-provision
 {% endcodeblock %}
