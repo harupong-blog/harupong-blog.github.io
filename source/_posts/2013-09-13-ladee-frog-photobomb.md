@@ -41,7 +41,7 @@ NASA 公式サイトで写真を紹介するページなのですが、そのタ
 
 だそうです。保護区から迷い込んだカエルが、思わぬところに落ち着いてしまったんでしょうかね...
 
-## 蛇足な補足： photobomb ＝ カブる？ 
+## 蛇足な補足: photobomb = カブる？ 
 
 英辞郎によると、
 
@@ -62,8 +62,7 @@ NASA 公式サイトで写真を紹介するページなのですが、そのタ
 [45]: http://oxforddictionaries.com/definition/english/photobomb?q=photobomb
 [59]: http://instagram.com/p/eKfsSLIaB9/
 [65]: https://itunes.apple.com/jp/podcast/bairingarunyusu-bilingual/id653415937
-[81]: http://www.tokyoweekender.com/2013/08/bilingual-news-podcast-storming-the-charts-in-japan/
 [82]: http://blog.oxforddictionaries.com/august-2013-update/
 [86]: http://eow.alc.co.jp/search?q=bomb
 
-[^01]: [パーソナリティ2人のインタビュー][81]もおもしろいのでぜひ。英語です。
+[^01]: [パーソナリティ2人のインタビュー記事](http://www.tokyoweekender.com/2013/08/bilingual-news-podcast-storming-the-charts-in-japan/)もおもしろいのでぜひ。英語です。
