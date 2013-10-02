@@ -14,7 +14,7 @@ categories: books
 
 さて､今月は何を読もうかなぁ｡
 
-- [2013年7月に読んだ本 - Pieces Of Peace](http://blog.harupong.com/2013/08/books_i_read_on_july_2013/)
+- [2013年7月に読んだ本 - Pieces Of Peace](http://blog.harupong.com/2013/08/books-i-read-on-july-2013/)
 - [2013年6月に読んだ本 - Pieces Of Peace](http://blog.harupong.com/2013/07/books_i_read_on_june_2013/)
 - [2013年5月に読んだ本 - Pieces Of Peace](http://blog.harupong.com/2013/06/books_i_read_on_may_2013/)
 - [2013年4月に読んだ本 - Pieces Of Peace](http://blog.harupong.com/2013/05/books_i_read_on_april_2013/)
