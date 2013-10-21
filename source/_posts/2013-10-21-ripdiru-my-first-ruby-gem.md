@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "NHKラジオのネット配信「らじる★らじる」を録音するツールを Ruby で作った"
-date: 2013-10-18 00:00
+date: 2013-10-21 00:00
 comments: true
 categories: 
 ---
