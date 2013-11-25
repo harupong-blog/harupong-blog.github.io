@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".bashrc と .bash_profile の使い分けを工夫する"
-date: 2013-10-25 00:00
+date: 2013-11-25 00:00
 comments: true
 categories: 
 ---
