@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ln -s するときに『どっちが TARGET？』といつも迷うので
-date: 2013/12/02 00:00
+date: 2013/12/03 00:00
 comments: true
 ---
 
