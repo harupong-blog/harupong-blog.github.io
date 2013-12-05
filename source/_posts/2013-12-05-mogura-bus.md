@@ -1,6 +1,7 @@
 ---
 layout: post
 title: [子育て 読み聞かせ Advent Calendar] 「もぐらバス」佐藤 雅彦、うちの ますみ
+date: 2013-12-05 00:00
 comments: true
 ---
 
