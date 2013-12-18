@@ -8,8 +8,10 @@ comments: true
 
 [55Y9024 （トラックポイント付きキーボード）を買った件 » 八雲日録][40][40]: https://www.ziomatrix.org/2012/11/1882
 
-The ThinkPad USB Keyboard with TrackPoint (55Y9003 - U.S. English) features: http://support.lenovo.com/en_US/product-and-parts/detail.page?&LegacyDocID=MIGR-73183
-[ThinkPad USB Keyboard with TrackPoint - Files](http://support.lenovo.com/en_US/downloads/detail.page?DocID=DS013897)
+英語版キーボードの製品ページ → The ThinkPad USB Keyboard with TrackPoint (55Y9003 - U.S. English) features: http://support.lenovo.com/en_US/product-and-parts/detail.page?&LegacyDocID=MIGR-73183
+型番と言語の対応表 ThinkPad USB Keyboard with TrackPoint - Service parts http://support.lenovo.com/en_US/product-and-parts/detail.page?&LegacyDocID=MIGR-73185
+ドライバのページ → [ThinkPad USB Keyboard with TrackPoint - Files](http://support.lenovo.com/en_US/downloads/detail.page?DocID=DS013897)
+
 
 2013/02/25
 55Y9024
