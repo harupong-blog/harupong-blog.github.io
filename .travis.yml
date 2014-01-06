@@ -10,12 +10,12 @@ before_script:
 - base64 --decode --ignore-garbage ~/.ssh/travis_rsa_64 > ~/.ssh/id_rsa
 - chmod 600 ~/.ssh/id_rsa
 - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- rake setup_github_pages[$REPO]
+- bundle exec rake setup_github_pages[$REPO]
 - git checkout -- _config.yml
 script:
-- rake generate
+- bundle exec rake generate
 after_script:
-- rake deploy
+- bundle exec rake deploy
 env:
   global:
   - REPO="git@github.com:harupong-blog/harupong-blog.github.io"
