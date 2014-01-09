@@ -15,7 +15,7 @@ title: "2013年12月に読んだ本"
 
 - [2013年11月に読んだ本 - Pieces Of Peace](http://blog.harupong.com/2013/12/books-i-read-on-november-2013/)
 - [2013年9月に読んだ本 - Pieces Of Peace](http://blog.harupong.com/2013/10/books-i-read-on-september-2013/)
-- [2013年8月に読んだ本 - Pieces Of Peace](http://blog.harupong.com/2013/09/books-i-read-on-august-2013/
+- [2013年8月に読んだ本 - Pieces Of Peace](http://blog.harupong.com/2013/09/books-i-read-on-august-2013/)
 - [2013年7月に読んだ本 - Pieces Of Peace](http://blog.harupong.com/2013/08/books-i-read-on-july-2013/)
 - [2013年6月に読んだ本 - Pieces Of Peace](http://blog.harupong.com/2013/07/books_i_read_on_june_2013/)
 - [2013年5月に読んだ本 - Pieces Of Peace](http://blog.harupong.com/2013/06/books_i_read_on_may_2013/)
