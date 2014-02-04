@@ -1,6 +1,16 @@
 <div class="jumbotron">
   <div class="container">
-    Pieces Of Peace
-    <h3 class="tagline">Journal to me in the future</h3>
+    {% if site.title %}
+      {{ site.title }}
+    {% else %}
+      Hi. I'm {{ site.author }}.
+    {% endif %}
+    <h3 class="tagline">
+      {% if site.subtitle %}
+        {{ site.subtitle }}
+      {% else %}
+         Here are some thoughts of mine.
+      {% endif %}
+    </h3>
   </div>
 </div>
