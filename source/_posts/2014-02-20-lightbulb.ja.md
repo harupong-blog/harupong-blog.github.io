@@ -27,7 +27,7 @@ the shop doesn’t accept Bitcoin. He pops on to Reddit to complain and in
 the process [compares his situation to that of the Jews in Nazi
 Germany](http://www.reddit.com/r/Bitcoin/comments/1x9pyp/1_simple_reason_why_apple_goes_rotten_%E0%B2%A1_%E0%B2%A1_and_a/).
 -->
-次にもう1人。電球を買おうとしたけれど、Bitcoin で支払えなくて買えなかった人。買えなかったことを Reddit でぼやき、自分の立場をナチス・ドイツ時代のユダヤ人に例える。
+次にもう1人。電球を買おうとしたけれど、Bitcoin で支払えなくて買えなかった人。買えなかったことを Reddit でぼやき、[自分の立場をナチス・ドイツ時代のユダヤ人に例える](http://www.reddit.com/r/Bitcoin/comments/1x9pyp/1_simple_reason_why_apple_goes_rotten_%E0%B2%A1_%E0%B2%A1_and_a/)。
 
 <!--original
 Another person to go on to JIRA and spend twenty minutes deciding
