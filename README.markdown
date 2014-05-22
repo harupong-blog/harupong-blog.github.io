@@ -1,3 +1,3 @@
 ## harupong-blog.github.io
 
-Powered with Octopress
+Powered by Octopress, deployed by Travis-CI, served by GitHub.
