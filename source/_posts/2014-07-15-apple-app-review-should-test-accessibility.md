@@ -5,7 +5,7 @@ comments: true
 categories: translation
 ---
 
-以下の文章は、[Marco Arment](https://twitter.com/marcoarment) さんによる [Apple’s App Review Should Test Accessibility – Marco.org](http://www.marco.org/2014/07/10/app-review-should-test-accessibility) の日本語訳です。翻訳をご許可いただきありがとうございました。
+以下の文章は、[Marco Arment](https://twitter.com/marcoarment) さんによる [Apple’s App Review Should Test Accessibility – Marco.org](http://www.marco.org/2014/07/10/app-review-should-test-accessibility) の日本語訳です。[翻訳をご許可](https://twitter.com/marcoarment/status/488871415240605696)いただきありがとうございました。
 
 The following is the Japanese translation of [Apple’s App Review Should Test Accessibility – Marco.org](http://www.marco.org/2014/07/10/app-review-should-test-accessibility) by [Marco Arment](https://twitter.com/marcoarment).  Thank you Mr. Arment, for [letting me translate](https://twitter.com/marcoarment/status/488871415240605696) his writing.
 
@@ -30,13 +30,13 @@ But the actual issue, buried in the sloppy article, is legitimate:
 一方、そのひどい記事からは読み取りにくいけれど、問題が残っていないわけではない。
 
 <!--original
-> But when apps don’t work, life can grind to a stop. Jonathan Lyens, a San Francisco city employee, who is legally blind, has a hard time browsing jobs on professional networking site LinkedIn.
->
-> “The app is insane. Buttons aren’t labeled. It’s difficult to navigate,” said Lyens. When it comes to social media apps, new problems arise with every release, he said. “I get nervous every time I hit the update button.” …
->
-> Now, Apple and Google both have developer guidelines on how to make features accessible, such as labeling buttons that can be read by Apple’s VoiceOver software.
->
-> But they don’t require accessibility, in contrast to other strictly enforced rules, such as a ban on apps that present crude or objectionable content. Nor do they offer an accessibility rating system, which some disabled advocates say would be a big help.
+ But when apps don’t work, life can grind to a stop. Jonathan Lyens, a San Francisco city employee, who is legally blind, has a hard time browsing jobs on professional networking site LinkedIn.
+
+ “The app is insane. Buttons aren’t labeled. It’s difficult to navigate,” said Lyens. When it comes to social media apps, new problems arise with every release, he said. “I get nervous every time I hit the update button.” …
+
+ Now, Apple and Google both have developer guidelines on how to make features accessible, such as labeling buttons that can be read by Apple’s VoiceOver software.
+
+ But they don’t require accessibility, in contrast to other strictly enforced rules, such as a ban on apps that present crude or objectionable content. Nor do they offer an accessibility rating system, which some disabled advocates say would be a big help.
 -->
 > アプリがうまく使えないと、生活がまわらなくなってしまうこともあるです。Jonathan Lyens さん(サンフランシスコ市に雇われていて、重度の視覚障害認定を受けている)は、職業検索サイト LinkedIn での職探しにとても苦労しています。
 
@@ -74,7 +74,7 @@ I try hard to get accessibility right… when I remember to. My triple-tap home-
 <!--original
 Poor or broken accessibility is exactly the sort of problem that Apple’s App Review team *should* check for: many developers forget to test it, it’s easy for Apple to quickly test when reviewing each app, and it’s easy to fix.
 -->
-実装が下手、もしくは用をなさないアクセシビリティ機能こそ、Apple のレビューチームが気をつけるべき問題だ。それは、開発者の多くがテストするのを忘れるが、レビュー時に一緒にテストしてしまうのは Apple にとっては容易だし、不備の修正も簡単だ。
+実装が下手、もしくは用をなさないアクセシビリティ機能こそ、Apple のレビューチームが気を配るべき問題だ。それは、開発者の多くがテストするのを忘れるが、レビュー時に一緒にテストしてしまうのは Apple にとっては容易だし、不備の修正も簡単だ。
 
 <!--original
 It’s even more clear when considering the customers’ point of view. App Review assures customers of minimum quality and security standards so they feel comfortable buying apps, and [we all benefit](http://www.marco.org/2011/02/04/ode-to-the-app-review-team) from it. The [App Store Review Guidelines](https://developer.apple.com/appstore/resources/approval/guidelines.html) are quite clear on the basics:
@@ -83,9 +83,9 @@ It’s even more clear when considering the customers’ point of view. App Revi
  [App Store のアプリケーション審査ガイドライン](https://developer.apple.com/appstore/resources/approval/guidelines.html) によると、審査の基本はとてもわかりやすい。
 
 <!--original
-> **2.2** Apps that exhibit bugs will be rejected
->
-> **2.3** Apps that do not perform as advertised by the developer will be rejected
+ **2.2** Apps that exhibit bugs will be rejected
+
+ **2.3** Apps that do not perform as advertised by the developer will be rejected
 -->
 > **2.2** バグがあるアプリはリジェクトします
 >
@@ -121,7 +121,7 @@ Requiring all apps and games to be completely accessible is probably infeasible.
 <!--original
 3.  If a user has VoiceOver enabled while downloading an app that has *not* been tested for accessibility, or while updating a previously tested app to to an untested version, show a warning dialog and ask them to confirm whether they still want to proceed. This helps them *and* gives developers a good reason to opt into accessibility testing.
 -->
-1. 開発者がアクセシビリティのテストを受けたい場合、アプリを申請する度に iTunes Connect でテストに申し込めるようにする。暗号化関連の画面で申し込めるようにすれば、申し込みの要否を必ず入力することになって、開発者が自覚できる。
+1. アクセシビリティのテストを希望する開発者向けに、アプリを申請する度に iTunes Connect でテストを申し込めるようにする。暗号化関連の画面で申し込めるようにすれば、申し込みの要否を必ず入力することになって、開発者が自覚できる。
 2. App Store のアプリのページにバッジを出す。それはアクセシビリティのテストを通過したことを意味し、お客さんがアプリ購入を検討するときの判断材料になる。  
 テストを通過するには、以下が順守されなければならない。謳われている内容がアクセシビリティを利用してすべてアクセス可能であること。利用可能なコントロールすべてに正確なラベルが付与されていること。回避不可能な画面や画面遷移中の行き止まりといった「UIナビゲーション上の罠」がないこと。
 3. 利用者が VoiceOver を有効にしている場合、アクセシビリティのテストを受けていないアプリのダウンロードや、テスト済みバージョンから未テストバージョンへのアップデート時に警告を出す。ユーザーは警告を受けて、そのまま続けるか中止するかの意思表示をする。該当者にとっても有意義だし、開発者にとってもアクセシビリティのテストに申し込むいいきっかけになるだろう。
