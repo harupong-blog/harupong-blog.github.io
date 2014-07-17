@@ -17,7 +17,9 @@ via [Social media speak: The 60 new abbreviations that are dominating the way yo
 
 ## 60 NEW ABBREVIATIONS
 
-トップ60は以下の通り。せっかくなので意訳もつけておきました。が、スラング系は怪しいので、「これ間違ってるよ」というのがあれば @[harupong](https://twitter.com/harupong) までご連絡いただければ幸いです。
+トップ60は以下の通り。せっかくなので意訳もつけておきました。が、スラング系は怪しいので、「これ間違ってるよ」というのがあれば @[harupong](https://twitter.com/harupong) までご連絡いただければ幸いです。`f***` とか `a**` とかは、まぁ、察してくださいまし。
+
+プログラマーには [Git - 英語のコメントや issue で頻出する略語の意味 (FYI, AFAIK, ...) - Qiita](http://qiita.com/uasi/items/86c3a09d17792ab62dfe) とかもオススメです。
 
 |#|略語|全文|意訳|
 |-----------|------------|------------|------------|
@@ -81,5 +83,3 @@ via [Social media speak: The 60 new abbreviations that are dominating the way yo
 |58|TTYS|Talk to you soon|またあとで|
 |59|FBO|Facebook Official|公認<br>(付き合った、分かれた、といった情報をFacebookの交友関係ステータスで確認すること)|
 |60|TTYN|Talk to you never|二度と話さない<br>(パリス・ヒルトンの番組での彼女の発言をきっかけに広まった)|
-
-プログラマーには [Git - 英語のコメントや issue で頻出する略語の意味 (FYI, AFAIK, ...) - Qiita](http://qiita.com/uasi/items/86c3a09d17792ab62dfe) とかもオススメです。
