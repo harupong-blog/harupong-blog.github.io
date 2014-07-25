@@ -49,7 +49,6 @@ RSSリーダーはずっとlivedoor Reader。仮にサービス終了された�
 - ねこ++
 
 
-[26]: https://itunes.apple.com/jp/app/smartever/id493990103?mt=8
 [30]: https://itunes.apple.com/jp/app/todo-6-appuguredo-chu-lainaidebaisu/id282778557?mt=8
 [68]: https://itunes.apple.com/jp/app/bao-sutaima-listtimer-o-liao/id890352174?mt=8
 [72]: https://github.com/fastladder/fastladder
@@ -58,6 +57,6 @@ RSSリーダーはずっとlivedoor Reader。仮にサービス終了された�
 
 [^01]: Appleがサードパーティのアプリ/サービスを模倣(パクる)ことを"Sherlocking"と言うそうですが、一度sherlockedな純正アプリで満足してしまうのもまた問題だなぁ、と思ったりもしてます。例えば、@gamellaオススメのTodoistはUIが秀逸ですが、位置情報ベースの通知が有料オプションだったので「純正だと無料でできることに年間数千円も払うのかー」と躊躇してしまって、Appleの思惑通りにロックインされてしまったりとか。
 
-[^02]: Web UIで検索するか、スマートフォンの検索専用アプリ([SmartEver][26]とか)を使うかのいずれかです。後者がメイン。
+[^02]: Web UIで検索するか、スマートフォンの検索専用アプリ([SmartEver](https://itunes.apple.com/jp/app/smartever/id493990103?mt=8)とか)を使うかのいずれかです。後者がメイン。
 
 [^03]: データの出力先がDropboxだけ、みたいなアプリも多いので、自然と用途が変わってきました。
