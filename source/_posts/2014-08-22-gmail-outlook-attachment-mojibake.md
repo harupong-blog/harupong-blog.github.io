@@ -13,7 +13,7 @@ Gmailで添付したテキストファイルが受信側で文字化けしてし
 <blockquote class="twitter-tweet" lang="en"><p>Gmailでテキスト文書を添付して送ると相手方で文字化けする例が明らかに増えてるんだけど、これはどうにかならないものかね。相手がOutlookの場合が多いようだけど、きのうの相手はShurikenだという。いい対策はないかな。</p>&mdash; 越前敏弥 Toshiya Echizen (@t_echizen) <a href="https://twitter.com/t_echizen/statuses/501887964620656640">August 20, 2014</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-ミステリー翻訳家として第一線で活躍されている[越前敏弥 - Wikipedia][30]さんのこんなツイートが流れてきて、「へー、未だにそんなことあるんだ。メーラーのせいじゃないの？」と思いつつも気になってググってみたら、
+ミステリー翻訳家として第一線で活躍されている[越前敏弥][30]さんのこんなツイートが流れてきて、「へー、未だにそんなことあるんだ。メーラーのせいじゃないの？」と思いつつも気になってググってみたら、
 
 [添付ファイルの文字コード「shift-jis」をGmailが「us-ascii」と誤判定して送信するため、これをOutlookで受信すると文字化けが発生します。 - Google プロダクト フォーラム][81]
 
