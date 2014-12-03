@@ -1,6 +1,9 @@
 language: ruby
 rvm:
 - 1.9.3
+branches:
+  only:
+    - source
 before_script:
 - git config --global user.name "harupong(via TravisCI)"
 - git config --global user.email "harupong@gmail.com"
