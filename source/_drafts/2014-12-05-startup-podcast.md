@@ -5,10 +5,10 @@ comments: true
 ---
 
 
-[StartUp — Gimlet Media][54]
-[Rebuild: Aftershow 65: Another Year, Another Phone (hmsk)][7]
-[‘This American Life’ Producer Raises $1.5 Million for Podcast Startup Gimlet - Venture Capital Dispatch - WSJ][41]
-[10 Defining Podcast Stories From 2014 Not About Serial][58]
+- [StartUp — Gimlet Media][54]
+- [Rebuild: Aftershow 65: Another Year, Another Phone (hmsk)][7]
+- [‘This American Life’ Producer Raises $1.5 Million for Podcast Startup Gimlet - Venture Capital Dispatch - WSJ][41]
+- [10 Defining Podcast Stories From 2014 Not About Serial][58]
 
 
 [7]: http://rebuild.fm/65a/
