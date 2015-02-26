@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>クラウドのうえのオフラインストレージ、Amazon Glacierを使うための初期費用は【1万ファイルにつき0.5ドル】くらい - Pieces Of Peace</title>
+  <meta name="author" content="harupong">
+
+   
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.harupong.com/2013/01/initial_cost_for_amazon_glacier">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Pieces Of Peace" type="application/atom+xml">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap-collapse.js"></script>
+  <script src="/js/modernizr-2.0.js"></script>
+  <script src="/js/octopress.js" type="text/javascript"></script>
+  <script src="/js/application.js"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <div class="navbar navbar-inverse navbar-static-top">
+  	<div class="navbar-inner">
+  	  <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="fui-menu-24"></span>
+        </a>
+  	  	<div class="nav-collapse collapse navbar-responsive-collapse" style="height:0;">
+  	      <ul class="nav">
+    
+        <li ><a href="/">Home</a></li>
+    
+        <li ><a href="/archives/">Archives</a></li>
+    
+        <li ><a href="/feed/">Feed</a></li>
+    
+</ul>
+
+<ul class="nav pull-right">
+    
+    
+    
+    
+    <li><a href="http://twitter.com/harupong" title="Twitter Profile"><i class="icon-twitter-sign social-navbar"></i></a></li>
+    
+    
+    
+    
+
+    
+</ul>
+
+  	    </div>
+  	  </div>
+  	</div>
+  </div>
+  <div class="container" id="main">
+      <div class="row-fluid">
+        <div id="content">
+          <div>
+<article class="hentry" role="article">
+  
+
+  <header>
+  <div class="jumbotron">
+    クラウドのうえのオフラインストレージ、Amazon Glacierを使うための初期費用は【1万ファイルにつき0.5ドル】くらい
+	<h5>
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-01-16T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+  </div>
+</header>
+  <div class="row-fluid">
+    <div class="span12">
+      <p>タイトルが結論で他に語ることはありませんが､もしお時間あれば以下の駄文もお付き合いください｡</p>
+
+<p>先月1ヶ月かけて個人データをAmazonのストレージサービスである<a href="http://aws.amazon.com/jp/s3/">S3</a>と<a href="http://aws.amazon.com/jp/glacier/">Glacier</a>に引っ越しました｡同月の請求書が届いたので､実際に掛かった初期費用を見ておきます｡</p>
+
+<p><img src="http://lh3.ggpht.com/-kMII4KOcZAs/UPY5KpxmL5I/AAAAAAAAAew/j_-q40NnQUA/s512/glacierInitialCost.jpeg" alt="glacierInitialCost.jpeg" /></p>
+
+<p>使用量に対する課金は月極従量課金ということで初期費用から省きます｡今回は<a href="http://blog.harupong.com/2012/12/year_end_cleanup_of_my_data_part2/">利便性を考え</a>､約49,500ファイル､213GBのデータを<a href="http://aws.amazon.com/jp/s3/">S3</a>にアップロードしたあと<a href="http://aws.amazon.com/jp/glacier/">Glacier</a>に移行しましたので､</p>
+
+<dl>
+<dt>S3へのアップロード費用<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></dt>
+<dd>54,509リクエストで0.55ドル</dd>
+<dt>Glacierへの移行費用<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></dt>
+<dd>51,129リクエストで2.56ドル</dd>
+</dl>
+
+<p>の合計<strong>3.11ドル</strong>かかりました｡1万ファイル0.6ドルくらいでしょうか｡<a href="http://aws.amazon.com/jp/s3/">S3</a>を省けば<a href="http://aws.amazon.com/jp/s3/pricing/">料金表</a>どおりの1万ファイル0.5ドルくらいです｡当たり前ですね｡</p>
+
+<p>とはいえ､今後の利用を検討している方は､1GB/0.01ドル/月の月極課金に加え､1万ファイルにつき0.5ドルの初期費用も頭の片隅に置いておくといいでしょう｡海外では数百万のファイルをアップしえらい額の請求が！！という話もありました<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>｡</p>
+
+<h2>これからはオフラインストレージという言葉が流行るかもしれない</h2>
+
+<p>先日､アマゾンデータサービスジャパン株式会社主催の <a href="http://kokucheese.com/event/index/65943/">AWSストレージソリューションセミナー</a>というのに参加してきました｡お題は</p>
+
+<ol>
+<li>Amazon S3, Amazon Glacier(グレイシャー)のご紹介</li>
+<li>AWS Storage Gateway (ストレージ　ゲートウェイ)のご紹介</li>
+</ol>
+
+
+<p>の2点だったのですが､前者のスピーカー北迫さんのスライドにしきりと｢オフラインストレージ｣という言葉が出てきたのが印象的でした｡これまでオフラインストレージといえばテープや光ディスクなどのことを指してきたように思いますが､Amazonはその分野もクラウドに持って行っちゃおうとしてるのね､と｡</p>
+
+<p>社内LAN､自社データセンター､といった設備･資産の抱え方を真剣に見なおしてもいい時期に来てそうです｡AWS包囲網によって｢クラウドには◯◯がないから．．．｣という言い訳がひとつずつ潰されている印象｡不可逆と思われるこの流れ､まさに｢インターネットが負ける方に賭けるな｣ですね｡</p>
+
+<h3>併せて読みたい</h3>
+
+<p>引越しのゴタゴタが気になるという方､これらも併せてどうぞ｡</p>
+
+<ul>
+<li><a href="http://blog.harupong.com/2012/12/be_careful_with_amazon_glacier/">勘違いしないようにしたい､Amazon Glacierのデメリットあれこれ | Pieces of Peace</a></li>
+<li><a href="http://blog.harupong.com/2012/12/too_complicated_glacier_pricing_model/">ややこしすぎるAmazon Glacierのデータダウンロード料金まとめ | Pieces of Peace</a></li>
+<li><a href="http://blog.harupong.com/2012/12/year_end_cleanup_of_my_data_part2/">年末データ大掃除(2) ～Amazon S3/Glacierに全てを漏れなく安価に保管できてすっきりした編～ | Pieces of Peace</a></li>
+</ul>
+
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>$0.01 per 1,000 PUT, COPY, POST, or LIST requests の部分<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:1">
+<p>$0.050 per 1,000 Glacier Requests (US) の部分<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:1">
+<p><a href="http://alestic.com/2012/12/s3-glacier-costs">Cost of Transitioning S3 Objects to Glacier - Alestic.com</a><a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+    </div>
+  </div>
+
+
+
+  <footer>
+    <hr>
+    
+    <div class="row-fluid">
+      
+      <div class="span6">
+        <p class="meta">
+        
+        
+
+
+        </p>
+      </div>
+      
+      <div class="span6 social-sharing">
+        <div class="sharing">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+      </div>
+      
+      
+    </div>
+    
+    <div class="row-fluid">
+      <div class="span12">
+        <p class="meta">
+          
+            <a class="basic-alignment left" href="/2013/01/whispersync_for_voice/" title="Previous Post: 「Kindleで読んだ続きをiPhoneで聴く」Whispersync for voiceがとても便利でお得だった">&laquo; 「Kindleで読んだ続きをiPhoneで聴く」Whispersync for voiceがとても便利でお得だった</a>
+          
+          
+            <a class="basic-alignment right" href="/2013/01/quoted_by_tsuda_san/" title="Next Post: 津田大介さんのメルマガ「メディアの現場」でこのブログの記事が紹介されました">津田大介さんのメルマガ「メディアの現場」でこのブログの記事が紹介されました &raquo;</a>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+</article>
+
+</div>
+
+
+
+        </div>
+      </div>
+      <div class="row-fluid">
+        <footer class="footer-page" role="contentinfo">
+          <p>
+  Copyright &copy; 2015 - harupong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - Theme by <a href="http://alexgaribay.com">Alex Garibay</a>
+</p>
+
+
+        </footer>
+      </div>
+  </div>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

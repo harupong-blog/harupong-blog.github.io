@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>らじる★らじるの番組情報等メタデータ - Pieces Of Peace</title>
+  <meta name="author" content="harupong">
+
+   
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.harupong.com/2013/10/radiru-metadata">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Pieces Of Peace" type="application/atom+xml">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap-collapse.js"></script>
+  <script src="/js/modernizr-2.0.js"></script>
+  <script src="/js/octopress.js" type="text/javascript"></script>
+  <script src="/js/application.js"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <div class="navbar navbar-inverse navbar-static-top">
+  	<div class="navbar-inner">
+  	  <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="fui-menu-24"></span>
+        </a>
+  	  	<div class="nav-collapse collapse navbar-responsive-collapse" style="height:0;">
+  	      <ul class="nav">
+    
+        <li ><a href="/">Home</a></li>
+    
+        <li ><a href="/archives/">Archives</a></li>
+    
+        <li ><a href="/feed/">Feed</a></li>
+    
+</ul>
+
+<ul class="nav pull-right">
+    
+    
+    
+    
+    <li><a href="http://twitter.com/harupong" title="Twitter Profile"><i class="icon-twitter-sign social-navbar"></i></a></li>
+    
+    
+    
+    
+
+    
+</ul>
+
+  	    </div>
+  	  </div>
+  	</div>
+  </div>
+  <div class="container" id="main">
+      <div class="row-fluid">
+        <div id="content">
+          <div>
+<article class="hentry" role="article">
+  
+
+  <header>
+  <div class="jumbotron">
+    らじる★らじるの番組情報等メタデータ
+	<h5>
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-10-24T00:00:00+00:00" pubdate data-updated="true">Oct 24<span>th</span>, 2013</time></h5>
+  </div>
+</header>
+  <div class="row-fluid">
+    <div class="span12">
+      <p><a href="http://blog.harupong.com/2013/10/ripdiru-my-first-ruby-gem/">NHKラジオのネット配信「らじる★らじる」を録音するツールを Ruby で作った - Pieces Of Peace</a> で利用している情報のメモ。</p>
+
+<hr />
+
+<p><a href="http://www3.nhk.or.jp/netradio/">らじる★らじるのトップページ</a>へのアクセス時に読み込まれる Javascript が2つ。らじる★らじる固有の処理は後者に含まれている。</p>
+
+<ol>
+<li><a href="http://www3.nhk.or.jp/netradio/files/js/jquery-1.9.1.min.js">http://www3.nhk.or.jp/netradio/files/js/jquery-1.9.1.min.js</a></li>
+<li><a href="http://www3.nhk.or.jp/netradio/files/js/common.js">http://www3.nhk.or.jp/netradio/files/js/common.js</a></li>
+</ol>
+
+
+<p>common.js の以下の記述</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/* config読込 */
+</span><span class='line'>config.get(dirplus+"/netradio/app/config_pc.xml");</span></code></pre></td></tr></table></div></figure>
+
+
+<p>より、<a href="http://www3.nhk.or.jp/netradio/app/config_pc.xml">config_pc.xml</a> かららじる★らじるの設定情報が読み取れることが分かる。使えそうなのは以下の4つ。</p>
+
+<ol>
+<li>各地域のストリームURL</li>
+<li>ただいま放送中の番組を取得するAPIのURL</li>
+<li>番組表を取得するAPIのURL</li>
+<li>番組の詳細情報を取得するAPIのURL</li>
+</ol>
+
+
+<p>各項目について、2013/10/22時点で分かることをメモ。</p>
+
+<h2>各地域のストリームURL</h2>
+
+<p>第1・第2・FMの3チャンネル分が rtmp と mms のプロトコルで、仙台・東京・名古屋・大阪の4地域分提供されている。ただし、NHK第2のストリームは4地域共通で重複しているので、実際は全部で18ストリームになる。</p>
+
+<p>以下は東京の3チャンネル分6ストリーム。他の地域も <code>config_pc.xml</code> に記載されてる。</p>
+
+<h3>rtmpプロトコル</h3>
+
+<pre><code>rtmpe://netradio-r1-flash.nhk.jp/live/NetRadio_R1_flash@63346
+rtmpe://netradio-r2-flash.nhk.jp/live/NetRadio_R2_flash@63342
+rtmpe://netradio-fm-flash.nhk.jp/live/NetRadio_FM_flash@63343
+</code></pre>
+
+<h3>mmsプロトコル</h3>
+
+<pre><code>http://mfile.akamai.com/129931/live/reflector:46032.asx?bkup=46037&amp;prop=a
+http://mfile.akamai.com/129932/live/reflector:46056.asx?bkup=46060&amp;prop=a
+http://mfile.akamai.com/129933/live/reflector:46051.asx?bkup=46055&amp;prop=a
+</code></pre>
+
+<h2>ただいま放送中の番組を取得するAPIのURL</h2>
+
+<p><code>config_pc.xml</code> に記載されている URL と、</p>
+
+<pre><code>http://www2.nhk.or.jp/hensei/api/noa.cgi?c=3&amp;wide=1&amp;mode=jsonp
+</code></pre>
+
+<p>ネット上でよく言及されてる URL</p>
+
+<pre><code>http://cgi4.nhk.or.jp/hensei/api/sche-nr.cgi?tz=all&amp;ch=netr1&amp;date=2013-10-24
+http://cgi4.nhk.or.jp/hensei/api/sche-nr.cgi?tz=all&amp;ch=netr2&amp;date=2013-10-24
+http://cgi4.nhk.or.jp/hensei/api/sche-nr.cgi?tz=all&amp;ch=netfm&amp;date=2013-10-24
+</code></pre>
+
+<p>の2種類がある(以下、前者を公式、後者を非公式と呼ぶ。)。</p>
+
+<dl>
+<dt>公式</dt>
+<dd>位置情報自動判定。「現在放送中の番組」「一つ前に放送した番組」「次に放送する番組」の3番組情報が、3チャンネル分返ってくる。チャンネルと日付指定不可。</dd>
+<dt>非公式</dt>
+<dd>チャンネルと日付が指定可。日付指定なしだと当日分になる。指定内容で一日分の番組情報(朝5時からの24時間分)が返ってくる。日付指定は当日以降7日間(計8日分)有効。<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></dd>
+</dl>
+
+<h2>動作しなかったAPI</h2>
+
+<h3>番組表を取得するAPIのURL</h3>
+
+<pre><code>http://www2.nhk.or.jp/hensei/api/sche.cgi?c=3&amp;mode=jsonp
+</code></pre>
+
+<h3>番組の詳細情報を取得するAPIのURL</h3>
+
+<pre><code>http://www2.nhk.or.jp/hensei/api/sche.cgi?c=3&amp;mb=1&amp;mode=jsonp
+</code></pre>
+
+<h2>参考にしたサイト</h2>
+
+<p><a href="http://www.dcc-jpl.com/foltia/wiki/radikomemo">radikomemo - foltia - Trac</a></p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>なお、チャンネルは東京の3チャンネル分だけ指定可能の模様。<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+    </div>
+  </div>
+
+
+
+  <footer>
+    <hr>
+    
+    <div class="row-fluid">
+      
+      <div class="span6">
+        <p class="meta">
+        
+        
+
+
+        </p>
+      </div>
+      
+      <div class="span6 social-sharing">
+        <div class="sharing">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+      </div>
+      
+      
+    </div>
+    
+    <div class="row-fluid">
+      <div class="span12">
+        <p class="meta">
+          
+            <a class="basic-alignment left" href="/2013/10/ripdiru-my-first-ruby-gem/" title="Previous Post: NHKラジオのネット配信「らじる★らじる」を録音するツールを Ruby で作った">&laquo; NHKラジオのネット配信「らじる★らじる」を録音するツールを Ruby で作った</a>
+          
+          
+            <a class="basic-alignment right" href="/2013/11/renewed-crashplan-subscription/" title="Next Post: オンラインバックアップサービス Crashplan の年間契約を更新した">オンラインバックアップサービス Crashplan の年間契約を更新した &raquo;</a>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+</article>
+
+</div>
+
+
+
+        </div>
+      </div>
+      <div class="row-fluid">
+        <footer class="footer-page" role="contentinfo">
+          <p>
+  Copyright &copy; 2015 - harupong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - Theme by <a href="http://alexgaribay.com">Alex Garibay</a>
+</p>
+
+
+        </footer>
+      </div>
+  </div>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

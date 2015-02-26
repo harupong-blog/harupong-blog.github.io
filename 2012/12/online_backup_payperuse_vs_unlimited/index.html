@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>年末データ大掃除(番外編) 容量だけじゃない、オンラインバックアップサービスの大事なあれこれ - Pieces Of Peace</title>
+  <meta name="author" content="harupong">
+
+   
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.harupong.com/2012/12/online_backup_payperuse_vs_unlimited">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Pieces Of Peace" type="application/atom+xml">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap-collapse.js"></script>
+  <script src="/js/modernizr-2.0.js"></script>
+  <script src="/js/octopress.js" type="text/javascript"></script>
+  <script src="/js/application.js"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <div class="navbar navbar-inverse navbar-static-top">
+  	<div class="navbar-inner">
+  	  <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="fui-menu-24"></span>
+        </a>
+  	  	<div class="nav-collapse collapse navbar-responsive-collapse" style="height:0;">
+  	      <ul class="nav">
+    
+        <li ><a href="/">Home</a></li>
+    
+        <li ><a href="/archives/">Archives</a></li>
+    
+        <li ><a href="/feed/">Feed</a></li>
+    
+</ul>
+
+<ul class="nav pull-right">
+    
+    
+    
+    
+    <li><a href="http://twitter.com/harupong" title="Twitter Profile"><i class="icon-twitter-sign social-navbar"></i></a></li>
+    
+    
+    
+    
+
+    
+</ul>
+
+  	    </div>
+  	  </div>
+  	</div>
+  </div>
+  <div class="container" id="main">
+      <div class="row-fluid">
+        <div id="content">
+          <div>
+<article class="hentry" role="article">
+  
+
+  <header>
+  <div class="jumbotron">
+    年末データ大掃除(番外編) 容量だけじゃない、オンラインバックアップサービスの大事なあれこれ
+	<h5>
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2012-12-03T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+  </div>
+</header>
+  <div class="row-fluid">
+    <div class="span12">
+      <p><img src="http://lh3.googleusercontent.com/-cSgT7dXEtoo/ULxC2Q6NzMI/AAAAAAAAAXY/5d5GPyOWMuw/s400/online-backup.jpeg?gl=JP" alt="onlinebackup" /><br/>
+via <a href="http://www.cloudbackupreviews.com/">Cloud Backup Reviews</a></p>
+
+<p><a href="http://blog.harupong.com/2012/11/year_end_cleanup_of_my_data/">個人データの年末大掃除！！</a>と題して<a href="http://www.crashplan.com">Crashplan</a>に個人データ230GB程度をせっせとアップロードしていたのですが､スタート当初は1.5Mbps～2.0Mbps出ていたアップロード速度が､全体の3割程度をアップロードした段階で0.4～0.5Mbpsへと大きく減速｡速度4分の1ということは所要時間4倍になるわけで､<strong>残り時間：39.2日</strong>などという表示を見て激しくやる気減退｡</p>
+
+<p>40日間もパソコンつけっぱなしになんてできるか！！ということで､カッとなって他サービスに浮気してみました｡結果いろいろと気付きがあったのでメモしておきます｡</p>
+
+<h2>オンラインバックアップ､容量無制限タイプ(Crashplan)と従量課金タイプ(Amazon S3/Glacier)の比較あれこれ</h2>
+
+<p>以下､容量無制限タイプの<a href="http://www.crashplan.com">Crashplan</a>と従量課金タイプの<a href="http://aws.amazon.com/jp/S3/Glacier/">Amazon S3/Glacier</a>を主観的に比較してみました｡素のままだと後者が高級すぎて比較にならないので､<a href="http://www.publickey1.jp/blog/12/amazon_s3amazon_glacier.html">安価にアーカイブする機能</a>を使用して比較してます｡</p>
+
+<dl>
+<dt>アップロード/ダウンロード速度優先なら【Amazon S3/Glacier】</dt>
+<dd>  上述のとおり､回線速度は圧倒的にAmazon S3/Glacierに軍配があがります｡定額容量無制限でやっているCrashplan､他のところで制限をかけないといけないのは致し方なし､といったところでしょうか｡Pogoplug CloudやBackblazeといった類似の容量無制限定額タイプのサービスでも状況は似たり寄ったり､のようです｡</dd>
+<dt>費用優先なら【Crashplan】</dt>
+<dd>  <strong>｢容量無制限の定額制｣</strong>この言葉だけで無条件にこちらを選択される方も大勢いらっしゃるのではないでしょうか｡定額制の安心感は他に代えがたいものが確かにあります｡一方､対象データが500GB未満の場合はAmazon S3/Glacierの方が安くあがりますのでデータ量と相談ですね｡</dd>
+<dt>とっつきやすさなら【Crashplan】</dt>
+<dd>  無料の専用ソフトウェアでスマートフォンでの利活用含めすべてが完結するCrashplan､この簡単さは両親にも安心して勧められるほどのお手軽さ｡Amazon S3/Glacierはそもそも企業向けということもあり､ユーザーにはちっともやさしくありません｡</dd>
+<dt>サービスの使い勝手なら【Crashplan】</dt>
+<dd>  ファイルの更新履歴も個別に取得できる､すぐにファイルをダウンロードできる(iPhoneからも可)など､高機能｡｢容量無制限なDropboxないのかな～｣な欲張りさんはこれで決まりです｡</dd>
+</dl>
+
+<h2>従量課金なオンラインバックアップサービス､Amazon S3/Glacierを試してみた</h2>
+
+<p>次にAmazon S3/Glacierの詳細レポート｡予め断っておきますが､｢容量無制限､難しいこと考えなくていいDropboxみたいなの欲しいなぁ｣な方にこれはオススメできません｡転んでも泣かない方向けです｡</p>
+
+<h3>アップロード速度がCrashplanの6倍！早い！！</h3>
+
+<p>Amazon S3/Glacierでは一貫して3～4Mbps程度のアップロード速度が出ていました｡回線のアップロード速度が5Mbps程度であったことを考えると､十分合格点なスピードです｡24時間アップロードし続けるとISPの制限にひっかかってしまいそう｡</p>
+
+<p>コンシューマー向け､定額無制限なCrashplanと比較するのは可哀想な感もありますが､それでもやはりこのスピードは素晴らしい｡</p>
+
+<h3>Windows/Mac､どちらも便利なソフトウェアがあった！</h3>
+
+<p><a href="http://aws.amazon.com/jp/S3/Glacier/">公式サイト</a>を読んだ印象は｢プログラミングができないと使えなさそう．．｣でしたが､サードパーティからいくつか専用ソフトが出ているようです｡今回はWindowsを試してみました｡ざっくり紹介しておきます｡オススメはWindowsの<a href="http://www.cloudberrylab.com/">Cloudberryのソフトウェア</a>｡画面がゴチャッとしてる感はありますが､日本語表示なのでこれ一択！なWindowsユーザーの方もいらっしゃるのでは｡</p>
+
+<h4>Windows</h4>
+
+<ol>
+<li><p><a href="http://www.cloudberrylab.com/">CloudBerry</a></p>
+
+<p>FTP風にファイルを転送できる<a href="http://www.cloudberrylab.com/free-amazon-s3-explorer-cloudfront-IAM.aspx">CloudBerry Explorer</a>とスケジュール機能がある<a href="http://www.cloudberrylab.com/amazon-s3-microsoft-azure-google-storage-online-backup.aspx">CloudBerry Online Backup</a>など､色々とS3関連ツールを作っている会社｡いずれも29.99ドルの有料版｡初心者にやさしいUI､スケジュール機能､日本語対応｡サイトは英語ですがソフトは日本語対応しています｡</p></li>
+<li><p><a href="http://fastglacier.com/">FastGlacier</a></p>
+
+<p>Amazon Glacier専用ソフト｡機能制限Free版と29.99ドルの有料版｡シンプルなUI､軽快な動作が魅力｡英語のみ､スケジュール機能がないので､軽快な動作優先､全て自分でやりたい､トラブったら自分で解決できる人向け｡</p></li>
+</ol>
+
+
+<h4>Mac</h4>
+
+<ol>
+<li><p><a href="http://www.haystacksoftware.com/arq/">Arq</a></p>
+
+<p>試してないのでコメントできないのですが､<a href="http://www.marco.org/2012/11/07/arq-adds-S3/Glacier">評判はよさそう</a>です｡Mac界隈では定番ソフトみたい｡</p></li>
+</ol>
+
+
+<h3>安いがゆえの短所有り｡使い方には注意が必要</h3>
+
+<p><a href="http://d.hatena.ne.jp/dkfj/20121127/1354031314">こちらでしつこく考察されているのでぜひ一読をおすすめします</a>が､サービスを安くするために一切を削ぎ落したAmazon Glacierは色々と不便でありました｡例えば最新のファイル一覧を参照するのにも時間がすごくかかるし､ファイル名なども管理の簡易化のため全て削除されてしまいます｡また､WORMなシステムでファイルの上書きができないので､ちょっとでも変更が入るとデータ全てをアップロードする必要がありました｡</p>
+
+<p>そんな欠点をうまいこと補ってくれるのがAmazon S3のアーカイブ機能｡S3にアップロードしたファイルを全てGlacierにアーカイブするように設定すれば､S3の高機能さとGlacierの安価さを組み合わせて利用することが可能です｡実際そのようにして使っていますが､ほぼAmazon Glacierの費用だけで済んでいます｡</p>
+
+<hr />
+
+<p>だらだらとまとまりのない文章を最後まで読んで頂きありがとうございます｡家族や友人にオススメを聞かれれば間違えなく｢Crashplan｣と言いますが､使い勝手が圧倒的にいいので自分はAmazon S3/Glacierを使う､という矛盾した状態が暫く続きそうで文章も着地点が見つかりません．．</p>
+
+<p>こんなのあるよ､ここはどういうこと？などありましたら､ぜひ<a href="http://twitter.com/harupong">Twitter</a>などで教えてください｡</p>
+
+    </div>
+  </div>
+
+
+
+  <footer>
+    <hr>
+    
+    <div class="row-fluid">
+      
+      <div class="span6">
+        <p class="meta">
+        
+        
+
+
+        </p>
+      </div>
+      
+      <div class="span6 social-sharing">
+        <div class="sharing">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+      </div>
+      
+      
+    </div>
+    
+    <div class="row-fluid">
+      <div class="span12">
+        <p class="meta">
+          
+            <a class="basic-alignment left" href="/2012/11/tsukuba_marathon_rac/" title="Previous Post: つくばマラソンの失敗と反省">&laquo; つくばマラソンの失敗と反省</a>
+          
+          
+            <a class="basic-alignment right" href="/2012/12/opening_up_your_world_widely_by_doing_it_yourself/" title="Next Post: [子育てエンジニア advent calendar]自作で広がる子どもの世界">[子育てエンジニア advent calendar]自作で広がる子どもの世界 &raquo;</a>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+</article>
+
+</div>
+
+
+
+        </div>
+      </div>
+      <div class="row-fluid">
+        <footer class="footer-page" role="contentinfo">
+          <p>
+  Copyright &copy; 2015 - harupong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - Theme by <a href="http://alexgaribay.com">Alex Garibay</a>
+</p>
+
+
+        </footer>
+      </div>
+  </div>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

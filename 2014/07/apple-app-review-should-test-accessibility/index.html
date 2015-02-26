@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Apple のアプリ審査はアクセシビリティをテストすべき - Pieces Of Peace</title>
+  <meta name="author" content="harupong">
+
+   
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.harupong.com/2014/07/apple-app-review-should-test-accessibility">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Pieces Of Peace" type="application/atom+xml">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap-collapse.js"></script>
+  <script src="/js/modernizr-2.0.js"></script>
+  <script src="/js/octopress.js" type="text/javascript"></script>
+  <script src="/js/application.js"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <div class="navbar navbar-inverse navbar-static-top">
+  	<div class="navbar-inner">
+  	  <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="fui-menu-24"></span>
+        </a>
+  	  	<div class="nav-collapse collapse navbar-responsive-collapse" style="height:0;">
+  	      <ul class="nav">
+    
+        <li ><a href="/">Home</a></li>
+    
+        <li ><a href="/archives/">Archives</a></li>
+    
+        <li ><a href="/feed/">Feed</a></li>
+    
+</ul>
+
+<ul class="nav pull-right">
+    
+    
+    
+    
+    <li><a href="http://twitter.com/harupong" title="Twitter Profile"><i class="icon-twitter-sign social-navbar"></i></a></li>
+    
+    
+    
+    
+
+    
+</ul>
+
+  	    </div>
+  	  </div>
+  	</div>
+  </div>
+  <div class="container" id="main">
+      <div class="row-fluid">
+        <div id="content">
+          <div>
+<article class="hentry" role="article">
+  
+
+  <header>
+  <div class="jumbotron">
+    Apple のアプリ審査はアクセシビリティをテストすべき
+	<h5>
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2014-07-15T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+  </div>
+</header>
+  <div class="row-fluid">
+    <div class="span12">
+      <p>以下の文章は、<a href="https://twitter.com/marcoarment">Marco Arment</a> さんによる <a href="http://www.marco.org/2014/07/10/app-review-should-test-accessibility">Apple’s App Review Should Test Accessibility – Marco.org</a> の日本語訳です。<a href="https://twitter.com/marcoarment/status/488871415240605696">翻訳をご許可</a>いただきありがとうございました。</p>
+
+<p>The following is the Japanese translation of <a href="http://www.marco.org/2014/07/10/app-review-should-test-accessibility">Apple’s App Review Should Test Accessibility – Marco.org</a> by <a href="https://twitter.com/marcoarment">Marco Arment</a>.  Thank you Mr. Arment, for <a href="https://twitter.com/marcoarment/status/488871415240605696">letting me translate</a> his writing.</p>
+
+<hr />
+
+<!--original
+Apple’s App Review Should Test Accessibility
+=================================================================
+-->
+
+
+<h2>Apple のアプリ審査はアクセシビリティをテストすべき</h2>
+
+<!--original
+[Christina Farr’s Reuters article](http://www.reuters.com/article/2014/07/09/us-apple-mobilephone-accessibility-idUSKBN0FE12Q20140709) is pretty bad, as helpfully detailed by [John Gruber](http://daringfireball.net/linked/2014/07/10/reuters-accessibility). Apple’s accessibility support leads the industry by a mile.
+-->
+
+
+<p><a href="http://www.reuters.com/article/2014/07/09/us-apple-mobilephone-accessibility-idUSKBN0FE12Q20140709">Reuters の記者 Christina Farr が書いた記事</a> はひどい。どれほどひどいか知りたい人は、<a href="http://daringfireball.net/linked/2014/07/10/reuters-accessibility">John Gruber</a>のブログ記事を読んでみるといい。Apple が提供しているアクセシビリティ関連の機能は、業界標準のずっと先を行ってる。</p>
+
+<!--original
+But the actual issue, buried in the sloppy article, is legitimate:
+-->
+
+
+<p>一方、そのひどい記事からは読み取りにくいけれど、問題が残っていないわけではない。</p>
+
+<!--original
+ But when apps don’t work, life can grind to a stop. Jonathan Lyens, a San Francisco city employee, who is legally blind, has a hard time browsing jobs on professional networking site LinkedIn.
+
+ “The app is insane. Buttons aren’t labeled. It’s difficult to navigate,” said Lyens. When it comes to social media apps, new problems arise with every release, he said. “I get nervous every time I hit the update button.” …
+
+ Now, Apple and Google both have developer guidelines on how to make features accessible, such as labeling buttons that can be read by Apple’s VoiceOver software.
+
+ But they don’t require accessibility, in contrast to other strictly enforced rules, such as a ban on apps that present crude or objectionable content. Nor do they offer an accessibility rating system, which some disabled advocates say would be a big help.
+-->
+
+
+<blockquote><p>アプリがうまく使えないと、生活がまわらなくなってしまうこともあるです。Jonathan Lyens さん(サンフランシスコ市に雇われていて、重度の視覚障害認定を受けている)は、職業検索サイト LinkedIn での職探しにとても苦労しています。</p>
+
+<p>「あのアプリはひどいよ。ボタンがラベル付けされてないから、画面操作がすごく難しい。」Lyensさんによれば、ソーシャルメディアアプリにいたっては新しいバージョンのリリースごとに別の問題が生じるようで、「アップデートボタンを押すとき、いつも不安なきもちになってる」そうです。</p>
+
+<p>いまでは、Apple や Google が開発者向けガイドラインでアプリのアクセシビリティを高める方法を示しています。ガイドラインには、ボタンにラベル付けをしておけばApple の VoiceOver が読み上げてくれる、などの内容が含まれています。</p>
+
+<p>けれども、両社ともにアクセシビリティを必須とはしていません。一方、下品なコンテンツを含むアプリを禁止するなどのルールを厳密に課しています。アクセシビリティを評価する仕組みもありません。関係者からは、それがあれば大きな違いになるのに、といった意見も出ています。</p></blockquote>
+
+<!--original
+Apps with standard UIs get most accessibility for free, Apple doesn’t reject apps for inaccessibility, and most customers don’t rely on accessibility tools, so most developers never hear about accessibility problems.
+-->
+
+
+<p>標準的なアプリのUIはそのままでアクセシビリティが最高レベルになる。Apple はアクセシビリティの低さを理由にアプリを拒否したりしないし、お客さんの大半はアクセシビリティの仕組みに依存していないので、ほとんどの開発者にとって、アクセシビリティに関する苦情を耳にする機会は生まれなくなる。</p>
+
+<!--original
+In the rush to get apps and updates out the door, it’s easy to forget to test every UI change with VoiceOver. I’ve certainly forgotten many times.
+-->
+
+
+<p>しかも、アプリのリリース、アップデートの提供を急ぐあまり、UI変更の VoiceOver 対応をテストするとき、変更のいくつかを見過ごしてしまうことはよくある。自分だって、何度も見過ごしてしまったことがある。</p>
+
+<!--original
+But while accessibility problems only affect a small percentage of an app’s userbase, their impact can be extremely damaging or fatal to those customers’ ability to use the app.
+-->
+
+
+<p>けれど、アクセシビリティの問題がアプリの利用者数のわずかにしか影響しないとしても、実際に影響を受けるお客さんからすれば、「アプリが使えなくなる」という被害は甚大だ。致命的な被害になることだってある。</p>
+
+<!--original
+Accessibility failures should be *embarrassments* to all developers because they’re usually *very* easy to fix. For most problems, you just need to add label text to a custom control or image button. Rare “complex” issues are usually less than an hour’s work.
+-->
+
+
+<p>アクセシビリティの欠陥は、開発者にとって<strong>恥じるべきこと</strong>だ。というのも、その欠陥はたいてい<strong>すぐに</strong>直せるものだからだ。問題の大半は、カスタムコントロールやイメージボタンにラベルテキストを付与するだけで解決できる。めったにないような「複雑な」問題でも、1時間もかからず解決できるだろう。</p>
+
+<!--original
+I try hard to get accessibility right… when I remember to. My triple-tap home-button shortcut is always mapped to VoiceOver so I can easily test. I include VoiceOver users in betas whenever possible and had an extremely valuable and insightful accessibility review in the WWDC labs this year. But I *still* occasionally ship unlabeled buttons, hidden-view clutter, or inaccessible custom views.
+-->
+
+
+<p>個人的には、アクセシビリティを正しく提供できるよう努力しているつもりだ(忘れることもあるけれど)。自分が使うデバイスの「ホームボタン3度押し」ショートカットは、すぐにテストできるよう、いつも VoiceOver に設定してある。VoiceOver の利用者もベータテストに可能な限り入ってもらうようにもしている。今年の WWDC のラボでは、思慮に富んだとてもありがたいレビューをアクセシビリティ絡みで受けることができた。それでも、ラベルなしのボタン、埋もれてしまったビュー、アクセシビリティ機能から参照不可なカスタムビューを<strong>ときどき</strong>リリースしてしまう。</p>
+
+<!--original
+Poor or broken accessibility is exactly the sort of problem that Apple’s App Review team *should* check for: many developers forget to test it, it’s easy for Apple to quickly test when reviewing each app, and it’s easy to fix.
+-->
+
+
+<p>実装が下手、もしくは用をなさないアクセシビリティ機能こそ、Apple のレビューチームが気を配るべき問題だ。それは、開発者の多くがテストするのを忘れるが、レビュー時に一緒にテストしてしまうのは Apple にとっては容易だし、不備の修正も簡単だ。</p>
+
+<!--original
+It’s even more clear when considering the customers’ point of view. App Review assures customers of minimum quality and security standards so they feel comfortable buying apps, and [we all benefit](http://www.marco.org/2011/02/04/ode-to-the-app-review-team) from it. The [App Store Review Guidelines](https://developer.apple.com/appstore/resources/approval/guidelines.html) are quite clear on the basics:
+-->
+
+
+<p>お客さんの目線に立ってみれば、それはより明確になる。Apple がアプリをレビューするから、最低限の品質とセキュリティが確保されていてお客さんは安心してアプリを買えるし、<a href="http://www.marco.org/2011/02/04/ode-to-the-app-review-team">開発者にとっても得るものは多い</a> 。
+ <a href="https://developer.apple.com/appstore/resources/approval/guidelines.html">App Store のアプリケーション審査ガイドライン</a> によると、審査の基本はとてもわかりやすい。</p>
+
+<!--original
+ **2.2** Apps that exhibit bugs will be rejected
+
+ **2.3** Apps that do not perform as advertised by the developer will be rejected
+-->
+
+
+<blockquote><p><strong>2.2</strong> バグがあるアプリはリジェクトします</p>
+
+<p><strong>2.3</strong> 開発者の申請どおりに動作しないアプリはリジェクトします</p></blockquote>
+
+<!--original
+Of course. Customers should know that they’re getting what’s promised.
+-->
+
+
+<p>そりゃそうだ。お客さんは、「謳い文句どおりのアプリが手に入るんだ」という認識を持っていいはずなんだ。</p>
+
+<!--original
+But those rules aren’t applied to accessibility. For a customer who uses VoiceOver, rows of unlabeled buttons and inescapable screens are “bugs”, and an app with inaccessible features certainly does not “perform as advertised”.
+-->
+
+
+<p>上述のルールはアクセシビリティには当てはまらないが、かといって VoiceOver を使ってるお客さんにとっては、ラベルなしのボタンや回避不可能な画面は「バグ」に他ならないし、アクセス出来ない機能があるアプリは「謳い文句どおりのアプリ」とは言いがたい。</p>
+
+<!--original
+This sucks for everyone: Apple, developers, and most of all, customers relying on accessibility aides who unknowingly pick a bad app, can’t do what they need, and now can’t trust the App Store with future purchases.
+-->
+
+
+<p>こうなってしまうと、誰(Appleや開発者やお客さんたち)のためにもならない。特にアクセシビリティ機能に依存しているお客さんたちの場合がひどくて、そうと知らずにひどいアプリを選んでしまった場合、やりたいこともできなくなって、今後アプリを買うときには App Store を信用できなくなってしまうだろう。</p>
+
+<!--original
+Requiring all apps and games to be completely accessible is probably infeasible. But that’s not the only option. My proposed fix:
+-->
+
+
+<p>ただ、ゲームを含むすべてのアプリに完璧なアクセシビリティを要求するのはおそらく無理難題だろう。とはいえ、他にもやり方はある。以下のようにすればいい。</p>
+
+<!--original
+1.  Allow developers to *opt into* accessibility testing for each submission in iTunes Connect. Put it on the screen that asks about cryptography so all developers must answer it and are made aware of it.
+2.  Show a small badge on each app’s page in the Store that passes accessibility testing. This helps customers make buying decisions for their needs.
+-->
+
+
+<!--original
+    Passing requires all advertised functionality to be accessible, all accessible controls to have accurate labels, and no navigational traps such as inescapable screens or stuck states.
+-->
+
+
+<!--original
+3.  If a user has VoiceOver enabled while downloading an app that has *not* been tested for accessibility, or while updating a previously tested app to to an untested version, show a warning dialog and ask them to confirm whether they still want to proceed. This helps them *and* gives developers a good reason to opt into accessibility testing.
+-->
+
+
+<ol>
+<li>アクセシビリティのテストを希望する開発者向けに、アプリを申請する度に iTunes Connect でテストを申し込めるようにする。暗号化関連の画面で申し込めるようにすれば、申し込みの要否を必ず入力することになって、開発者が自覚できる。</li>
+<li>App Store のアプリのページにバッジを出す。それはアクセシビリティのテストを通過したことを意味し、お客さんがアプリ購入を検討するときの判断材料になる。<br/>
+テストを通過するには、以下が順守されなければならない。謳われている内容がアクセシビリティを利用してすべてアクセス可能であること。利用可能なコントロールすべてに正確なラベルが付与されていること。回避不可能な画面や画面遷移中の行き止まりといった「UIナビゲーション上の罠」がないこと。</li>
+<li>利用者が VoiceOver を有効にしている場合、アクセシビリティのテストを受けていないアプリのダウンロードや、テスト済みバージョンから未テストバージョンへのアップデート時に警告を出す。ユーザーは警告を受けて、そのまま続けるか中止するかの意思表示をする。該当者にとっても有意義だし、開発者にとってもアクセシビリティのテストに申し込むいいきっかけになるだろう。</li>
+</ol>
+
+
+<!--original
+There’s definitely more Apple can do to address this very real problem, and a system like this would make a huge difference.
+-->
+
+
+<p>現在進行形のこの問題に対して Apple ができることはたくさんあるし、ここに書いたような仕組みがあれば状況は劇的に改善されるだろう。</p>
+
+<hr />
+
+<p>初出公開：　2014年7月15日、　最終更新日： 2014年7月15日</p>
+
+    </div>
+  </div>
+
+
+
+  <footer>
+    <hr>
+    
+    <div class="row-fluid">
+      
+      <div class="span6">
+        <p class="meta">
+        
+        
+
+
+
+  <a href="/blog/categories/translation/"><span class="badge">translation</span></a>
+
+
+
+
+        </p>
+      </div>
+      
+      <div class="span6 social-sharing">
+        <div class="sharing">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+      </div>
+      
+      
+    </div>
+    
+    <div class="row-fluid">
+      <div class="span12">
+        <p class="meta">
+          
+            <a class="basic-alignment left" href="/2014/07/ask-forgiveness-than-permission/" title="Previous Post: 「教科書からはみ出さないことが一番大事」なので「許可より謝罪」が許されないディズニーの苦悩">&laquo; 「教科書からはみ出さないことが一番大事」なので「許可より謝罪」が許されないディズニーの苦悩</a>
+          
+          
+            <a class="basic-alignment right" href="/2014/07/sns-60-new-abbreviations/" title="Next Post: 英語圏で使われてるソーシャルメディア略語 トップ60">英語圏で使われてるソーシャルメディア略語 トップ60 &raquo;</a>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+</article>
+
+</div>
+
+
+
+        </div>
+      </div>
+      <div class="row-fluid">
+        <footer class="footer-page" role="contentinfo">
+          <p>
+  Copyright &copy; 2015 - harupong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - Theme by <a href="http://alexgaribay.com">Alex Garibay</a>
+</p>
+
+
+        </footer>
+      </div>
+  </div>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

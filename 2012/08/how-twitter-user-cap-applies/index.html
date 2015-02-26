@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>【翻訳】Twitterクライアントの利用者トークン数制限はどのように適用される？ - Pieces Of Peace</title>
+  <meta name="author" content="harupong">
+
+   
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.harupong.com/2012/08/how-twitter-user-cap-applies">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Pieces Of Peace" type="application/atom+xml">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap-collapse.js"></script>
+  <script src="/js/modernizr-2.0.js"></script>
+  <script src="/js/octopress.js" type="text/javascript"></script>
+  <script src="/js/application.js"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <div class="navbar navbar-inverse navbar-static-top">
+  	<div class="navbar-inner">
+  	  <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="fui-menu-24"></span>
+        </a>
+  	  	<div class="nav-collapse collapse navbar-responsive-collapse" style="height:0;">
+  	      <ul class="nav">
+    
+        <li ><a href="/">Home</a></li>
+    
+        <li ><a href="/archives/">Archives</a></li>
+    
+        <li ><a href="/feed/">Feed</a></li>
+    
+</ul>
+
+<ul class="nav pull-right">
+    
+    
+    
+    
+    <li><a href="http://twitter.com/harupong" title="Twitter Profile"><i class="icon-twitter-sign social-navbar"></i></a></li>
+    
+    
+    
+    
+
+    
+</ul>
+
+  	    </div>
+  	  </div>
+  	</div>
+  </div>
+  <div class="container" id="main">
+      <div class="row-fluid">
+        <div id="content">
+          <div>
+<article class="hentry" role="article">
+  
+
+  <header>
+  <div class="jumbotron">
+    【翻訳】Twitterクライアントの利用者トークン数制限はどのように適用される？
+	<h5>
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2012-08-28T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+  </div>
+</header>
+  <div class="row-fluid">
+    <div class="span12">
+      <h2>非公式Twitterクライアント界隈がプチ炎上中</h2>
+
+
+
+
+<p>8月16日に<a href="https://dev.twitter.com/blog/changes-coming-to-twitter-api">Twitter APIのルール変更が発表</a>されて以来､非公式Twitterクライアントに今後課される制限について､開発者の方を中心に喧々諤々のやりとりが行われます｡発表された情報が断片的であるため､様々な憶測･誤解･誤報が流れているようです｡</p>
+
+
+<p>有名サードパーティ製TwitterクライアントTweetbotの<a href="http://tapbots.com/blog/">開発者ブログ</a>に､｢誤解を解こう｣としてルール適用の具体例が記載されていました<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>｡開発者のみならず､利用者も知っておくべき内容が含まれていると思うので､以下に翻訳を掲載します｡</p>
+
+<p>あなたがiPhone/Androidで愛用しているSOICHA/ついっぷる/twiccaなどにも関係がある話です<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>｡一読することを強くオススメします｡</p>
+
+<h2>【翻訳】Twitterクライアントの利用者トークン数制限はどのように適用される？</h2>
+
+
+
+
+<blockquote>
+  <ol>
+  <li>2012年8月16日をもって､Twitterのサードパーティ製クライアントには利用者トークン数上限が課されます｡その上限は10万トークンとし､もし利用者トークンが既に10万を超えている場合は､同日時点のトークン数の2倍を上限とします｡</li>
+  <li>これらの上限はサードパーティ製クライアントにのみ課されます｡クライアントアプリケーション以外に上限は課されません｡</li>
+  <li>これらの上限は｢アプリケーション毎｣に課されるため､1開発者が複数のアプリを開発している場合､アプリ毎に上限が課されます｡</li>
+  <li>同じアプリ､同じアカウントで複数の端末からログインした場合､利用したアプリが有するトークン数の一つを消費することになります｡</li>
+  <li>同じアプリから複数のアカウントでログインした場合､利用したアプリが有するトークン数の複数を消費することになります｡</li>
+  <li>Twitter Web版の 設定 -> アプリ連携 から｢許可を取り消す｣をクリックすると､消費したトークンを返却することができます｡</li>
+  <li>現時点において､トークンに有効期限はありません｡一度アプリ連携を許可すると､｢許可を取り消す｣を実行しない限りそのトークンは使用中と認識されます｡</li>
+  </ol>
+</blockquote>
+
+
+
+
+<p>(翻訳終わり｡<a href="http://tapbots.com/blog/news/where-did-the-tweetbot-for-mac-alpha-go">原文</a>)</p>
+
+
+
+
+<h2>ユーザーが意識すべきことは？</h2>
+
+
+<p>トークン<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>は</p>
+
+<ul>
+<li>有効期限がない</li>
+<li>連携許可を取り消すと返却できる</li>
+</ul>
+
+
+
+
+<p>ので､非公式Twitterクライアントのユーザーとしては､</p>
+
+
+<ul>
+<li>アプリ開発者のために､使わなくなったアプリのトークンは上記6.の手順で返却すること<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup></li>
+<li>利用中アプリの連携許可を間違って取り消さないこと<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup></li>
+</ul>
+
+
+<p>を心がければよさそうです｡iPhoneアプリ探しが好きで過去にあれこれTwitterアプリを試したことがある方､そもそもTwitter Web版の設定画面なんて一度も開いたことがないという方､今すぐ<a href="https://twitter.com/settings/applications">アプリ連携の画面</a>にアクセスして設定を見直しましょう｡</p>
+
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>自社製Mac版クライアントのパブリックベータ版におけるトークン数制限を巡ってTwitter社とやりとりしたうえで得た情報とのことです｡<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>スマフォアプリに限らず､WindowsやMacで使うようなクライアントアプリも全て対象です｡<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>使用権､とでも訳せばよいのかな？<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>そのアプリで利用可能なトークンが増える->新規ユーザーが増やせる､という流れが出来ます｡<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+<li id="fn:5">
+<p>トークン数が上限に達してしまい再度連携させられない恐れがある<a href="#fnref:5" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+    </div>
+  </div>
+
+
+
+  <footer>
+    <hr>
+    
+    <div class="row-fluid">
+      
+      <div class="span6">
+        <p class="meta">
+        
+        
+
+
+        </p>
+      </div>
+      
+      <div class="span6 social-sharing">
+        <div class="sharing">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+      </div>
+      
+      
+    </div>
+    
+    <div class="row-fluid">
+      <div class="span12">
+        <p class="meta">
+          
+            <a class="basic-alignment left" href="/2012/08/grandfather-clause/" title="Previous Post: 名付け親はお茶目に違いない！英語表現”grandfathered”の意味">&laquo; 名付け親はお茶目に違いない！英語表現”grandfathered”の意味</a>
+          
+          
+            <a class="basic-alignment right" href="/2012/09/2012-democratic-national-convention/" title="Next Post: 2012年アメリカ民主党大会での主要スピーチ動画まとめ">2012年アメリカ民主党大会での主要スピーチ動画まとめ &raquo;</a>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+</article>
+
+</div>
+
+
+
+        </div>
+      </div>
+      <div class="row-fluid">
+        <footer class="footer-page" role="contentinfo">
+          <p>
+  Copyright &copy; 2015 - harupong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - Theme by <a href="http://alexgaribay.com">Alex Garibay</a>
+</p>
+
+
+        </footer>
+      </div>
+  </div>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

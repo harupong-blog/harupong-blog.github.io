@@ -1,0 +1,942 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Pieces Of Peace</title>
+  <meta name="author" content="harupong">
+
+   
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.harupong.com/page/6">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Pieces Of Peace" type="application/atom+xml">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap-collapse.js"></script>
+  <script src="/js/modernizr-2.0.js"></script>
+  <script src="/js/octopress.js" type="text/javascript"></script>
+  <script src="/js/application.js"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <div class="navbar navbar-inverse navbar-static-top">
+  	<div class="navbar-inner">
+  	  <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="fui-menu-24"></span>
+        </a>
+  	  	<div class="nav-collapse collapse navbar-responsive-collapse" style="height:0;">
+  	      <ul class="nav">
+    
+        <li ><a href="/">Home</a></li>
+    
+        <li ><a href="/archives/">Archives</a></li>
+    
+        <li ><a href="/feed/">Feed</a></li>
+    
+</ul>
+
+<ul class="nav pull-right">
+    
+    
+    
+    
+    <li><a href="http://twitter.com/harupong" title="Twitter Profile"><i class="icon-twitter-sign social-navbar"></i></a></li>
+    
+    
+    
+    
+
+    
+</ul>
+
+  	    </div>
+  	  </div>
+  	</div>
+  </div>
+  <div class="container" id="main">
+      <div class="row-fluid">
+        <div id="content">
+          <div class="jumbotron">
+  <div class="container">
+    
+      Pieces Of Peace
+    
+    <h3 class="tagline">
+      
+        Journal to me in the future
+      
+    </h3>
+  </div>
+</div>
+
+
+<div class="blog-index">
+  
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-07-29T06:39:00+00:00" pubdate data-updated="true">Jul 29<span>th</span>, 2013</time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          <a href="/blog/categories/git/"><span class="badge">git</span></a>
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2013/07/git-repo-on-file-server/">Git とファイルサーバーを使って小規模な分散バージョン管理システムを構築する -Windows 編-</a></h1>
+      <p>ブログのテーマががっつり偏ってきた気がしますが、自分の興味関心のままに書いているので大目に見てくださいまし。</p>
+
+<p>なお、Mac 編はありませんのであしからず<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>。</p>
+
+<h2>やりたいこと</h2>
+
+<ol>
+<li>Windows オンリーなネットワーク環境で</li>
+<li>インターネットへはアクセスせずに</li>
+<li>Git とファイルサーバーだけで</li>
+<li>分散バージョン管理システムを</li>
+</ol>
+
+
+<p>簡単に作ってみましょう。</p>
+
+<h2>想定読者</h2>
+
+<ul>
+<li>ソースコードのバックアップに不満がある</li>
+<li>プログラミングを Windows で行なっている</li>
+<li>非公開であっても、ソースコードを他者のサーバーやサービスに保存したくない、できない</li>
+<li>Git を使ったことがある、もしくは Git を使ってみる気がある</li>
+</ul>
+
+
+<h2>事前準備</h2>
+
+
+      
+       <a href="/2013/07/git-repo-on-file-server/">Read on &rarr;</a> 
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-07-24T06:28:00+00:00" pubdate data-updated="true">Jul 24<span>th</span>, 2013</time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          <a href="/blog/categories/blog/"><span class="badge">blog</span></a>
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2013/07/vagrant_up_without_provisioning/">Vagrant でプロビジョニングを実行せずに VM を立ち上げる方法</a></h1>
+      <h2>2013/09/13 追記</h2>
+
+<p>2013/09/05 にリリースされた 1.3.0 から、</p>
+
+<blockquote><p><code>vagrant up</code> will now only run provisioning by default the first time it is run.</p></blockquote>
+
+<p>ということで、以下の workaround 的な方法は必要なくなったみたい。やったね！！</p>
+
+<p>詳しい日本語解説記事↓。</p>
+
+<p><a href="http://www.msng.info/archives/2013/09/vagrant-1-3-0-no-provision.php">Vagrant 1.3.0 からは2回目以降の起動時にプロビジョニングが自動で走らないので注意 - 頭ん中</a></p>
+
+<hr />
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ Vagrant up --no-provision</span></code></pre></td></tr></table></div></figure>
+
+
+<p>と、<code>--no-provision</code> を付けて VM をたちあげてやればいい。</p>
+
+<h2>背景</h2>
+
+<p><a href="http://progit-ja.github.io/">Pro Git 日本語版電子書籍公開サイト</a>で配布しているデータを生成するための環境作りとそのメンテナンスをなるべく手抜きするために色々と試行錯誤している。</p>
+
+<p>EC2 やら試してみたけど、今のところ <strong><a href="http://www.vagrantup.com/">Vagrant</a> でローカル環境上に Ubuntu を Pro Git 仕様にプロビジョニングする</strong>、というのが一番しっくり来てるところ<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>。</p>
+
+<p>で、Vagrant といえば <code>Vagrant up</code> なのだけど、Vagrantfile にプロビジョニング設定を書いた状態で <code>Vagrant up</code> すると必ずプロビジョニングが実行されてしまう。</p>
+
+<p>初めて VM を立ち上げる時はそれでも構わないのだけど、プロビジョニング済み VM を一度シャットダウンの、その後立ち上げるときにまたプロビジョニングが行われてしょんぼりしていた。</p>
+
+<p>どちらかと言うと <code>--provision</code> オプションをつけて VM を立ち上げたときだけプロビジョニングを実行する、みたいにして欲しいのだけど..<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>どうやってるかは別途まとめる予定<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>そのようにプロビジョニングを作りこめばいいじゃん、というツッコミはスルーします<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-07-23T06:12:00+00:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          <a href="/blog/categories/blog/"><span class="badge">blog</span></a>
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2013/07/newblog/">ブログを引越した ～ばいばい Wordpress、はじめまして Octopress～</a></h1>
+      <p><img src="http://lh3.googleusercontent.com/-6Pjf5RsYppE/Ue3dJfDMu9I/AAAAAAAAA_w/es49eBJkpAs/octopress.png" alt="octopress" /></p>
+
+<p>ブログを引越した。見た目は大きく変わったけど、アドレスや記事はうまく移行できてるはず。</p>
+
+<h2>きっかけ</h2>
+
+<p><a href="http://blog.harupong.com/2013/03/taking_inventory_of_internet_on_every_february_2013/">ここ</a>でもちょっと触れたけど、主に Wordpress 用として契約したレンタルサーバーの2年契約があと半年で切れる。延長してもいいし他社で引き続き Wordpress 使い続けてもいいのだけど、それじゃどうもありきたり。</p>
+
+<p><a href="http://blog.harupong.com/2013/07/progit_ebook_japanese/">Git の解説書翻訳版を公開</a>する過程で <a href="http://pages.github.com/">GitHub Pages</a> の使い方を色々と試行錯誤したので、いっそのこと自分のブログも引っ越してしまえ！ということで Wordpress とはお別れすることに。<a href="https://www.google.com/search?safe=off&amp;q=Github+Pages+%E3%83%96%E3%83%AD%E3%82%B0&amp;oq=Github+Pages+%E3%83%96%E3%83%AD%E3%82%B0&amp;gs_l=serp.3..0.16216.16641.0.17229.2.2.0.0.0.0.233.302.1j0j1.2.0....0.0..1c.4.20.serp._225u2J43Ds">Github Pages ブログ でググって</a>1件目に出てきた</p>
+
+<p><a href="http://onigra.github.io/blog/2013/04/28/introduction-of-octopress/">【何番煎じ】OctopressとGitHub Pagesを使用したブログの構築手順 - nekogeruge</a></p>
+
+<p>を更に煎じて自分のブログを移行した。<strong>ばいばい Wordpress、はじめまして Octopress</strong>。</p>
+
+<p>静的ファイル配信に変わったので以前よりレスポンスはあがってる。予想してたとはいえ、自ブログをサクサク見れるのはやはり嬉しい。</p>
+
+<h2>今後</h2>
+
+<p><a href="http://blog.harupong.com/2013/03/your_favorite_thursday_sandwich_in_jp/">この翻訳記事</a>を載せたときにも考えていたのだけど、やはりレンタルサーバー屋さんのサービスは網羅的すぎて、てんこ盛り感が強い。使ってるのは以下の4つくらいだし。</p>
+
+<ol>
+<li>ブログ</li>
+<li>ドメイン</li>
+<li>メール</li>
+<li>ファイルストレージ</li>
+</ol>
+
+
+<p>キャンペーンで最初は安くアレコレ使わせて、更新時には依存度上がってて切り替えられずに高い料金を払い続ける<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>、というのはバカらしいし悔しいので、半年以内に全部引っ越しちゃうつもり。</p>
+
+<h2>トラブったことメモ</h2>
+
+<ol>
+<li><p>フィードのURLを変更したくない</p>
+
+<p><a href="http://luosky.com/2012/07/24/create-custom-rss-feed-for-octopress/">http://luosky.com/2012/07/24/create-custom-rss-feed-for-octopress/</a> を参考にして解決</p></li>
+<li><p>記事の投稿を自動化したい</p>
+
+<p><a href="http://pchw.github.io/blog/2013/06/27/octopress-travis/">http://pchw.github.io/blog/2013/06/27/octopress-travis/</a> を参考にして解決</p></li>
+<li><p>Tweet Button のURLがおかしくなる</p>
+
+<p><a href="http://www.harimenon.com/blog/2013/01/27/auto-deploying-to-my-octopress-blog/">http://www.harimenon.com/blog/2013/01/27/auto-deploying-to-my-octopress-blog/</a> を参考にして解決</p></li>
+</ol>
+
+
+<p>解決の結果出来上がった<a href="https://github.com/harupong/harupong.github.io">ブログ生成のソースファイル</a>と<a href="https://github.com/harupong/octoflat">テーマファイル</a>は GitHub にあげておいた。</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>典型的なベンダーロックイン<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-07-16T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2013/07/progit_ebook_japanese/">Git 解説書 Pro Git、日本語版電子書籍を公開します</a></h1>
+      <p><img src="http://lh4.ggpht.com/-fQhfIb08vyg/UdupbZnn6gI/AAAAAAAAA_I/Wb0sHfdXSK8/d/progit-cover.png" alt="Pro Git Book Cover" /></p>
+
+<p>専用サイトを作ってみました｡Git らしく､GitHub Pages です｡</p>
+
+<p><a href="http://progit-ja.github.io/">Pro Git 日本語版電子書籍公開サイト</a></p>
+
+<p>誤訳などのツッコミ歓迎です｡連絡先は上記のサイトでご確認ください｡</p>
+
+<h2>謝辞</h2>
+
+<p>原著出版直後から日本語翻訳作業を牽引してこられた<a href="http://www.m-takagi.org/">高木正弘さん</a>｡電子書籍の公開について快諾を頂きました｡この場を借りて御礼申し上げます｡</p>
+
+<h3>オマケ</h3>
+
+<ol>
+<li>Ubuntu と EC2 で Pro Git の電子書籍データをサクッと生成する方法</li>
+<li>Google Analyticsでファイルダウンロード数を計測する方法 2013年版(analytics.js対応)</li>
+<li>GitHub Pagesの素晴らしさとハマりどころ</li>
+</ol>
+
+
+<p>公開までの一連の作業で作業記録が溜まったので､次回更新時に自分が困らないためにも早めにブログ記事にしておこうと思います｡</p>
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-07-01T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2013/07/books_i_read_on_june_2013/">2013年6月に読んだ本</a></h1>
+      <p>今月は7冊｡想像すらしたことのなかった内実が知れて痛快だった､太田直子さんの<a href="http://blog.harupong.com/2013/06/essay_by_naoko_ohta_movie_translator/">字幕屋は銀幕の片隅で日本語が変だと叫ぶ</a>がイチオシの1冊｡洋画好きはもちろん､そうでなくても十分楽しめます｡</p>
+
+<p><a href="http://booklog.jp/users/harupong/archives/1/4166607227">すきやばし次郎 鮨を語る</a>と<a href="http://booklog.jp/users/harupong/archives/1/4061385100">20歳の自分に受けさせたい文章講義</a>は､付箋がいくつもついたので追って感想を書く予定｡</p>
+
+<p><a href="http://www.amazon.co.jp/review/R9F23X7FKJEE2/ref=cm_cr_dp_title?ie=UTF8&amp;ASIN=4163821104&amp;channel=detail-glance&amp;nodeID=465392&amp;store=books">2万人以上に『参考になった』と投票されたAmazonレビュー</a>が一部で話題になった村上春樹さんの最新作は､「風の歌を聴け」から「ノルウェイの森」あたりまでが楽しめた人にはオススメの1冊｡そうじゃない人にとっては､このレビューのような感想も納得｡</p>
+
+<div style="margin-bottom:15px;"><a href="http://booklog.jp/users/harupong" target="_blank">harupongさんの本棚</a> - 2013年06月 (7作品)</div>
+
+
+<div style="margin-bottom:5px;"><div style="width:75px;height:75px;float:left;margin-right:2px;"><a href="http://booklog.jp/users/harupong/archives/1/433403392X" target="_blank"><img src="http://ecx.images-amazon.com/images/I/31T3EXyTWrL._SL75_.jpg" width="47" height="75" alt="" /></a></div><div><a href="http://booklog.jp/users/harupong/archives/1/433403392X" target="_blank">字幕屋は銀幕の片隅で日本語が変だと叫ぶ (光文社新書)</a><br /><a href="http://booklog.jp/author/%E5%A4%AA%E7%94%B0%E7%9B%B4%E5%AD%90" target="_blank">太田直子</a><br />読了日：06月02日<br /><img src="http://booklog.jp/images/rank/5.gif" width="59" height="12" alt="{book['rank']" /></div><br style="clear:both;" /></div>
+
+
+<div style="margin-bottom:5px;"><div style="width:75px;height:75px;float:left;margin-right:2px;"><a href="http://booklog.jp/users/harupong/archives/1/4087462765" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41uUPAswOML._SL75_.jpg" width="51" height="75" alt="" /></a></div><div><a href="http://booklog.jp/users/harupong/archives/1/4087462765" target="_blank">負けるのは美しく (集英社文庫)</a><br /><a href="http://booklog.jp/author/%E5%85%90%E7%8E%89%E6%B8%85" target="_blank">児玉清</a><br />読了日：06月14日<br /><img src="http://booklog.jp/images/rank/3.gif" width="59" height="12" alt="{book['rank']" /></div><br style="clear:both;" /></div>
+
+
+<div style="margin-bottom:5px;"><div style="width:75px;height:75px;float:left;margin-right:2px;"><a href="http://booklog.jp/users/harupong/archives/1/4062880377" target="_blank"><img src="http://ecx.images-amazon.com/images/I/416gAk5W45L._SL75_.jpg" width="46" height="75" alt="" /></a></div><div><a href="http://booklog.jp/users/harupong/archives/1/4062880377" target="_blank">走る意味―命を救うランニング (講談社現代新書)</a><br /><a href="http://booklog.jp/author/%E9%87%91%E5%93%B2%E5%BD%A6" target="_blank">金哲彦</a><br />読了日：06月19日<br /><img src="http://booklog.jp/images/rank/3.gif" width="59" height="12" alt="{book['rank']" /></div><br style="clear:both;" /></div>
+
+
+<div style="margin-bottom:5px;"><div style="width:75px;height:75px;float:left;margin-right:2px;"><a href="http://booklog.jp/users/harupong/archives/1/B00C9V3EJC" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51A5gNrgZfL._SL75_.jpg" width="55" height="75" alt="" /></a></div><div><a href="http://booklog.jp/users/harupong/archives/1/B00C9V3EJC" target="_blank">WIRED VOL.8 GQ JAPAN.2013年7月号増刊</a><br />読了日：06月21日<br /><img src="http://booklog.jp/images/rank/4.gif" width="59" height="12" alt="{book['rank']" /></div><br style="clear:both;" /></div>
+
+
+<div style="margin-bottom:5px;"><div style="width:75px;height:75px;float:left;margin-right:2px;"><a href="http://booklog.jp/users/harupong/archives/1/4163821104" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41NAeswPUWL._SL75_.jpg" width="52" height="75" alt="" /></a></div><div><a href="http://booklog.jp/users/harupong/archives/1/4163821104" target="_blank">色彩を持たない多崎つくると、彼の巡礼の年</a><br /><a href="http://booklog.jp/author/%E6%9D%91%E4%B8%8A%E6%98%A5%E6%A8%B9" target="_blank">村上春樹</a><br />読了日：06月26日<br /><img src="http://booklog.jp/images/rank/4.gif" width="59" height="12" alt="{book['rank']" /></div><br style="clear:both;" /></div>
+
+
+<div style="margin-bottom:5px;"><div style="width:75px;height:75px;float:left;margin-right:2px;"><a href="http://booklog.jp/users/harupong/archives/1/4166607227" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41b0HyJDVfL._SL75_.jpg" width="47" height="75" alt="" /></a></div><div><a href="http://booklog.jp/users/harupong/archives/1/4166607227" target="_blank">すきやばし次郎 鮨を語る (文春新書)</a><br /><a href="http://booklog.jp/author/%E5%AE%87%E4%BD%90%E7%BE%8E%E4%BC%B8" target="_blank">宇佐美伸</a><br />読了日：06月28日<br /><img src="http://booklog.jp/images/rank/4.gif" width="59" height="12" alt="{book['rank']" /></div><br style="clear:both;" /></div>
+
+
+<div style="margin-bottom:5px;"><div style="width:75px;height:75px;float:left;margin-right:2px;"><a href="http://booklog.jp/users/harupong/archives/1/4061385100" target="_blank"><img src="http://ecx.images-amazon.com/images/I/31QfJVEjrDL._SL75_.jpg" width="46" height="75" alt="" /></a></div><div><a href="http://booklog.jp/users/harupong/archives/1/4061385100" target="_blank">20歳の自分に受けさせたい文章講義 (星海社新書)</a><br /><a href="http://booklog.jp/author/%E5%8F%A4%E8%B3%80%E5%8F%B2%E5%81%A5" target="_blank">古賀史健</a><br />読了日：06月30日<br /><img src="http://booklog.jp/images/rank/4.gif" width="59" height="12" alt="{book['rank']" /></div><br style="clear:both;" /></div>
+
+
+<div style="margin:10px 0;font-size:80%;">powered by <a href="http://booklog.jp" target="_blank">booklog</a></div>
+
+
+<p>さて､今月は何を読もうかなぁ｡</p>
+
+<ul>
+<li><a href="http://blog.harupong.com/2013/06/books_i_read_on_may_2013/">2013年5月に読んだ本 | Pieces of Peace</a></li>
+<li><a href="http://blog.harupong.com/2013/06/books_i_read_on_april_2013/">2013年4月に読んだ本 | Pieces of Peace</a></li>
+</ul>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-06-24T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2013/06/cd_with_digital_data_cheaper_than_digital_data_only/">デジタルデータつきのCDよりもデジタルデータのみの方がお高いアメリカの音楽事情</a></h1>
+      <p>って､どうなってんでしょうね､という質問なので､音楽事情解説はありません<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>｡あしからず｡</p>
+
+<p>一部熱狂的なファンも多いと聞くハウス系音楽ユニット<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>Daft Punkの最新アルバム<a href="http://www.amazon.com/gp/product/B00C061I3K/">Random Access Memories</a>､これが今売れに売れてるみたいです｡自身の持つセールス記録を軽く塗り替え､米英のチャートを独占しています｡</p>
+
+<p>ということは､当然米英のAmazonでもガッツリCDが売られているわけですが､にわかに信じがたい逆転現象が起きていました｡</p>
+
+<p><img src="http://lh6.ggpht.com/-4YVo-BkmO8I/Ucfw5nwAHgI/AAAAAAAAA-0/MLhiHIvZHc8/s640/daftpunk_cd.jpeg" alt="CD" /><br/>
+↑<a href="http://www.amazon.com/gp/product/B00C061I3K/">CDは$10.28､MP3データ(AutoRip) + Amazon MP3の$1クーポン付き､送料別</a></p>
+
+<p><img src="http://lh3.ggpht.com/-afepTWwSPow/Ucfw5u89DOI/AAAAAAAAA-4/i9Kk4OmBU_g/s640/daftpunk_mp3.jpeg" alt="MP3" /><br/>
+↑<a href="http://www.amazon.com/Random-Access-Memories-digital-booklet/dp/B00CRMWMZ0/">データは$11.99､PDF版のリーフレット付き</a></p>
+
+<p>そう､デジタルデータよりCDの方が安いのです｡CDにはオマケとしてデジタルデータも付いてくると言うのに！！</p>
+
+<h2>ちなみに</h2>
+
+
+      
+       <a href="/2013/06/cd_with_digital_data_cheaper_than_digital_data_only/">Read on &rarr;</a> 
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-06-17T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2013/06/comparing_personal_music_streaming_service/">個人向け音楽クラウドサービスの本命が決まりそう</a></h1>
+      <p>きっかけ-&gt; <a href="http://chalow.net/2013-04-05-3.html">[を] Dropbox とスマートフォンでクラウド音楽環境</a></p>
+
+<p>前々から｢iTunesに依存し過ぎててつらい&hellip;｣な状況が続いていたので､ここ2ヶ月ほどアレコレ試している｡</p>
+
+<h2>望むこと</h2>
+
+<ol>
+<li>自宅PCに保存されてる音楽データ<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>を自分向けにネット配信できる</li>
+<li>ラジオ的な音楽配信サービス<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>はお呼びでない</li>
+<li>自宅PCの電源が入っていなくても使える</li>
+<li>無料/有料問わない</li>
+<li>スマートフォン(iOS/Android)用アプリがオフライン再生に対応している</li>
+</ol>
+
+
+<h2>お試し履歴</h2>
+
+<ol>
+<li><p><a href="http://www.ampache.org/">Ampache</a></p></li>
+<li><p>初期設定で挫折したので試せていない</p></li>
+<li><p><a href="https://itunes.apple.com/jp/app/cloud-music-player-skydrive/id573192227">CloudBeats</a></p></li>
+<li><p><a href="http://audiobox.fm/">AudioBox</a></p></li>
+<li><p><a href="http://www.amazon.com/gp/dmusic/marketing/CloudPlayerLaunchPage/ref=sa_menu_mp3_acp">Amazon Cloud Player</a></p></li>
+</ol>
+
+
+<h2>候補の良し悪し</h2>
+
+<p>一つ試してはダメなとこに気付き､解決策を求めて次のを試し&hellip;と3つほど試してみて､ようやっと上述した<strong>自分の希望</strong>が見えてきた次第｡</p>
+
+<p>それら希望を満たしているのが<a href="http://audiobox.fm/">AudioBox</a>と<a href="http://www.amazon.com/gp/dmusic/marketing/CloudPlayerLaunchPage/ref=sa_menu_mp3_acp">Amazon Cloud Player</a>だったのだけど､</p>
+
+<ul>
+<li>音楽データ用容量の値頃感</li>
+<li>再生プレイヤーの使い勝手</li>
+</ul>
+
+
+<p>の2点で今のところ<a href="http://www.amazon.com/gp/dmusic/marketing/CloudPlayerLaunchPage/ref=sa_menu_mp3_acp">Amazon Cloud Player</a>が2歩も3歩も先んじてる｡というか圧勝してる｡具体的には</p>
+
+<h3>音楽データ用容量の値頃感</h3>
+
+<p>Amazon Cloud Playerは24.99ドル/年で実質無制限<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>なのに対し､AudioBoxは1ドル/月の利用料＋Dropbox等ストレージサービスの料金がかかる｡</p>
+
+<p>手持ちの音楽データを全部アップロードした場合､前者は年25ドル､後者は12ドル＋100ドルの年112ドル｡4分の1以下でAmazonの圧勝｡</p>
+
+<h3>再生プレイヤーの使い勝手</h3>
+
+<p><a href="http://techcrunch.com/2013/02/04/audiobox-ios/">TechCrunchにも載った</a>し､スタートアップは応援したいし､開発者とのやりとりも好印象だったのだけど､AudioBoxの再生プレイヤーが､それはもう出来が悪かった｡致命的バグの修正が蕎麦屋の出前状態でまったく出て来なかったためあえなく使用を断念<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>｡</p>
+
+<p>代わってAmazonの方だけど､こちらはさすがの横綱相撲｡Webサイト､Webプレイヤー､スマートフォン用アプリのいずれもそつなくまとまってる｡サーバーからのファイル配信もお手の物､地下鉄などの途切れがちなネット接続でも問題なく再生できたのもプラス｡</p>
+
+<hr />
+
+<p>初期のモヤモヤから今までをざっと1000文字でまとめてみた｡結論はまだ出てないけど､<a href="http://www.amazon.com/gp/dmusic/marketing/CloudPlayerLaunchPage/ref=sa_menu_mp3_acp">Amazon Cloud Player</a>に軍配が上がる気配が濃厚｡</p>
+
+<blockquote class="twitter-tweet"><p>書き始めるとついつい3000字4000字と書きすぎてしまうので、1000文字程度のブログエントリを書き慣れよう、ということで修行中であります。1000文字程度の文章をポンポン投げられるようになりたいものです。</p>&mdash; しの(昇天) (@raf00) <a href="https://twitter.com/raf00/statuses/346449049743941632">June 17, 2013</a></blockquote>
+
+
+<p>同じく､ポンポン投げてく練習してみます｡</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>80GBくらいある<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>SpotifyとかRdioとかiTunes Matchとか<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>一応､上限は25万曲<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>スタートアップならではの人的､経済的リソース不足はあったのだろうけど､それは言い訳には出来ないと思うのです｡<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-06-13T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2013/06/essay_by_naoko_ohta_movie_translator/">「字幕屋は銀幕の片隅で日本語が変だと叫ぶ」太田直子</a></h1>
+      <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/433403392X/harupong-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/31T3EXyTWrL._SL160_.jpg" alt="字幕屋は銀幕の片隅で日本語が変だと叫ぶ (光文社新書)" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/433403392X/harupong-22/ref=nosim/" name="amazletlink" target="_blank">字幕屋は銀幕の片隅で日本語が変だと叫ぶ (光文社新書)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.06.08</div></div><div class="amazlet-detail">太田 直子 <br />光文社 <br />売り上げランキング: 15,306<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/433403392X/harupong-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+
+<blockquote><p>もちろん､気分転換や暇つぶしでもかなわない｡笑って泣いてすっきりするのも効用だ｡「映画はわたしの人生の教科書です」などと言うのはやめておこう｡気紛れに取る副読本でいい｡</p></blockquote>
+
+<p>20年に渡り1000本以上の映画に字幕をつけてきた映画字幕翻訳家､<a href="http://ja.wikipedia.org/wiki/%E5%A4%AA%E7%94%B0%E7%9B%B4%E5%AD%90">太田直子さん</a>のエッセイ本｡上の引用はあとがきの一節なのだけど､タイトル然りこの一節然り､「映画大好きっ！」だけでない､酸いも甘いも噛み分けた<strong>歯に衣着せない文章</strong>がとても爽快な1冊だった｡</p>
+
+<p>翻訳の苦労話にはじまり､字幕翻訳の歴史､業界裏話､と映画字幕にまつわるエッセイが中心｡とはいえそこは言語の専門家､「句読点の苦闘」と題されたエッセイでは分かち書きにまつわる日本語の歴史なども紐解かれていて<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>興味深いところ｡</p>
+
+<h2>ざる知識のススメ</h2>
+
+<p>ぜひ読んでほしいのが「ざる知識のススメ」というエッセイ｡ざる知識とは筆者の造語で､<strong>ざるで水をすくうがごとく､頭に入れてもすぐに忘れてしまういい加減な知識</strong>のことなのだけど､そんなざる知識でも懲りずにすくい続けることを推奨している｡</p>
+
+<p>これは､<strong>生涯学び続ける意欲を絶やさないためのスタンス</strong>としてとても有効だと思う｡過去の記憶や経験だけに頼らず､知ったかぶりをせず､疑問があったらざるを片手に新しい知識をガサッとすくってみる｡そんなスタンス｡</p>
+
+<p>以下はあとがきの一節なのだけど､</p>
+
+<blockquote><p>この仕事をし続けてよかったなと思える効用のひとつは､さまざまな価値観が世界に存在することを､理屈ではなく体感として経験できたことだ｡要するに､世の中なんでもありだとわかり､少々のことには動じなくなる｡離婚や中絶や死や心の病や一家離散もあたりまえ､戦争もテロも宗教対立も死後の世界クーデーターも弾圧も暴力もマフィアの抗争も天災も､日常茶飯事｡</p></blockquote>
+
+<p>映画から得られる多様な価値観体験を右手に､ざる知識学習で養われる広く柔軟な知識を左手に携え､自分の道を切り開いていきたいものだ｡</p>
+
+<h3>併せて読みたい</h3>
+
+<p><a href="http://www.tsuhon.jp/title/backnumber.html">字幕屋通信  「酔眼亭夜話」 バックナンバー</a><br/>
+著者による季刊WEB掲載なエッセイ集｡今も更新されてます｡</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>句読点で文章を区切る現在の日本語記法は戦後のものだとか｡朝日新聞は1950年頃から採用したらしい｡<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-06-09T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2013/06/hothot100k_70km_marathon_log/">一期一会が身に沁みた！Hot Hot 100K 70kmの記録と記憶</a></h1>
+      <p><img src="http://lh5.ggpht.com/-mXwKdFfiC_Q/UawfbJ1srjI/AAAAAAAAA-U/jFETfGXoykc/s480/hothot100kWatch.jpeg" alt="当日のストップウォッチ" /><br/>
+↑スタートからゴールまで､一番近くでずっと励ましてくれた相棒｡名残惜しくてなかなかリセットできず&hellip;</p>
+
+<p>先日書いた<a href="http://blog.harupong.com/2013/05/preparing_for_hothot100k/">事前準備ブログ記事</a>に沿ってしっかり備えたつもりだったけど､やはり初めてならではのつまずきと気付きがあった｡当日の記録と記憶をメモ｡</p>
+
+<h2>当日の記録あれこれ</h2>
+
+<p>2013年6月1日､朝8時茅ヶ崎サザンビーチをスタート｡10時間切りを第1目標､狙うは9時間半切り｡</p>
+
+<p>スタート時はぬけるような青空､日中は曇り空に程よい風｡気温は最高25度くらい？一番日差しの強い時間帯が曇りだったこともあり､天候をつらく感じたことは終始なかった｡</p>
+
+<p><a href="http://runkeeper.com/user/harupong/activity/188808043"><img src="http://lh5.ggpht.com/-ekBtShLC1qk/UawfASNzHYI/AAAAAAAAA-M/x111tDZoCSY/s640/hothot100k_gpslog.jpeg" alt="当日のGPSログ" /></a></p>
+
+<p>ゴールは17時55分｡ゴール手前で待っていてくれた息子と一緒にゴールイン｡ゴール後は達成感でも満足感でもなく､「もう走らなくていいんだ」「無事帰ってこれたんだ」という気持ちでいっぱいだった｡</p>
+
+<h3>細かいタイム</h3>
+
+
+      
+       <a href="/2013/06/hothot100k_70km_marathon_log/">Read on &rarr;</a> 
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-06-06T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2013/06/dealing_with_my_son_feeling/">子どもの「○×できないっ！！」悔しい気持ちと向き合う</a></h1>
+      <p>副題は｢成功体験超重要｣で｡</p>
+
+<p>子どもが感じる悔しさ､｢次につながれば大きな可能性があるんだろうなぁ｣と思いつつ､如何せん｢腫れ物に触る｣感もあってその場しのぎすら難しかったりします｡我が家でもいろいろと試行錯誤中です｡</p>
+
+<hr />
+
+<p>昨年末のアドベントカレンダー企画で<a href="http://blog.harupong.com/2012/12/opening_up_your_world_widely_by_doing_it_yourself/">こんな記事</a>を書いた時にも触れましたが､うちの息子は<strong>どんくさい</strong>です｡とても｡</p>
+
+<p>保育園の体育系活動では出遅れることも多く､ときには｢突っ伏して泣いて悔しがる｣こともあるようです｡｢早生まれだし&hellip;｣とそれほど真剣に受け止めてなかったのですが､先日自宅で遊んでいた際その現場に出くわしました｡</p>
+
+<p>その現場というのがこれ↓｡そう､ブリッジです｡</p>
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/tauHoolCsNc" frameborder="0" allowfullscreen></iframe>
+
+
+<p>息子としては､なんとか頭を床から浮かせて体育の先生から｢合格っ！｣をもらいたいらしいのですが､どうにもこうにもうまくいきません｡自宅で練習するもうまくいかず､上述のような｢突っ伏して泣いて悔しがる｣状態になってしまいました｡｢もう出来ないんだもん！！！｣->大泣きの無限ループ｡</p>
+
+<p>ところが､｢泣き疲れるまではどうしようもないかも｣という気持ちになりつつ､息子にかけた一言</p>
+
+<p><strong>｢小さい頃はおはし上手に使えなかったけど､練習したから今は上手に使えるじゃん｡ブリッジだって､練習すればきっとできるよ！｣</strong></p>
+
+<p>で事態は急展開｡はっと何かに気づいた様子で泣き止んだ息子｡｢そうだね､練習すればできるね｣と繰り返しつぶやき､落ち着きを取り戻しました｡本人曰く｢これから毎日練習するねっ！｣とのこと<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>｡</p>
+
+<hr />
+
+<p>出来ないといって悔しがる子どもに対し｢そのうちできるよ｣と声をかけたりしがちだったのですが､<strong>今</strong>できていないことを｢いずれできるようになる｣とはぐらかしてもあまり効果はないのかもしれません｡せっかくの悔しい気持ちが活かせないのも残念｡</p>
+
+<p>子どもそれぞれツボは違うのでしょうが､うちの場合は｢過去の成功体験を引き合いに出す｣ことで､いい流れにもっていくことができました｡練習の成果がでるよう､これから見守っていきます｡</p>
+
+<p>大人にとってもそうですが､子どもにとっても<strong>成功体験超重要</strong>｡当たり前ながら､見落としていた貴重な気付きをもらいました｡</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>4歳児なのに随分物分かりいいなぁという気もしますが､その辺のツッコミはスルーの方向で｡<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+  
+  <div class="pagination">
+    
+    <a class="prev" href="/page/7/">&larr; Older</a>
+    
+
+    
+    <a class="next" href="/page/5/">Newer &rarr;</a>
+    
+  </div>
+</div>
+
+
+        </div>
+      </div>
+      <div class="row-fluid">
+        <footer class="footer-page" role="contentinfo">
+          <p>
+  Copyright &copy; 2015 - harupong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - Theme by <a href="http://alexgaribay.com">Alex Garibay</a>
+</p>
+
+
+        </footer>
+      </div>
+  </div>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

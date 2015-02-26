@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: blog | Pieces Of Peace]]></title>
+  <link href="http://blog.harupong.com/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://blog.harupong.com/"/>
+  <updated>2015-02-26T06:44:49+00:00</updated>
+  <id>http://blog.harupong.com/</id>
+  <author>
+    <name><![CDATA[harupong]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Vagrant でプロビジョニングを実行せずに VM を立ち上げる方法]]></title>
+    <link href="http://blog.harupong.com/2013/07/vagrant_up_without_provisioning/"/>
+    <updated>2013-07-24T06:28:00+00:00</updated>
+    <id>http://blog.harupong.com/2013/07/vagrant_up_without_provisioning</id>
+    <content type="html"><![CDATA[<h2>2013/09/13 追記</h2>
+
+<p>2013/09/05 にリリースされた 1.3.0 から、</p>
+
+<blockquote><p><code>vagrant up</code> will now only run provisioning by default the first time it is run.</p></blockquote>
+
+<p>ということで、以下の workaround 的な方法は必要なくなったみたい。やったね！！</p>
+
+<p>詳しい日本語解説記事↓。</p>
+
+<p><a href="http://www.msng.info/archives/2013/09/vagrant-1-3-0-no-provision.php">Vagrant 1.3.0 からは2回目以降の起動時にプロビジョニングが自動で走らないので注意 - 頭ん中</a></p>
+
+<hr />
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ Vagrant up &ndash;no-provision</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>と、<code>--no-provision</code> を付けて VM をたちあげてやればいい。</p>
+
+<h2>背景</h2>
+
+<p><a href="http://progit-ja.github.io/">Pro Git 日本語版電子書籍公開サイト</a>で配布しているデータを生成するための環境作りとそのメンテナンスをなるべく手抜きするために色々と試行錯誤している。</p>
+
+<p>EC2 やら試してみたけど、今のところ <strong><a href="http://www.vagrantup.com/">Vagrant</a> でローカル環境上に Ubuntu を Pro Git 仕様にプロビジョニングする</strong>、というのが一番しっくり来てるところ<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>。</p>
+
+<p>で、Vagrant といえば <code>Vagrant up</code> なのだけど、Vagrantfile にプロビジョニング設定を書いた状態で <code>Vagrant up</code> すると必ずプロビジョニングが実行されてしまう。</p>
+
+<p>初めて VM を立ち上げる時はそれでも構わないのだけど、プロビジョニング済み VM を一度シャットダウンの、その後立ち上げるときにまたプロビジョニングが行われてしょんぼりしていた。</p>
+
+<p>どちらかと言うと <code>--provision</code> オプションをつけて VM を立ち上げたときだけプロビジョニングを実行する、みたいにして欲しいのだけど..<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>どうやってるかは別途まとめる予定<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>そのようにプロビジョニングを作りこめばいいじゃん、というツッコミはスルーします<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ブログを引越した ～ばいばい Wordpress、はじめまして Octopress～]]></title>
+    <link href="http://blog.harupong.com/2013/07/newblog/"/>
+    <updated>2013-07-23T06:12:00+00:00</updated>
+    <id>http://blog.harupong.com/2013/07/newblog</id>
+    <content type="html"><![CDATA[<p><img src="http://lh3.googleusercontent.com/-6Pjf5RsYppE/Ue3dJfDMu9I/AAAAAAAAA_w/es49eBJkpAs/octopress.png" alt="octopress" /></p>
+
+<p>ブログを引越した。見た目は大きく変わったけど、アドレスや記事はうまく移行できてるはず。</p>
+
+<h2>きっかけ</h2>
+
+<p><a href="http://blog.harupong.com/2013/03/taking_inventory_of_internet_on_every_february_2013/">ここ</a>でもちょっと触れたけど、主に Wordpress 用として契約したレンタルサーバーの2年契約があと半年で切れる。延長してもいいし他社で引き続き Wordpress 使い続けてもいいのだけど、それじゃどうもありきたり。</p>
+
+<p><a href="http://blog.harupong.com/2013/07/progit_ebook_japanese/">Git の解説書翻訳版を公開</a>する過程で <a href="http://pages.github.com/">GitHub Pages</a> の使い方を色々と試行錯誤したので、いっそのこと自分のブログも引っ越してしまえ！ということで Wordpress とはお別れすることに。<a href="https://www.google.com/search?safe=off&amp;q=Github+Pages+%E3%83%96%E3%83%AD%E3%82%B0&amp;oq=Github+Pages+%E3%83%96%E3%83%AD%E3%82%B0&amp;gs_l=serp.3..0.16216.16641.0.17229.2.2.0.0.0.0.233.302.1j0j1.2.0....0.0..1c.4.20.serp._225u2J43Ds">Github Pages ブログ でググって</a>1件目に出てきた</p>
+
+<p><a href="http://onigra.github.io/blog/2013/04/28/introduction-of-octopress/">【何番煎じ】OctopressとGitHub Pagesを使用したブログの構築手順 - nekogeruge</a></p>
+
+<p>を更に煎じて自分のブログを移行した。<strong>ばいばい Wordpress、はじめまして Octopress</strong>。</p>
+
+<p>静的ファイル配信に変わったので以前よりレスポンスはあがってる。予想してたとはいえ、自ブログをサクサク見れるのはやはり嬉しい。</p>
+
+<h2>今後</h2>
+
+<p><a href="http://blog.harupong.com/2013/03/your_favorite_thursday_sandwich_in_jp/">この翻訳記事</a>を載せたときにも考えていたのだけど、やはりレンタルサーバー屋さんのサービスは網羅的すぎて、てんこ盛り感が強い。使ってるのは以下の4つくらいだし。</p>
+
+<ol>
+<li>ブログ</li>
+<li>ドメイン</li>
+<li>メール</li>
+<li>ファイルストレージ</li>
+</ol>
+
+
+<p>キャンペーンで最初は安くアレコレ使わせて、更新時には依存度上がってて切り替えられずに高い料金を払い続ける<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>、というのはバカらしいし悔しいので、半年以内に全部引っ越しちゃうつもり。</p>
+
+<h2>トラブったことメモ</h2>
+
+<ol>
+<li><p>フィードのURLを変更したくない</p>
+
+<p><a href="http://luosky.com/2012/07/24/create-custom-rss-feed-for-octopress/">http://luosky.com/2012/07/24/create-custom-rss-feed-for-octopress/</a> を参考にして解決</p></li>
+<li><p>記事の投稿を自動化したい</p>
+
+<p><a href="http://pchw.github.io/blog/2013/06/27/octopress-travis/">http://pchw.github.io/blog/2013/06/27/octopress-travis/</a> を参考にして解決</p></li>
+<li><p>Tweet Button のURLがおかしくなる</p>
+
+<p><a href="http://www.harimenon.com/blog/2013/01/27/auto-deploying-to-my-octopress-blog/">http://www.harimenon.com/blog/2013/01/27/auto-deploying-to-my-octopress-blog/</a> を参考にして解決</p></li>
+</ol>
+
+
+<p>解決の結果出来上がった<a href="https://github.com/harupong/harupong.github.io">ブログ生成のソースファイル</a>と<a href="https://github.com/harupong/octoflat">テーマファイル</a>は GitHub にあげておいた。</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>典型的なベンダーロックイン<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

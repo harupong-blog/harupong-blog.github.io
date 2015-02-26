@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: translation | Pieces Of Peace]]></title>
+  <link href="http://blog.harupong.com/blog/categories/translation/atom.xml" rel="self"/>
+  <link href="http://blog.harupong.com/"/>
+  <updated>2015-02-26T06:44:49+00:00</updated>
+  <id>http://blog.harupong.com/</id>
+  <author>
+    <name><![CDATA[harupong]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Apple のアプリ審査はアクセシビリティをテストすべき]]></title>
+    <link href="http://blog.harupong.com/2014/07/apple-app-review-should-test-accessibility/"/>
+    <updated>2014-07-15T00:00:00+00:00</updated>
+    <id>http://blog.harupong.com/2014/07/apple-app-review-should-test-accessibility</id>
+    <content type="html"><![CDATA[<p>以下の文章は、<a href="https://twitter.com/marcoarment">Marco Arment</a> さんによる <a href="http://www.marco.org/2014/07/10/app-review-should-test-accessibility">Apple’s App Review Should Test Accessibility – Marco.org</a> の日本語訳です。<a href="https://twitter.com/marcoarment/status/488871415240605696">翻訳をご許可</a>いただきありがとうございました。</p>
+
+<p>The following is the Japanese translation of <a href="http://www.marco.org/2014/07/10/app-review-should-test-accessibility">Apple’s App Review Should Test Accessibility – Marco.org</a> by <a href="https://twitter.com/marcoarment">Marco Arment</a>.  Thank you Mr. Arment, for <a href="https://twitter.com/marcoarment/status/488871415240605696">letting me translate</a> his writing.</p>
+
+<hr />
+
+<!--original
+Apple’s App Review Should Test Accessibility
+=================================================================
+-->
+
+
+<h2>Apple のアプリ審査はアクセシビリティをテストすべき</h2>
+
+<!--original
+[Christina Farr’s Reuters article](http://www.reuters.com/article/2014/07/09/us-apple-mobilephone-accessibility-idUSKBN0FE12Q20140709) is pretty bad, as helpfully detailed by [John Gruber](http://daringfireball.net/linked/2014/07/10/reuters-accessibility). Apple’s accessibility support leads the industry by a mile.
+-->
+
+
+<p><a href="http://www.reuters.com/article/2014/07/09/us-apple-mobilephone-accessibility-idUSKBN0FE12Q20140709">Reuters の記者 Christina Farr が書いた記事</a> はひどい。どれほどひどいか知りたい人は、<a href="http://daringfireball.net/linked/2014/07/10/reuters-accessibility">John Gruber</a>のブログ記事を読んでみるといい。Apple が提供しているアクセシビリティ関連の機能は、業界標準のずっと先を行ってる。</p>
+
+<!--original
+But the actual issue, buried in the sloppy article, is legitimate:
+-->
+
+
+<p>一方、そのひどい記事からは読み取りにくいけれど、問題が残っていないわけではない。</p>
+
+<!--original
+ But when apps don’t work, life can grind to a stop. Jonathan Lyens, a San Francisco city employee, who is legally blind, has a hard time browsing jobs on professional networking site LinkedIn.
+
+ “The app is insane. Buttons aren’t labeled. It’s difficult to navigate,” said Lyens. When it comes to social media apps, new problems arise with every release, he said. “I get nervous every time I hit the update button.” …
+
+ Now, Apple and Google both have developer guidelines on how to make features accessible, such as labeling buttons that can be read by Apple’s VoiceOver software.
+
+ But they don’t require accessibility, in contrast to other strictly enforced rules, such as a ban on apps that present crude or objectionable content. Nor do they offer an accessibility rating system, which some disabled advocates say would be a big help.
+-->
+
+
+<blockquote><p>アプリがうまく使えないと、生活がまわらなくなってしまうこともあるです。Jonathan Lyens さん(サンフランシスコ市に雇われていて、重度の視覚障害認定を受けている)は、職業検索サイト LinkedIn での職探しにとても苦労しています。</p>
+
+<p>「あのアプリはひどいよ。ボタンがラベル付けされてないから、画面操作がすごく難しい。」Lyensさんによれば、ソーシャルメディアアプリにいたっては新しいバージョンのリリースごとに別の問題が生じるようで、「アップデートボタンを押すとき、いつも不安なきもちになってる」そうです。</p>
+
+<p>いまでは、Apple や Google が開発者向けガイドラインでアプリのアクセシビリティを高める方法を示しています。ガイドラインには、ボタンにラベル付けをしておけばApple の VoiceOver が読み上げてくれる、などの内容が含まれています。</p>
+
+<p>けれども、両社ともにアクセシビリティを必須とはしていません。一方、下品なコンテンツを含むアプリを禁止するなどのルールを厳密に課しています。アクセシビリティを評価する仕組みもありません。関係者からは、それがあれば大きな違いになるのに、といった意見も出ています。</p></blockquote>
+
+<!--original
+Apps with standard UIs get most accessibility for free, Apple doesn’t reject apps for inaccessibility, and most customers don’t rely on accessibility tools, so most developers never hear about accessibility problems.
+-->
+
+
+<p>標準的なアプリのUIはそのままでアクセシビリティが最高レベルになる。Apple はアクセシビリティの低さを理由にアプリを拒否したりしないし、お客さんの大半はアクセシビリティの仕組みに依存していないので、ほとんどの開発者にとって、アクセシビリティに関する苦情を耳にする機会は生まれなくなる。</p>
+
+<!--original
+In the rush to get apps and updates out the door, it’s easy to forget to test every UI change with VoiceOver. I’ve certainly forgotten many times.
+-->
+
+
+<p>しかも、アプリのリリース、アップデートの提供を急ぐあまり、UI変更の VoiceOver 対応をテストするとき、変更のいくつかを見過ごしてしまうことはよくある。自分だって、何度も見過ごしてしまったことがある。</p>
+
+<!--original
+But while accessibility problems only affect a small percentage of an app’s userbase, their impact can be extremely damaging or fatal to those customers’ ability to use the app.
+-->
+
+
+<p>けれど、アクセシビリティの問題がアプリの利用者数のわずかにしか影響しないとしても、実際に影響を受けるお客さんからすれば、「アプリが使えなくなる」という被害は甚大だ。致命的な被害になることだってある。</p>
+
+<!--original
+Accessibility failures should be *embarrassments* to all developers because they’re usually *very* easy to fix. For most problems, you just need to add label text to a custom control or image button. Rare “complex” issues are usually less than an hour’s work.
+-->
+
+
+<p>アクセシビリティの欠陥は、開発者にとって<strong>恥じるべきこと</strong>だ。というのも、その欠陥はたいてい<strong>すぐに</strong>直せるものだからだ。問題の大半は、カスタムコントロールやイメージボタンにラベルテキストを付与するだけで解決できる。めったにないような「複雑な」問題でも、1時間もかからず解決できるだろう。</p>
+
+<!--original
+I try hard to get accessibility right… when I remember to. My triple-tap home-button shortcut is always mapped to VoiceOver so I can easily test. I include VoiceOver users in betas whenever possible and had an extremely valuable and insightful accessibility review in the WWDC labs this year. But I *still* occasionally ship unlabeled buttons, hidden-view clutter, or inaccessible custom views.
+-->
+
+
+<p>個人的には、アクセシビリティを正しく提供できるよう努力しているつもりだ(忘れることもあるけれど)。自分が使うデバイスの「ホームボタン3度押し」ショートカットは、すぐにテストできるよう、いつも VoiceOver に設定してある。VoiceOver の利用者もベータテストに可能な限り入ってもらうようにもしている。今年の WWDC のラボでは、思慮に富んだとてもありがたいレビューをアクセシビリティ絡みで受けることができた。それでも、ラベルなしのボタン、埋もれてしまったビュー、アクセシビリティ機能から参照不可なカスタムビューを<strong>ときどき</strong>リリースしてしまう。</p>
+
+<!--original
+Poor or broken accessibility is exactly the sort of problem that Apple’s App Review team *should* check for: many developers forget to test it, it’s easy for Apple to quickly test when reviewing each app, and it’s easy to fix.
+-->
+
+
+<p>実装が下手、もしくは用をなさないアクセシビリティ機能こそ、Apple のレビューチームが気を配るべき問題だ。それは、開発者の多くがテストするのを忘れるが、レビュー時に一緒にテストしてしまうのは Apple にとっては容易だし、不備の修正も簡単だ。</p>
+
+<!--original
+It’s even more clear when considering the customers’ point of view. App Review assures customers of minimum quality and security standards so they feel comfortable buying apps, and [we all benefit](http://www.marco.org/2011/02/04/ode-to-the-app-review-team) from it. The [App Store Review Guidelines](https://developer.apple.com/appstore/resources/approval/guidelines.html) are quite clear on the basics:
+-->
+
+
+<p>お客さんの目線に立ってみれば、それはより明確になる。Apple がアプリをレビューするから、最低限の品質とセキュリティが確保されていてお客さんは安心してアプリを買えるし、<a href="http://www.marco.org/2011/02/04/ode-to-the-app-review-team">開発者にとっても得るものは多い</a> 。
+ <a href="https://developer.apple.com/appstore/resources/approval/guidelines.html">App Store のアプリケーション審査ガイドライン</a> によると、審査の基本はとてもわかりやすい。</p>
+
+<!--original
+ **2.2** Apps that exhibit bugs will be rejected
+
+ **2.3** Apps that do not perform as advertised by the developer will be rejected
+-->
+
+
+<blockquote><p><strong>2.2</strong> バグがあるアプリはリジェクトします</p>
+
+<p><strong>2.3</strong> 開発者の申請どおりに動作しないアプリはリジェクトします</p></blockquote>
+
+<!--original
+Of course. Customers should know that they’re getting what’s promised.
+-->
+
+
+<p>そりゃそうだ。お客さんは、「謳い文句どおりのアプリが手に入るんだ」という認識を持っていいはずなんだ。</p>
+
+<!--original
+But those rules aren’t applied to accessibility. For a customer who uses VoiceOver, rows of unlabeled buttons and inescapable screens are “bugs”, and an app with inaccessible features certainly does not “perform as advertised”.
+-->
+
+
+<p>上述のルールはアクセシビリティには当てはまらないが、かといって VoiceOver を使ってるお客さんにとっては、ラベルなしのボタンや回避不可能な画面は「バグ」に他ならないし、アクセス出来ない機能があるアプリは「謳い文句どおりのアプリ」とは言いがたい。</p>
+
+<!--original
+This sucks for everyone: Apple, developers, and most of all, customers relying on accessibility aides who unknowingly pick a bad app, can’t do what they need, and now can’t trust the App Store with future purchases.
+-->
+
+
+<p>こうなってしまうと、誰(Appleや開発者やお客さんたち)のためにもならない。特にアクセシビリティ機能に依存しているお客さんたちの場合がひどくて、そうと知らずにひどいアプリを選んでしまった場合、やりたいこともできなくなって、今後アプリを買うときには App Store を信用できなくなってしまうだろう。</p>
+
+<!--original
+Requiring all apps and games to be completely accessible is probably infeasible. But that’s not the only option. My proposed fix:
+-->
+
+
+<p>ただ、ゲームを含むすべてのアプリに完璧なアクセシビリティを要求するのはおそらく無理難題だろう。とはいえ、他にもやり方はある。以下のようにすればいい。</p>
+
+<!--original
+1.  Allow developers to *opt into* accessibility testing for each submission in iTunes Connect. Put it on the screen that asks about cryptography so all developers must answer it and are made aware of it.
+2.  Show a small badge on each app’s page in the Store that passes accessibility testing. This helps customers make buying decisions for their needs.
+-->
+
+
+<!--original
+    Passing requires all advertised functionality to be accessible, all accessible controls to have accurate labels, and no navigational traps such as inescapable screens or stuck states.
+-->
+
+
+<!--original
+3.  If a user has VoiceOver enabled while downloading an app that has *not* been tested for accessibility, or while updating a previously tested app to to an untested version, show a warning dialog and ask them to confirm whether they still want to proceed. This helps them *and* gives developers a good reason to opt into accessibility testing.
+-->
+
+
+<ol>
+<li>アクセシビリティのテストを希望する開発者向けに、アプリを申請する度に iTunes Connect でテストを申し込めるようにする。暗号化関連の画面で申し込めるようにすれば、申し込みの要否を必ず入力することになって、開発者が自覚できる。</li>
+<li>App Store のアプリのページにバッジを出す。それはアクセシビリティのテストを通過したことを意味し、お客さんがアプリ購入を検討するときの判断材料になる。<br/>
+テストを通過するには、以下が順守されなければならない。謳われている内容がアクセシビリティを利用してすべてアクセス可能であること。利用可能なコントロールすべてに正確なラベルが付与されていること。回避不可能な画面や画面遷移中の行き止まりといった「UIナビゲーション上の罠」がないこと。</li>
+<li>利用者が VoiceOver を有効にしている場合、アクセシビリティのテストを受けていないアプリのダウンロードや、テスト済みバージョンから未テストバージョンへのアップデート時に警告を出す。ユーザーは警告を受けて、そのまま続けるか中止するかの意思表示をする。該当者にとっても有意義だし、開発者にとってもアクセシビリティのテストに申し込むいいきっかけになるだろう。</li>
+</ol>
+
+
+<!--original
+There’s definitely more Apple can do to address this very real problem, and a system like this would make a huge difference.
+-->
+
+
+<p>現在進行形のこの問題に対して Apple ができることはたくさんあるし、ここに書いたような仕組みがあれば状況は劇的に改善されるだろう。</p>
+
+<hr />
+
+<p>初出公開：　2014年7月15日、　最終更新日： 2014年7月15日</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【翻訳】ソフトウェア開発者が何人いれば電球を替えられる？(2014年版)]]></title>
+    <link href="http://blog.harupong.com/2014/02/lightbulb.ja/"/>
+    <updated>2014-02-20T00:00:00+00:00</updated>
+    <id>http://blog.harupong.com/2014/02/lightbulb.ja</id>
+    <content type="html"><![CDATA[<p>以下の文章は、<a href="https://github.com/tommorris">Tom Morris</a> さんによる <a href="http://tommorris.org/posts/8786">How many software developers would it take to change a lightbulb?</a> の日本語訳です。</p>
+
+<p>The following is the Japanese translation of <a href="http://tommorris.org/posts/8786">How many software developers would it take to change a lightbulb?</a> by <a href="https://github.com/tommorris">Tom Morris</a>.</p>
+
+<hr />
+
+<!--original
+How many software developers would it take to change a lightbulb?
+=================================================================
+-->
+
+
+<h2>ソフトウェア開発者が何人いれば電球を替えられる？</h2>
+
+<!--original
+One person to go to the shop to buy a lightbulb.
+-->
+
+
+<p>まず1人。電球を買いに店に行く人。</p>
+
+<!--original
+Another person who goes and tries to buy a lightbulb but fails because
+the shop doesn’t accept Bitcoin. He pops on to Reddit to complain and in
+the process [compares his situation to that of the Jews in Nazi
+Germany](http://www.reddit.com/r/Bitcoin/comments/1x9pyp/1_simple_reason_why_apple_goes_rotten_%E0%B2%A1_%E0%B2%A1_and_a/).
+-->
+
+
+<p>次にもう1人。電球を買おうとしたけれど、Bitcoin で支払えなくて買えなかった人。買えなかったことを Reddit でぼやき、<a href="http://www.reddit.com/r/Bitcoin/comments/1x9pyp/1_simple_reason_why_apple_goes_rotten_%E0%B2%A1_%E0%B2%A1_and_a/">自分の立場をナチス・ドイツ時代のユダヤ人に例える</a>。</p>
+
+<!--original
+Another person to go on to JIRA and spend twenty minutes deciding
+whether it is a bug, a support question, a request or one of fifteen
+other categories that someone dreamt up as being necessary for “process
+reasons”.
+-->
+
+
+<p>続いてもう1人。JIRA に issue を登録しようとする人。カテゴリーがバグなのか、サポートへの質問なのか、要望なのか、それとも｢取りまとめるために必要｣として誰かがでっち上げた15はあろうかというカテゴリーの1つなのか、決めるのに20分もかかってしまう。</p>
+
+<!--original
+An ops person to spend half a day setting up a virtual private light
+fitting environment so you can securely test your lightbulb fittings
+without having to be exposed to the evils of the Internet. Having set
+this up, he’ll forget to give you a password.
+-->
+
+
+<p>運用担当者1人。電球が合うかどうかのテストをインターネットの悪意に晒されることなく行えるよう、仮想電球装着環境を構築するのに半日かかる。これに取り組んでいたので、その担当者は同環境のパスワードを連絡するのを忘れてしまう。</p>
+
+<!--original
+Another ops person who sets up a CI server to tell you whether your
+lightbulb is actually on. And some zany co-workers who decide to give
+you a lethal electric shock if you cause the CI to go red, because
+they’ve got a company culture to uphold. And you wouldn’t want to not be
+a culture fit.
+-->
+
+
+<p>運用担当者もう1人。選んだ電球が実際に点灯しているかどうか確認するための CI サーバーを構築する。更に、迷惑な同僚が数人。所属する企業の文化・習慣を維持するため、CI を赤(失敗)にしてしまった者に命を奪いかねない電気ショックを与えることを決める。そしてもちろん、あなたは企業文化不適合者になることを望んでいない。</p>
+
+<!--original
+A few managers standing around and looking at the Herculean efforts of
+their lightbulb fitting team and wishing they could go ten times faster
+even though that would require adding more hours to the day and extra
+limbs to their employees. They pass the time by producing Gantt charts
+and burndown charts that have almost no relation to reality.
+-->
+
+
+<p>次に、管理職が数人。あたりをうろつき電球テストチームの超人的な努力を横目に見つつ、彼らの作業が10倍の早さで進捗することを望んでいる。達成には更なる残業と、メンバー一人一人が猫の手を借りたくなるほどにがむしゃらに働かねばならないけれど。管理者自身は、現実にはほとんど無意味なガントチャートやバーンダウンチャートを作成して時間を潰している。</p>
+
+<!--original
+137 to prepare reports for management on comparing the different types
+of lightbulbs and light fixtures and light switches. None of which will
+be read; management will instead just choose the lightbulb manufacturer
+that buys them lots of drinks and hookers.
+-->
+
+
+<p>経営者向けレポートを作成するために137人。電球、照明器具および照明スイッチを比較するためのレポートを作成している。いずれのレポートも読まれることはなく、経営層はその代わりに「どこが最も接待してくれたか」を基準に電球メーカーを選定する。</p>
+
+<!--original
+1 person to poke around on Github for a lightbulb library.
+-->
+
+
+<p>1人。電球ライブラリが欲しくて Github をあちこち探してる人。</p>
+
+<!--original
+1 person to package an old, broken version of the lightbulb library for
+Debian and Ubuntu and then complain that the fixed one isn’t “stable”
+enough.
+-->
+
+
+<p>1人。古くて動かないバージョンの電球ライブラリを Debian と Ubuntu 用にパッケージ化して、修正済みバージョンをまだ「安定してない」とぼやいてる人。</p>
+
+<!--original
+20 person to put a slightly less broken version of the lightbulb library
+up on an Ubuntu PPA and then neglect to maintain it.
+-->
+
+
+<p>20人。上述のものより少しはマシなバージョンの電球ライブラリを Ubuntu PPA にアップするけれど、メンテをおざなりにしてしまう人。</p>
+
+<!--original
+1 fucking rockstar to tell the guy looking on Github that they all suck
+and he’ll write a better one this evening when he’s dosed up on *Red
+Bull*.
+-->
+
+
+<p>イケてるハッカー1人。Github でライブラリを探してる人に「そこにある電球ライブラリは全部しょぼい。今日の午後、レッドブルを飲み終わったら俺がイケてるのを作ってやる」と伝える。</p>
+
+<!--original
+Someone wearing Google Glass looking like a complete cock.
+-->
+
+
+<p>1人。Google Glass をかけてる自信過剰なうぬぼれ屋。</p>
+
+<!--original
+Someone in a far away land who looks at the lightbulb specification,
+doesn’t quite understand it and hops on to LightbulbOverflow and asks in
+all caps “CAN YOU SEND ME THE BLUBS BY EMAIL TO
+confusedlightblubman@hotmail.com ?”. Management in San Francisco and
+London still think outsourcing to this company is a good thing because
+they are cheap.
+-->
+
+
+<p>1人。どこか遠くに住んでる。電球の仕様を読んだけど理解できず、LightbulbOverflow へアクセスし、すべて大文字で &ldquo;CAN YOU SEND ME THE BLUBS BY EMAIL TO confusedlightblubman@hotmail.com（訳注：全て大文字、スペルミス、などは StackOverflow で非英語話者がするありがちな書き込み）&rdquo; と書き込む。けれど、サンフランシスコやロンドンにある企業の経営層は相変わらず、そんな風に遠くにある企業に外注することを「安上がり」と肯定的である。</p>
+
+<!--original
+Some consultants in suits saying that the lightbulb isn’t enterprise
+ready and needs to be made more modular and hook up to their Enterprise
+Service Bridge and Messaging Architecture and to communicate using 17
+different SOAP and WS-\* standards dreamed up by people with important
+job titles at BEA, Microsoft, Oracle and IBM, but which nobody has
+actually ever sat down and implemented without wanting to stab someone
+in the face so many times they don’t have a face left. Usually
+themselves.
+-->
+
+
+<p>スーツ姿のコンサルタントが数人。その電球はビジネス用途には向かない、よりモジュラーでなければならない、と主張している。また、彼らが提供するエンタープライズ·サービス·ブリッジおよびメッセージングアーキテクチャと連携し、17もの異なる SOAP や WS-* 標準を使用して通信できる必要がある、と説く。ただし、それらの標準は全て BEA や Microsoft、Oracle や IBM で要職についている人たちがでっち上げたものでしかなく、実装者からすれば「誰がこんなものをっ！！」と相手の顔を原型を留めなくなるまで突き刺さずにはいられないような代物ばかりだ。しかもそんな実装者たちは、でっち上げた張本人であることが多い。</p>
+
+<!--original
+A few more to argue which type of XML Schema vocabulary (XSD, RELAX NG,
+DTD, Schematron etc.) should be used, with one fucking genius deciding
+to blow up all the lightbulbs on the planet by launching a [billion
+lightbulb DTD attack](https://en.wikipedia.org/wiki/Billion_laughs) on
+the XML architecting team.
+-->
+
+
+<p>XML スキーマ用語絡みで数人。どの用語を採用すべきか検討している。一方、すげぇハッカーが<a href="https://en.wikipedia.org/wiki/Billion_laughs">billion lightbulb DTD 攻撃</a>を XML アーキテクチャチームにしかけることで「地球上の全電球をぶっ壊してやる！」と思いつく。</p>
+
+<!--original
+A few young hipsters who point at the XML Schema and SOAP people and
+tell them they are ludicrously outdated and need to get with building a
+RESTful HTTP API using JSON, but [look blankly at
+you](http://blog.steveklabnik.com/posts/2011-07-03-nobody-understands-rest-or-http)
+when you ask them what content negotiation is or the difference between
+safe and unsafe methods, and then produce you an API that is completely
+undocumented, changes every week and doesn’t actually conform to
+anything sensible about web architecture.
+-->
+
+
+<p>若手の開発者数人。XML Schema と SOAP の関係者に、上から目線でモノ申している。「あり得ないくらい長期間放置されてる」と XML Schema などを批判し、JSON ベースの RESTful HTTP API を作るよう迫る。しかし、コンテントネゴシエーションとは何か、安全なメソッドとそうでないメソッドの違いは何か、と問われると、彼らは一様に<a href="http://blog.steveklabnik.com/posts/2011-07-03-nobody-understands-rest-or-http">ぽかんとした顔でこちらを見かえしてくる</a>。そして、ドキュメントが一切なく、毎週変更が生じ、Web の仕組みにおいて重要とされることに何一つ対応できていないような API を提示してくる。</p>
+
+<!--original
+Some idealistic open data person to suggest that maybe they should try
+RDF. Fifty people to tell him he’s an idiot.
+-->
+
+
+<p>オーブンデータの信仰者が数人。RDF を試してみるよう提案している。周囲の50名ほどの人が、「何いってんの！？」と彼をバカにしている。</p>
+
+<!--original
+300 or so tossers on Hacker News bitching about how the lightbulb
+“doesn’t scale” because the bulb they’ve put in their bedside lamp isn’t
+able to double as a floodlight for a fucking soccer stadium.
+-->
+
+
+<p>300人位の暇人。Hacker News にたむろしてる。自分たちのベッド脇の照明がサッカースタジアムの巨大な照明のように明るくならないことを例に挙げて、「電球はスケールしない」とぼやいている。</p>
+
+<!--original
+A whole bevy of other tossers who decide they don’t like lightbulbs done
+in the traditional way so write a fucking library called lightbulb.js
+because [“everything that can be written in JavaScript will
+be”](http://tommorris.org/posts/8637). The lightbulbs depend on
+seventeen JavaScript libraries and silently fail if you fit them in an
+old house.
+-->
+
+
+<p>暇人の集団がもう一つ。従来のやり方で電球を扱うのがいやで、lightbulb.js という新しいライブラリを作る。なぜなら<a href="http://tommorris.org/posts/8637">『JavaScriptで書けるものは、いずれJavaScriptで書かれる』から</a>。その電球は17の Javascript ライブラリに依存しており、古い家屋で使おうとすると誰にも気付かれずに静かに壊れてしまう。</p>
+
+<!--original
+Some arsehole on Lambda the Ultimate who points to an unreadable PDF
+filled with mathematical equations proving that unless you know Haskell
+you aren’t a good person and should just go die in a fire rather than
+bother fitting lightbulbs.
+-->
+
+
+<p>『うつけもの』数名。Lambda the Ultimate にたむろしてる。Haskell を理解できない人はおろかで、電球を試してるヒマがあるなら焼身自殺を果たすべき、ということを証明している、数式まみれで解読不能な PDF を提示してきている。</p>
+
+<!--original
+Some other arsehole in the comments on Lambda the Ultimate asking
+whether it’s normal that to turn the light switch on, he needs to [do a
+Ph.D first](http://www.willamette.edu/~fruehr/haskell/evolution.html).
+-->
+
+
+<p>『うつけもの』がもう数名。Lambda the Ultimate にたむろしてる。電球のスイッチを入れるには、<a href="http://www.willamette.edu/~fruehr/haskell/evolution.html">事前に博士過程を修了</a>していることが必須であることが普通なことなのかどうか、議論している。</p>
+
+<!--original
+Twenty odd bloggers writing naff articles about how the
+LightbulbStateMutator monad isn’t that complicated and analogising it to
+pizzas, roadkill, leprosy, Cher’s new album and some even more
+complicated abstract concepts.
+-->
+
+
+<p>変わり者のブロガーが20人。Haskell の monad である LightbulbStateMutator がそれほど複雑ではないことを説明しようとして、いくつもの役立たずな記事を書いている。彼らはそれをピザ、路上で車にはねられて死んだ動物、ハンセン病、Cher のニューアルバム、その他もっと複雑で抽象的なものなどに例えて説明しようとしている。</p>
+
+<!--original
+An important looking person in a dark black suit who turns up, insists
+that you install a box next to the lightbulb and tells you that you
+aren’t allowed to tell anyone about this because of national security
+but that if anyone asks, [it’s only
+metadata](http://www.msnbc.com/msnbc/not-just-metadata).
+-->
+
+
+<p>漆黒のスーツを来た関係者風の人1人。電球の隣に、とある箱を設置するようしつこく頼んでくる。また、このことを「国家機密」として誰にも話さぬよう、そしてもし尋ねられたら、<a href="http://www.msnbc.com/msnbc/not-just-metadata">「ただの属性情報です」</a>と答えるよう念を押している。</p>
+
+<!--original
+One meek university professor suggesting that maybe if you are going to
+change a lightbulb, you should get some kind of qualification first,
+agree to some kind of lightbulb fitters’ code of conduct and ethics, and
+take out some professional indemnity insurance so that if your
+incompetence [leads to people
+dying](https://en.wikipedia.org/wiki/Therac-25), people don’t point to
+lightbulb fitters and say they are all cowboys and charlatans and
+morons.
+-->
+
+
+<p>おとなしそうな大学教授1人。電球を交換するなら、まずは資格をとりなさいと提案してくる。更に、電球交換手の行動規約に同意し、専門職業人賠償責任保険に加入するべきだとしている。なぜなら、仮に彼らの未熟さが<a href="https://en.wikipedia.org/wiki/Therac-25">人の死に繋がったとしても</a>、上述の手順を踏んでいれば電球交換手は「悪徳業者、ペテン師、無能者！」と避難されずに済むからだ。</p>
+
+<!--original
+A few thousand people telling meek university professor to go fuck
+himself.
+-->
+
+
+<p>数千人。上述の「おとなしそうな大学教授」に、「逝ってよし」と告げる。</p>
+
+<!--original
+A young lady asking very politely if she can have a turn fitting
+lightbulbs once in a while without being cat-called, jeered at or
+threatened with rape.
+-->
+
+
+<p>若い女性が1人。セクハラ発言、ヤジ、「犯すぞ！」といった脅しを受けることなく、電球を試す作業に加わることができるかどうか丁寧に訪ねている。</p>
+
+<!--original
+A couple dozen nice guys telling her to get back in the kitchen, make
+them a sandwich and stop being a radical geminist misandrist or they’ll
+rape the fucking crap out of her while then explaining that they don’t
+understand why anyone would think that women face any issue in the
+lightbulb business.
+-->
+
+
+<p>親切な男性が数人。上述の女性に、「キッチンに戻ってサンドイッチでも作っててくれ、ミサンドリー(男性嫌悪)主義者として立ち振る舞うのはやめてくれ。さもなくば、電球ビジネスに女性が首を突っ込む理由がさっぱり分からない、ということを説明しながら君をレイプするよ」と話している。</p>
+
+<!--original
+A couple of venture capitalists who are wearing suit jackets but not
+ties so they can look modern saying things like “these lightbulbs seem
+like a neat hack but how exactly do you plan to monetize this?” and
+“what’s your exit strategy?”
+-->
+
+
+<p>ベンチャーキャピタリスト数人。オシャレに見せるため、ジャケットは着てるけどネクタイはしていない。「この電球はイケてるね。けど、どうやってマネタイズするつもりなの？」とか、「出口戦略は？」などといった質問をしてまわっている。</p>
+
+<!--original
+A couple of professional lightbulb journalists arguing about who got the
+scoop on the fitting of the new lightbulb and sending catty tweets back
+and forth about how they suck. And another professional lightbulb
+metajournalist to document said catty Twitter fight for his lightbulb
+industry gossip blog.
+-->
+
+
+<p>電球専門のジャーナリストが数人。新しい電球のテストが誰のスクープだったかを言い合い、更に互いを避難する見苦しい口論を Twitter 上で交わしている。別の電球「業界」記者はそのやりとりを、電球業界うわさ話をまとめてる自分のブログに投稿する。</p>
+
+<!--original
+Finally, one person to fit the lightbulb.
+-->
+
+
+<p>そしてついに最後の1人。電球を交換する。</p>
+
+<hr />
+
+<p>初出公開：　2014年2月20日、　最終更新日： 2014年2月20日</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【翻訳】Amazon にとっての「利益」]]></title>
+    <link href="http://blog.harupong.com/2013/10/amazon-profits/"/>
+    <updated>2013-10-03T00:00:00+00:00</updated>
+    <id>http://blog.harupong.com/2013/10/amazon-profits</id>
+    <content type="html"><![CDATA[<p>以下の文章は、<a href="http://ben-evans.com/about/">Benedict Evans</a> さんによる <a href="http://ben-evans.com/benedictevans/2013/8/8/amazons-profits">Amazon&rsquo;s profits</a> の日本語訳です。翻訳をご許可いただきありがとうございました。</p>
+
+<p>The following is the Japanese translation of <a href="http://ben-evans.com/benedictevans/2013/8/8/amazons-profits">Amazon&rsquo;s profits</a> by <a href="http://ben-evans.com/about/">Benedict Evans</a>.  Thank you Mr. Evans, for letting me translate your writing.</p>
+
+<hr />
+
+<h1><!--Amazon's profits-->Amazon にとっての「利益」</h1>
+
+<!--
+The problem with Amazon is not that it doesn’t make a profit, but that you don’t actually know what the profits are.
+-->
+
+
+<p>Amazon を巡る疑問。それは、同社が利益を生んでいない、ということではなく、彼らにとって何が利益なのかが分からない、ということだ。</p>
+
+<!--
+On the face of it, this sounds like an absurd statement - it doesn’t make any profits. After all, look at this chart - massive revenue growth, zero profit.
+-->
+
+
+<p>一見すると、この疑問は的外れに思える。なぜなら、事実 Amazon はまったく利益を生んでいないのだから。まず、このグラフを見てほしい。収益の伸びは凄まじいが、利益はゼロだ。</p>
+
+<p><img src="http://lh4.googleusercontent.com/-r8Pn8Rdgu2A/UkuEVzPRKVI/AAAAAAAABDg/RtK1crB4ajs/s512/Screen%2520Shot%25202013-08-08%2520at%252017.13.44.png" alt="Screen Shot 2013-08-08 at 17.13.44.png" /></p>
+
+<!--
+If we’re going to do this properly, of course, we should look at free cash flow, or rather (to smooth out the seasonality) trailing 12 months free cash flow (which is also Amazon's preferred metric).
+-->
+
+
+<p>より厳密な分析のためには、フリーキャッシュフロー、特に(季節要因からくる起伏をならす意味でも)直近12か月のフリーキャッシュフローに注目すべきだろう(それは Amazon が好んで使用する指標でもある。)。</p>
+
+<p><img src="http://lh3.googleusercontent.com/-G_FWx7fK-So/UkuEV--gF3I/AAAAAAAABDs/Ih1BR-1ali0/s512/Screen%2520Shot%25202013-08-08%2520at%252010.22.01%2520pm.png" alt="Screen Shot 2013-08-08 at 10.22.01 pm.png" /></p>
+
+<!--
+But, of course, this doesn’t show any profits either - in fact what (relatively) little FCF there used to be has now been reduced to close to zero by capex (though this also includes a one-off $1.4bn for purchasing Amazon's headquarters building in Seattle in Q4 2012). Amazon is, very obviously, reinvesting every penny that it can squeeze out of the business back into growth, in pricing, market expansion and capex.
+-->
+
+
+<p>とはいえ、そうしてみたところでどこにも利益は見当たらない。実際、(他社と比較しても)ただでさえ少なかった純現金収支は、設備投資(ただし、それには2012年第4四半期に行われたシアトル本社ビル購入の14億ドル一括払いも含まれるが)によってほぼゼロに近い水準まで減少している。Amazon が自社ビジネスであげた収益の全てを、価格競争の原資、市場規模の拡大、設備投資などの形で、さらなる成長のための投資としてつぎ込んでいることは明らかだ。</p>
+
+<!--
+This leads to two views of the company. One, to put it crudely, is that at some point, when it has gained enough market share to get away with it, it will ‘flip a switch’, put up prices or cut capex and start making a return.
+-->
+
+
+<p>これらの事実から、Amazon という会社についての見方が2つ出てくる。1つ目は、露骨な表現ではあるが、他社を圧倒できるようなシェアを得た時点で「スイッチを切り替える」、つまり、値上げと設備投資削減で利益をあげる方針に切り替える会社だ、という見方。</p>
+
+<!--
+The other view is that this isn’t actually possible - that Amazon is a sort of Ponzi scheme. It can only grow by running at zero profit - as soon as it puts up prices or cuts capex the business will collapse, and as soon as the share price stops going up all the staff will leave.
+-->
+
+
+<p>もう一つは、実際にはありえないのだけど、Amazon という会社が詐欺まがいだ、という見方。つまり、Amazon は利益ゼロ状態でしか成長できず、値上げと設備投資削減を行ってしまえば事業は失敗に追い込まれるし、株価の上昇が止まれば全社員が去っていくだろう、という見方だ。</p>
+
+<!--
+It is certainly true that you can’t just decide to change your business model to be be profitable, as Horace Dedui points out with some precision [here](http://www.asymco.com/2013/08/07/the-anti-apple/). But there's another angle to the Amazon story - it isn’t actually one business.
+-->
+
+
+<p>確かに、Horace Dedui の<a href="http://www.asymco.com/2013/08/07/the-anti-apple/">指摘</a>にもあるように、ビジネスモデルさえ変えれば利益があがる、なんてことはない。ただし、Amazon に限っていえば、別の見方もありえる。それは、Amazon の事業は一本柱ではない、という見方だ。</p>
+
+<p><img src="http://lh4.googleusercontent.com/-I8dK_-Q3MbA/UkuEVzR1OwI/AAAAAAAABDw/MQN4Y4th8JM/s512/Screen%2520Shot%25202013-08-09%2520at%252014.12.41.png" alt="Screen Shot 2013-08-09 at 14.12.41.png" /></p>
+
+<!--
+This chart shows the revenue segments that Amazon reports. These are in different industries, at different stages of development, and in different markets. It seems pretty likely that their underlying economics are different too. Not, that is, the FCF or net incomes that Amazon reports after all that re-investment, but the underlying performance of the divisions.
+-->
+
+
+<p>このグラフは、Amazon が公表している収益の分布を示したものだ。収益は、発達度合いの異なる複数の産業、かつ異なるいくつものマーケットに及んでいる。おそらく、企業経営との向き合い方も Amazon の場合は異なっているのだろう。すなわちそれは、上述のような再投資の後に残るフリーキャッシュフローや純利益を重要視するやり方ではなく、各事業の本質的な成果を重視する、ということだ。</p>
+
+<!--
+Moreover, even this isn’t the full story, since Amazon is actually a lot more atomised. Most separate product lines have their own internal owner and P&L by country or region (with a lot of internal transparency, incidentally). Some of them fail and get killed, some have only just started and some are doing very well.
+-->
+
+
+<p>しかも、Amazon の違いはそこにとどまらない。なぜなら、Amazon の実態はもっと細分化されているからだ。同社内では、製品ラインの大半は国や地域ごとに責任者が置かれ損益が管理されている(皮肉なことに、社内の透明性は非常に高い)。うまくいかず撤退するものもあれば、始まったばかりのものもあるし、絶好調のものもある、といった具合だ。</p>
+
+<!--
+Meanwhile, Amazon is constantly creating new business lines. When they start, like any new business, they're loss making. But they don't 'flip a switch' to get to profitability - they just grow and execute, like any other business.
+-->
+
+
+<p>一方、Amazon は常に新しい事業を生み出してきている。それらの新事業も開始時は、他社の新事業同様、会社にとってはお荷物だ。だからといって、利益をあげるために「スイッチを切り替える」ようなことを Amazon はしない。他の自社事業同様、ただただ規模を拡大し続ける。</p>
+
+<!--
+This means that Amazon's earnings are actually driven a mix of four overlapping factors:
+-->
+
+
+<p>これらが意味すること、それは Amazon の売上が以下の4要素の組み合わせから生み出されているということだ。</p>
+
+<!--
+- Capex in new distribution
+- 'Artificially' low prices
+- Operating losses at new ventures
+- Offsetting profits at established ventures
+-->
+
+
+<ul>
+<li>新たな販路への投資</li>
+<li>「戦略的」低価格</li>
+<li>新事業運営での損失</li>
+<li>既存事業からの補填</li>
+</ul>
+
+
+<!--
+We have very little idea, from outside, what the mix is. All we know is that Bezos diverts any profit that arrives at the bottom of the P&L back into these to keep the final result at zero. But at least two offer a switch that can be 'pressed' for profit without any damage to the business or any conceptual problem.
+-->
+
+
+<p>要素の組み合わせ方がどうなっているか、外部から分かることは少ない。唯一分かることは、最終収益をゼロにすべく、損益計算書の最後に残る利益の全てをベゾス氏がこれら4要素に回している、ということだ。とはいえ、うち少なくとも2つの要素は、事業へのマイナスになったり戦略上の矛盾を生むことなく、金のなる木へと変わることができるわけだが。</p>
+
+<!--
+To put this another way, Amazon is LOTS of different startup ecommerce businesses on one platform. All the profits from the ones that work are spent on new, loss-making ones.
+-->
+
+
+<p>あるいはこうも言えよう。Amazon とは、一つのプラットフォーム上に成り立つ無数のオンラインビジネス系スタートアップの集合体だと。うまくいってるものから集まる利益の全ては、生まれたてのお荷物たちに費やされていくのだ。</p>
+
+<!--
+This prompts two analogies. The first is GE, which also managed its earnings with great care, so that it was hard for anyone outside really to tell what was going on.
+-->
+
+
+<p>この考えについて、2つの類似例が思い浮かんだ。1つ目は GE。GE は自社の売上を念には念を入れて管理していたので、内部で何が起こっているかを第三者が把握するのはとても難しくなっていた。</p>
+
+<!--
+The other is Marxism. As Karl Popper pointed out, the problem with the Marxist theory of historical materialism was that you couldn't disprove it. Any scientific theory is susceptible to disproof: something could happen that would show it to be untrue. But there isn't anything that would disprove Marxism - the Marxist can always say 'the conditions for revolution weren't right, but just wait, it will come next century'.
+-->
+
+
+<p>もう1例はマルクス主義。カール・ポパーが指摘したように、マルクスの唯物史観が抱える問題とは、誰もそれを反証できないということだった。どんな科学理論であれ、反証にさらされる。その理論は正しくない、ということを示すような事象が起こりうるものだ。しかし、マルクス主義を反証しうる事象は存在しない。マルクス主義者はこう言うだろう。「革命の条件が適切でなかったのだ。しばし待て。そうすれば来世紀には革命が起こるだろう」と。</p>
+
+<!--
+Equally, the problem with saying 'we can't tell from outside how Amazon is really doing, but it will become profitable, just wait and see' is that you could be waiting for ever without ever knowing if you're wrong.
+-->
+
+
+<p>マルクス主義者の主張同様、「Amazon が何をどうしてるかは外部からだとよく分からないけれど、しばらく様子見してればいずれ利益を生む会社になるでしょう」という主張も疑わしい。というのも、その主張の正誤を確かめることなく、ただただ様子を見続けることになるかもしれないからだ。</p>
+
+<hr />
+
+<p>初出公開：　2013年10月3日、　最終更新日： 2013年10月3日</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【翻訳】任天堂の危機]]></title>
+    <link href="http://blog.harupong.com/2013/09/hypercritical-nintendo-in-crisis/"/>
+    <updated>2013-09-05T00:00:00+00:00</updated>
+    <id>http://blog.harupong.com/2013/09/hypercritical-nintendo-in-crisis</id>
+    <content type="html"><![CDATA[<p>以下の文章は、<a href="http://hypercritical.co/">John Siracusa</a> さんによる <a href="http://hypercritical.co/2013/09/02/nintendo-in-crisis">Nintendo in Crisis</a> の日本語訳です。翻訳をご許可いただきありがとうございました。</p>
+
+<p>The following is the Japanese translation of <a href="http://hypercritical.co/2013/09/02/nintendo-in-crisis">Nintendo in Crisis</a> by <a href="http://hypercritical.co/">John Siracusa</a>.  Thank you Mr. Siracura, for letting me translate his writing.</p>
+
+<hr />
+
+<h1><!--Nintendo in Crisis-->任天堂の危機</h1>
+
+<!--
+When Apple was on the ropes sixteen years ago, there was no shortage of advice about what the company should do to save itself, much of it fueled by a deep love for Apple’s products.  It takes a diehard Apple fanatic to create something like the [iconic “Pray” cover](/2013/09/02/images/wired-pray-cover.png) from the [June 1997 issue of Wired magazine](http://www.wired.com/wired/archive/5.06/)—coupled with the faith that there are enough like-minded readers to appreciate the sentiment.  [A decade later](http://arstechnica.com/staff/2008/06/wwdc-2008-keynote-bingo/), those of us who spent the 1990s worrying about Apple felt relieved, and maybe even [a little nervous about Apple’s newfound power](/2013/09/02/images/wwdc-2008-bingo-poster.png).  It was a hell of a ride.
+-->
+
+
+<p>Apple が絶体絶命だった16年前、その苦境を Apple 自ら打破するための案が、特に Apple 製品のファンたちによって、やまほど挙げられた。この思いを理解してくれる読者が何人もいるに違いないと信じた狂信的な Apple 信者によって、 <a href="http://www.wired.com/wired/archive/5.06/">Wired 誌1997年6月号</a>の<a href="http://lh5.ggpht.com/-m72804J1Y8w/UiiVSdRHpxI/AAAAAAAABCk/mdP_R5McgBA/d/wired-pray-cover.jpeg">象徴的な表紙 &ldquo;Pray&rdquo;</a> が作られたりもした。<a href="http://arstechnica.com/staff/2008/06/wwdc-2008-keynote-bingo/">十年後</a>、Apple のことで気をもみながら90年代を過ごした私たちはようやっと胸を撫で下ろすことができた。同時に、<a href="http://lh3.ggpht.com/-a6I2rtsP91k/UiiVTgC4RqI/AAAAAAAABCs/srVF5kTQatc/d/wwdc-2008-bingo-poster.jpeg">Apple が新たに手にした力について少し落ち着かない</a>気分にもなったりした。それくらい、ひどいアップダウンの連続だったのだ。</p>
+
+<!--
+Nintendo engenders the same kind of affection and loyalty.  Like Apple, it has a recent history of defeat followed by [unlikely triumph](/2013/02/24/images/who-dares-wins.jpg).  Nintendo’s dark times were not as bad as Apple’s; the [N64](http://en.wikipedia.org/wiki/N64) and [GameCube](http://en.wikipedia.org/wiki/Gamecube) were outgunned by the [PlayStation](http://en.wikipedia.org/wiki/PlayStation_(console)) and [PlayStation 2](http://en.wikipedia.org/wiki/PlayStation_2), but Nintendo wasn’t days away from bankruptcy at any point, nor did it have to [buy another company](http://en.wikipedia.org/wiki/NeXT#1996:_After_NeXT) to save itself.
+-->
+
+
+<p>同じような愛着と信頼を、任天堂も得ている。Apple のように、任天堂もまた、失敗とそれに続く<a href="http://lh3.ggpht.com/-FE9ZayxD8QM/UiiVSKimVOI/AAAAAAAABCg/PcqgmabS7tY/d/who-dares-wins.jpeg">過去に例を見ないほどの大成功を経験している</a>。とはいえ、任天堂の低調期は、Apple ほどひどくはなかった。<a href="http://en.wikipedia.org/wiki/N64">Nintendo 64</a> と <a href="http://en.wikipedia.org/wiki/Gamecube">GameCube</a> は、<a href="http://en.wikipedia.org/wiki/PlayStation_(console)">PlayStation</a> と <a href="http://en.wikipedia.org/wiki/PlayStation_2">PlayStation 2</a> に打ち負かされはしたが、当時倒産寸前、というわけではなかったし、自ら苦境を打破するために<a href="http://en.wikipedia.org/wiki/NeXT#1996:_After_NeXT">他社を買収する</a>必要もなかった。</p>
+
+<!--
+Now the roles appear reversed.  Apple is in a bit of a slump (or so the [narrative](http://techcrunch.com/2013/04/23/apple-ceo-tim-cook-we-acknowledge-that-our-growth-rate-has-slowed/) [goes](http://www.google.com/finance?chdnp=1&amp;chdd=1&amp;chds=1&amp;chdv=1&amp;chvs=maximized&amp;chdeh=0&amp;chfdeh=0&amp;chdet=1378136501154&amp;chddm=97750&amp;chls=IntervalBasedLine&amp;q=NASDAQ:AAPL&amp;ntsp=0&amp;ei=q7EkUvCZB5-slgOJnwE)), but it’s a comparatively mild crisis of expectations.  Apple’s products are still in demand and [selling in large numbers](http://www.apple.com/pr/library/2013/07/23Apple-Reports-Third-Quarter-Results.html).  Nintendo, meanwhile, is experiencing one of the most [disastrous console launches](http://kotaku.com/the-wii-u-sales-are-really-really-bad-973133897) in its history—and that’s not even the worst news, according to some observers.  It’s the handheld market where [Nintendo is in the most trouble](http://daringfireball.net/2013/09/nintendo_in_motion), [they say](https://alpha.app.net/chartier/post/10166007).
+-->
+
+
+<p>ところが今や、状況は逆転したようだ。Apple はスランプに陥りかけている(という<a href="http://techcrunch.com/2013/04/23/apple-ceo-tim-cook-we-acknowledge-that-our-growth-rate-has-slowed/">解説</a>も<a href="http://www.google.com/finance?chdnp=1&amp;amp;chdd=1&amp;amp;chds=1&amp;amp;chdv=1&amp;amp;chvs=maximized&amp;amp;chdeh=0&amp;amp;chfdeh=0&amp;amp;chdet=1378136501154&amp;amp;chddm=97750&amp;amp;chls=IntervalBasedLine&amp;amp;q=NASDAQ:AAPL&amp;amp;ntsp=0&amp;amp;ei=q7EkUvCZB5-slgOJnwE">ある</a>)が、とはいえそれは、関係者の期待が噛み合わなくなりつつあるだけ、とも言える。Apple 製品はいまだ需要も高く、<a href="http://www.apple.com/pr/library/2013/07/23Apple-Reports-Third-Quarter-Results.html">実によく売れている</a>。一方の任天堂だが、<a href="http://kotaku.com/the-wii-u-sales-are-really-really-bad-973133897">最新ゲーム機の失敗は過去に例を見ないほどの規模</a>になっている。また、業界関係者によれば苦境はそれだけにとどまらず、<a href="http://daringfireball.net/2013/09/nintendo_in_motion">任天堂最大の問題</a>は携帯ゲーム機市場にこそ<a href="https://alpha.app.net/chartier/post/10166007">あるらしい</a>。</p>
+
+<!--
+As expected, people who don’t want to live in a world without a successful, thriving Nintendo feel compelled to [offer their heartfelt suggestions](http://daringfireball.net/2013/09/nintendo_in_motion) for saving the company.  It’s this same compulsion that has briefly driven me out of my months-long [Mavericks](http://www.apple.com/osx/preview/)-review-writing haze to offer my own perspective.
+-->
+
+
+<p>予想はしていたが、「成功を収め、かつ努力し続ける任天堂」が存在しない世界など考えられないという人たちは、任天堂を苦境から救うための<a href="http://daringfireball.net/2013/09/nintendo_in_motion">真摯な提案</a> をせずにはいられないようだ。同じような衝動を抱いたので、ここ数か月五里霧中状態の <a href="http://www.apple.com/osx/preview/">Mavericks</a> のレビュー書きから抜け出し、私自身の考えを記しておこうと思う。</p>
+
+<h2><!--Schrödinger’s Console-->シュレーディンガーのゲーム機</h2>
+
+<!--
+I agree that Nintendo is in trouble.  Before considering possible solutions, I’m forced to ask a tougher question: _can_ it be saved?  [Some say no](https://twitter.com/codinghorror/status/374389005304885248), that it’s only a matter of time.  I think it comes down to this.  As long as there continues to be a market for devices that are primarily designed to play games, then it’s possible for Nintendo to live to fight another day.
+-->
+
+
+<p>まず、任天堂が問題を抱えているという意見には私も賛成だ。ただ、解決策を模索する前に、より本質的な疑問、それを <em>救える</em> のだろうか？、ということを問わずにはいられない。救いようはなくて、もはや時間の問題だ、<a href="https://twitter.com/codinghorror/status/374389005304885248">という人もいる</a>ようだが、突き詰めればこういうことだと思う。つまり、「ゲームをするためだけに設計された機器」の市場が存在する限り、任天堂が活路を見出すチャンスはある、ということだ。</p>
+
+<!--
+If not, then I fear the worst.  Nintendo is not equipped to produce and maintain a long-lived, _general-purpose_ software platform.  [Precious few](http://hypercritical.co/2013/03/19/self-reliance) companies have ever done it.  You know all their names: Microsoft, Apple, Google.  I don’t expect to ever see Nintendo on that list.
+-->
+
+
+<p>もし、そのような市場がなくなっていくのなら、最悪のケースを想定せざるをえない。長期間用いられる <em>汎用的な</em> ソフトウェアのプラットフォームを作り出し維持していくための準備が、任天堂にはできていない。知ってのとおり、Microsoft、Apple、Google と、<a href="http://hypercritical.co/2013/03/19/self-reliance">ごく一部の限られた</a>企業だけが、それを成し得てきた。任天堂がそれら企業の仲間入りをするとは到底思えない。</p>
+
+<!--
+I think there is still a market for game-only (or at least “game-mostly”) hardware products.  I’m not sure how long it will last, but I’m betting this [upcoming generation of consoles](http://hypercritical.co/2013/05/28/next-generation) will sell well enough in the aggregate to maintain the status quo, at the very least.
+-->
+
+
+<p>ゲーム専用(もしくは主たる用途がゲーム)の機器の市場はまだあるはずだ。それが今後どれだけ続いていくのかは分からないが、最悪でも、<a href="http://hypercritical.co/2013/05/28/next-generation">各社の次世代ゲーム機</a>の売り上げが現状維持に事足りる程度には続いていくに違いない。</p>
+
+<!--
+Assuming I’m right, Nintendo has all the tools it needs to pull itself out of its current tailspin.  To understand how, just look at how Nintendo has always done it: with hardware and software working together to provide new, fun experiences.
+-->
+
+
+<p>この仮定が正しいとしたら、不調の渦に陥った自らを救い出すのに必要な手立てを、任天堂はもう持っている。それは一体何かって？任天堂がこれまでどうやってきたかを振り返ればいい。ハードウェアとソフトウェアが一体となって、斬新で楽しい体験を提供する、ということだ。</p>
+
+<h2><!--How Nintendo Succeeds-->任天堂流勝利の方程式</h2>
+
+<!--
+The [NES](http://en.wikipedia.org/wiki/Nintendo_Entertainment_System) was Nintendo’s first big video game success.  After the [game console crash](http://en.wikipedia.org/wiki/North_American_video_game_crash_of_1983) of the 1980s, home video game software alone was not going to lead Nintendo to riches.  Personal computers were still expensive and wouldn’t have mass-market penetration for years.  Any attempt to field an [Atari-2600](http://en.wikipedia.org/wiki/Atari_2600)-like hardware product would surely be met with skepticism.
+-->
+
+
+<p>任天堂にとって、テレビゲーム初の大成功といえば<a href="http://en.wikipedia.org/wiki/Nintendo_Entertainment_System">ファミコン</a>だ。1980年代の<a href="http://en.wikipedia.org/wiki/North_American_video_game_crash_of_1983">アタリショック</a>以降、家庭用ゲーム機器ソフトだけでは任天堂が成功を収めるのは難しくなった。パソコンはまだ高価で普及するのはずっと先の話だったし、<a href="http://en.wikipedia.org/wiki/Atari_2600">Atari-2600</a> のようなゲーム機を出そうとすれば懐疑的な意見が集中するだろうことも明らかだった。</p>
+
+<!--
+Nintendo’s solution required hardware and software.  The hardware: an Atari-like game console, yes, but also…[a robot](http://en.wikipedia.org/wiki/R.O.B.)?  Yep, and a [light gun](http://en.wikipedia.org/wiki/NES_Zapper), too.  Very few games used these accessories, but you can be sure they were featured heavily in all the initial advertising for the NES.  They were hardware decoys, misdirections.  They existed to get the NES into homes.  Once there, a tiny mustachioed trojan [plumber](http://en.wikipedia.org/wiki/Mario) spilled out of the belly of the beast and conquered a generation of gamers.
+-->
+
+
+<p>そんななかで任天堂がうまくやるには、ハードとソフトの両方が必要だった。Atari のようなゲーム機はもちろん、<a href="http://en.wikipedia.org/wiki/R.O.B.">ロボット</a>とか？そう、それに加えて<a href="http://en.wikipedia.org/wiki/NES_Zapper">光線銃</a> も。ほとんどのゲームがこれら周辺機器を採用しなかったけど、ファミコン発売当初、これらが宣伝用途で繰り返し取り上げられたであろうことは疑いの余地がない。それらはただの飾りで、用をなすものではなかった。ただただ、ファミコンを各家庭に置いてもらうためだけに存在していた。家庭にさえ入ってしまえば、あとはチビでヒゲヅラの<a href="http://en.wikipedia.org/wiki/Mario">配管工を装った侵入者</a>が怪獣の腹から飛び出し、歴戦のゲーマーたちをファミコンの虜にしてくれたからだ。</p>
+
+<!--
+Now consider the [Nintendo 64](http://en.wikipedia.org/wiki/N64), the company’s first 3D console.  The [Saturn](http://en.wikipedia.org/wiki/Sega_Saturn) and the [PlayStation](http://en.wikipedia.org/wiki/PlayStation_(console)) beat it to market by years, and both had the good sense to use optical disks instead of cartridges.  Though the PlayStation came to dominate that generation, it was the Nintendo that transformed 3D gaming forever with the potent combination of [Super Mario 64](http://en.wikipedia.org/wiki/Super_Mario_64) and the [Nintendo 64 controller](http://en.wikipedia.org/wiki/Nintendo_64_controller)—hardware and software products that were designed together, and it showed.
+-->
+
+
+<p>次に、話は変わって、任天堂初の 3D ゲーム機、<a href="http://en.wikipedia.org/wiki/N64">Nintendo 64</a> について述べておきたい。すでに、<a href="http://en.wikipedia.org/wiki/Sega_Saturn">セガサターン</a>や <a href="http://en.wikipedia.org/wiki/PlayStation_(console)">PlayStation</a> が何年も前に発売されていたし、それらはカセットの代わりに CD を用いるという良い判断をしていた。当時の市場シェアは PlayStation が圧倒的であったけど、<a href="http://en.wikipedia.org/wiki/Super_Mario_64">スーパーマリオ64</a>と <a href="http://en.wikipedia.org/wiki/Nintendo_64_controller">Nintendo64コントローラー</a>という強力な組み合わせで3D ゲームの分野に変革をもたらしたのは任天堂だった。ハードとソフトを見事に融合させ、それを現実にしてみせたのだ。</p>
+
+<!--
+Mario 64 taught the world how to make a good 3D game.  Though it couldn’t save the N64 from an ignominious fate in the market, it left its mark on gaming history and perhaps singlehandedly kept Nintendo relevant.  The idea of releasing a 3D gaming system today without a standard [analog stick](http://en.wikipedia.org/wiki/Analog_stick) is absurd, but that’s just what Sega and Sony did in 1994.  After the N64 was revealed to the world, analog sticks quickly appeared on both the [Saturn](http://en.wikipedia.org/wiki/Sega_Saturn#3D_Pad) and the [PlayStation](http://en.wikipedia.org/wiki/Dual_Analog_Controller)—[hastily tacked onto](http://en.wikipedia.org/wiki/File:PS1DualAnalogController.jpg) the existing controller, in the latter case, but I’m sure that was only a temporary condition, right?  ([Sigh](http://5by5.tv/hypercritical/49).)
+-->
+
+
+<p>スーパーマリオ64は、優れた 3D ゲームのお手本となった。それは、Nintendo64 というゲーム機そのものの残念な結末を変えることは出来なかったけれど、ゲームソフトの発展に大きな一歩を残した。また、 任天堂が生きながらえたのは、まさにそれのおかげだったかもしれない。今日、<a href="http://en.wikipedia.org/wiki/Analog_stick">アナログスティック</a>のない 3D 用ゲームシステムを発売するのはあまりに馬鹿げた話だけど、1994年当時のセガとソニーは、まさにそれをやってしまった。Nintendo64 発表後、ほどなくして<a href="http://en.wikipedia.org/wiki/Sega_Saturn#3D_Pad">サターン</a>と <a href="http://en.wikipedia.org/wiki/Dual_Analog_Controller">PlayStation</a> にもアナログスティックが搭載された。後者などは、既存のコントローラーに<a href="http://en.wikipedia.org/wiki/File:PS1DualAnalogController.jpg">とってつけたような</a>仕上がりだった。なんてその場しのぎ！？(<a href="http://5by5.tv/hypercritical/49">いやいや&hellip;</a>)</p>
+
+<!--
+Then there’s the [Wii](http://en.wikipedia.org/wiki/Wii).  Nintendo sacrificed hardware power for a novel input method and low price, then paired it with [software](http://en.wikipedia.org/wiki/Wii_Sports) that explained the value proposition to the world.  After two generations of defeat at the hands of Sony, Nintendo put itself back on the top of the game console market.
+-->
+
+
+<p>そして、ようやっと <a href="http://en.wikipedia.org/wiki/Wii">Wii</a> の登場だ。任天堂はゲーム機の性能を犠牲に斬新な操作方法と低価格を実現し、それらが生み出すメリットを知らしめるための<a href="http://en.wikipedia.org/wiki/Wii_Sports">ソフト</a>も出した。過去の2機種でソニーに辛酸を嘗めさせられた任天堂が、ついにゲーム機市場トップの座を自らの手で取り戻したのだ。</p>
+
+<!--
+None of these examples would have been possible if Nintendo didn’t make both the hardware and the software.  And I didn’t even mention the [Game Boy](http://en.wikipedia.org/wiki/Game_Boy_line) product line or the dual-screened [DS](http://en.wikipedia.org/wiki/Nintendo_DS), two of the top three [best-selling gaming platforms of all time](http://www.vgchartz.com/analysis/platform_totals/).  Again, impossible without hardware and software synergy.  This is how Nintendo succeeds.
+-->
+
+
+<p>ここに挙げたような実例は、任天堂がハードとソフトの両方を手がけていない限り、そのどれをとっても実現不可能なものばかりだ。<a href="http://www.vgchartz.com/analysis/platform_totals/">歴代ゲーム機売り上げランキング</a>トップ3のうちの2つである<a href="http://en.wikipedia.org/wiki/Game_Boy_line">ゲームボーイ</a>や <a href="http://en.wikipedia.org/wiki/Nintendo_DS">DS</a> については改めて説明するまでもない。ともかく、ハードとソフトのシナジーがなければ実現し得ないことだ。そしてそれこそが、任天堂流勝利の方程式だと言えよう。</p>
+
+<h2><!--[Red Ocean](http://en.wikipedia.org/wiki/Blue_Ocean_Strategy#Blue_ocean_strategy_vs._red_ocean_strategy)--><a href="http://en.wikipedia.org/wiki/Blue_Ocean_Strategy#Blue_ocean_strategy_vs._red_ocean_strategy">レッドオーシャン</a></h2>
+
+<!--
+When I read the current crop of advice for Nintendo, much of it focused on how to survive in a world where iOS comes to dominate portable gaming, I think about how it would have helped Nintendo at its previous low points.  [Nintendo should make games for iOS](http://daringfireball.net/2013/09/nintendo_in_motion), some say.  If you can’t beat ’em, join ’em.
+-->
+
+
+<p>最近目にする任天堂への助言をひと通り読んでみたが、それらの大半は、携帯ゲーム機市場を iOS が席巻しつつある状況で如何に生き残るかを論じていた。これらのアドバイスを前回の任天堂の低調期に当てはめるとどうなったのかな、と思う。<a href="http://daringfireball.net/2013/09/nintendo_in_motion">任天堂は iOS 向けゲームを作るべきだ</a>、という声もある。勝てないなら仲間に入れてもらえ、ってね。</p>
+
+<!--
+At the tail end of the GameCube’s life, Sony had sold many times more consoles and games than Nintendo over the course of a decade.  Should Nintendo have started writing games for the overwhelmingly dominant Sony platform? Would that have helped Nintendo achieve Wii-like success?  I don’t think so; no amount of software alone could have done that.
+-->
+
+
+<p>ゲームキューブが寿命を迎えようとしてたころには、ソニーはゲーム機とソフトの両方で過去十年に渡り、任天堂をはるかに凌ぐ実績をあげてきた。当時圧倒的シェアだったソニーのゲーム機向けに、任天堂もゲームソフトを作るべきだったのだろうか？そうすることで、Wii のような成功を任天堂は成し得ただろうか？そうは思わない。ゲームソフトだけでは、あのレベルの成功は達成し得ない。</p>
+
+<!--
+The game software business is tough.  It’s hit-driven, like Hollywood.  Most games lose money or break even.  A few big winners fund all the others—if you’re lucky.  A game development studio going out of business shortly after releasing a critically acclaimed game is not unheard of.  (Hell, [the best game released last year](http://hypercritical.co/2012/11/27/strange-game) [bankrupted its developer](http://www.destructoid.com/journey-took-thatgamecompany-into-bankruptcy-244311.phtml).)
+-->
+
+
+<p>ゲームソフト事業はとても厳しいものだ。当たるも八卦当たらぬも八卦、まさにハリウッドのよう。大半のゲームは赤字かトントンで終わる。恵まれていれば、数少ない大ヒットで残り全てを支えていくことになる。そうでなければ、前評判が高かったゲームを発売したゲーム制作会社がほどなくして倒産するはめになる。実際、そんなケースもないわけではない。(そう、 <a href="http://hypercritical.co/2012/11/27/strange-game">去年発売された最高のゲームのせいで</a> <a href="http://www.destructoid.com/journey-took-thatgamecompany-into-bankruptcy-244311.phtml">同ゲームの開発者は倒産するはめになった</a>。)</p>
+
+<!--
+Consolidation is rampant in game development.  Small players are routinely snatched up by [behemoths](http://en.wikipedia.org/wiki/Ea) that have a better capacity to absorb the inevitable losses that come with games that are not monster sales successes.
+-->
+
+
+<p>合併や統合はゲーム開発界隈に当たり前になってしまっている。上述したような「数少ない大ヒットで残り全てを支える」ことが可能な<a href="http://en.wikipedia.org/wiki/Ea">超巨大企業</a>が、小規模な開発者たちを日常的に吸収している。</p>
+
+<!--
+This is not a world that Nintendo should aspire to enter.  Better to stick with hardware platforms that it controls, profiting from both the hardware sales and the fees collected from third-party games sold on its platforms.  That’s the kind of steady (and potentially enormous) income that will keep Nintendo afloat as it works on the next big thing.
+-->
+
+
+<p>そんな世界に、任天堂は自ら進んで入っていくべきじゃない。自ら生み出したゲーム機を離さず、その売り上げと、各社が作ってくれるゲームソフトの売り上げ手数料で利益をあげるべきだ。次のヒットのための「産みの苦しみ」期間に任天堂が入っているうちは、そういった手堅い売り上げ(それですら膨大かもしれないけれど)こそが自らを救うことになるのだから。</p>
+
+<h2><!--iOS Does What Nintendon’t-->任天堂がしてくれないこと、iOS が引き受けますよ</h2>
+
+<!--
+Even if Nintendo sticks to its guns, and even if the market for game-focused hardware continues to exist, Nintendo still faces some big challenges.  A gaming platform doesn’t have to compete with iOS on its own terms, but it does have to at least match it in the areas that are relevant to gaming.
+-->
+
+
+<p>自らの強みを忘れず、かつゲーム専用機の市場が存在し続けるとしても、任天堂が挑むべき課題は困難なものが多い。ゲームシステムそのものとしては iOS と競い合う必要はないとはいえ、やはりゲームに関係する部分では最低限遅れを取らずについていかなければならないわけだから。</p>
+
+<!--
+Right now, Apple is crushing Nintendo when it comes to the software purchase, installation, and ownership experience.  Hell, even [Steam](http://en.wikipedia.org/wiki/Steam_(software))—a PC gaming platform—embarrasses Nintendo’s e-commerce efforts.  My Nintendo games should not be tied to a piece of hardware.  My purchases should transfer seamlessly to any new Nintendo device I purchase.  [Illegal emulation should not be the easiest way](http://www.penny-arcade.com/report/article/nintendo-isnt-losing-to-the-ouyas-high-quality-emulation-of-classic-games-i) (or only way) to play classic Nintendo games. Nintendo needs to get [much, much better](http://5by5.tv/hypercritical/99) at this stuff—fast.
+-->
+
+
+<p>今現在、ソフトの購入、インストール、使い回しのよさの点において、Apple は任天堂の遥か先を行っている。パソコン用ゲーム配信の仕組みである <a href="http://en.wikipedia.org/wiki/Steam_(software)">Steam</a>  にですら、任天堂のオンラインビジネスの取り組みは全く及ばない。自分で買った任天堂のゲームが、特定のゲーム機でしか使えないのにはうんざりだ。購入したソフトは、今後買うであろう次世代の任天堂ゲーム機でも簡単に使えるべきだ。任天堂のこれまでのゲームで遊ぶ<a href="http://www.penny-arcade.com/report/article/nintendo-isnt-losing-to-the-ouyas-high-quality-emulation-of-classic-games-i">もっとも簡単な方法が違法なエミュレーター</a>(唯一の方法かも。)であってはいけない。任天堂はこの辺りの事情を速やかに、<a href="http://5by5.tv/hypercritical/99">うんと改善</a>しないといけない。</p>
+
+<!--
+Apple is also winning when it comes to market access.  It’s much easier for a two-person team to write an iOS game and put it up for sale than it is for that same team to get a game onto a Nintendo platform.  Expensive, formal, limited developer access has no place in the modern gaming world.  Nintendo needs to wake up and smell the App Store.
+-->
+
+
+<p>販売チャネルの強さという点でも、Apple は上回っている。2人のチームがゲームを作って販売するような場合、任天堂のゲーム機向けよりも iOS 向けの方がはるかに容易だ。膨大な資金を要し、ルールも多く、制限された開発環境では、今どきのゲーム開発者は寄り付かない。任天堂は目を覚まし、App Store をじっくりと観察しなければならない。</p>
+
+<h2>Let’s-a-Go!</h2>
+
+<!--
+A lot of things have to go right for Nintendo to get its mojo back.  It’s worth reiterating: if the market for dedicated gaming hardware disappears, I fear it’s game over for Nintendo as we know it.
+-->
+
+
+<p>任天堂がその神がかり的な力を取り戻すには、多くのピースがうまくはまらないといけない。もう一度強調しておこう。「もし、ゲーム専用機市場がなくなったら、周知のとおりそれは任天堂にとってゲームオーバーに他ならない」。</p>
+
+<!--
+But if the time of the game console is not yet at an end (handheld or otherwise), then Nintendo has a lot of work to do.  It needs to get better at all of the game-related things that iOS is good at.  It needs to produce software that clearly demonstrates the value of its hardware—or, if that’s not possible, then it needs to make new hardware.
+-->
+
+
+<p>けれど、もしゲーム専用機(携帯ゲーム機かどうかに関わらず)の出番がまだなくならないのだとしたら、任天堂がやるべきことはやまほどある。ゲーム絡みで iOS の方が得意としてることは、なんでも改善していかないといけない。自身のゲーム機を引き立てるようなソフトを作り出さないといけないし、それができないなら新しいゲーム機を作り出さないといけない。</p>
+
+<!--
+Any advice that leads in a different direction is a distraction.  There’s no point in any plan to “save” Nintendo that fails to preserve what’s best about the company.  Nintendo needs to do what Nintendo does best: create amazing combinations of hardware and software.  That’s what has saved the company in the past, and it’s the only thing that will ensure its future.
+-->
+
+
+<p>それ以外の方向へ持っていこうとする「助言」は全てインチキだ。最大の持ち味を奪うような任天堂救済プランなんて、何の意味もない。任天堂は、自らが最も得意とすることに集中しないといけない。ハードとソフト、最高の組み合わせを生み出す、ということだ。これまで任天堂を救ってきたのはまさにそれだし、それのみが今後の任天堂を強く確かにしていくのだから。</p>
+
+<hr />
+
+<p>初出公開：　2013年09月05日、　最終更新日： 2013年09月05日</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>よちよち Vim-fu (2.1): Git を使ったプラグイン導入 - Pieces Of Peace</title>
+  <meta name="author" content="harupong">
+
+   
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.harupong.com/2014/02/vim-fu-2.1">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Pieces Of Peace" type="application/atom+xml">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap-collapse.js"></script>
+  <script src="/js/modernizr-2.0.js"></script>
+  <script src="/js/octopress.js" type="text/javascript"></script>
+  <script src="/js/application.js"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <div class="navbar navbar-inverse navbar-static-top">
+  	<div class="navbar-inner">
+  	  <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="fui-menu-24"></span>
+        </a>
+  	  	<div class="nav-collapse collapse navbar-responsive-collapse" style="height:0;">
+  	      <ul class="nav">
+    
+        <li ><a href="/">Home</a></li>
+    
+        <li ><a href="/archives/">Archives</a></li>
+    
+        <li ><a href="/feed/">Feed</a></li>
+    
+</ul>
+
+<ul class="nav pull-right">
+    
+    
+    
+    
+    <li><a href="http://twitter.com/harupong" title="Twitter Profile"><i class="icon-twitter-sign social-navbar"></i></a></li>
+    
+    
+    
+    
+
+    
+</ul>
+
+  	    </div>
+  	  </div>
+  	</div>
+  </div>
+  <div class="container" id="main">
+      <div class="row-fluid">
+        <div id="content">
+          <div>
+<article class="hentry" role="article">
+  
+
+  <header>
+  <div class="jumbotron">
+    よちよち Vim-fu (2.1): Git を使ったプラグイン導入
+	<h5>
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2014-02-21T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+  </div>
+</header>
+  <div class="row-fluid">
+    <div class="span12">
+      <p><a href="http://blog.harupong.com/2014/02/vim-fu-2/">前回予告</a>の通り、先に進む前に、Git を使ったプラグイン導入の方法をメモしておきます。前回同様<a href="http://www.vim.org/ugrankar.pdf">こちらのガイド(PDF)</a>をベースに進めていきます。</p>
+
+<p>やることは全部で3つ。</p>
+
+<ol>
+<li>Git をインストールする</li>
+<li>Curl をインストールする</li>
+<li>Pathogen.vim をインストールする</li>
+</ol>
+
+
+<p>順番に見ていきましょう。</p>
+
+<h2>Git をインストールする</h2>
+
+<p>公式サイトからインストーラーをダウンロードし、インストールします。2014年2月時点での最新版は 1.9.0 です。</p>
+
+<ol>
+<li>インストーラーを <a href="http://git-scm.com/download/">Git - Downloads</a> からダウンロードする</li>
+<li>インストーラーを実行する
+
+<ol>
+<li><strong>Adjusting your PATH environment</strong> という画面で、<strong>Run Git from the Windows Command Prompt</strong> を選択する<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></li>
+<li>その他はデフォルトのままでOK</li>
+</ol>
+</li>
+<li>コマンドプロンプトか PowerShell で <code>git --version</code> を実行する</li>
+</ol>
+
+
+<p>インストールした Git のバージョンが3.の手順で表示されればOKです。</p>
+
+<h2>Curl をインストールする</h2>
+
+<p>Curl 自体は上述の手順で併せてインストールされますが、パスが通っていません。<a href="https://github.com/gmarik/Vundle.vim/wiki/Vundle-for-Windows">Vundle</a> という Vim プラグインで解説されている手順で、Curl を有効にします。</p>
+
+<ol>
+<li><a href="https://gist.githubusercontent.com/gmarik/912993/raw/2753fc4ad996d00bbe09f7af9faceb8e98433722/curl.cmd">ここ</a>から <code>curl.cmd</code> というバッチファイルをダウンロードする</li>
+<li>ダウンロードしたファイルを、先ほど Git をインストールしたフォルダ配下にある <code>cmd</code> というフォルダに移動する</li>
+<li>コマンドプロンプトか PowerShell で <code>curl --version</code> を実行する</li>
+</ol>
+
+
+<p>Curl のバージョンが3.の手順で表示されればOKです。</p>
+
+<h2>Pathogen.vim をインストールする</h2>
+
+<p>Git を使ったプラグイン導入の肝である、<a href="https://github.com/tpope/vim-pathogen">pathogen</a> をインストールします。まず、コマンドプロンプトを開いて以下の3行を順に実行します。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd C:\users\&lt;username&gt;\vim\vimfiles\autoload
+</span><span class='line'>curl -Sso pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+</span><span class='line'>dir | find /I "pathogen.vim"`</span></code></pre></td></tr></table></div></figure>
+
+
+<p>次に、<code>_vimrc</code> の末尾に以下の記述を追加します<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>execute pathogen#infect()
+</span><span class='line'>filetype plugin indent on
+</span><span class='line'>syntax on</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Vim を起動し、特にエラーがでなければOKです。</p>
+
+<h2>プラグインを Git を使ってインストールしてみる</h2>
+
+<p>せっかくなので、プラグインをインストールしてみましょう。今回はガイドでも紹介されてる Vim のカラースキーム kolor をインストールしてみます。まず、コマンドプロンプトで</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd C:\users\&lt;username&gt;\vim\vimfiles\bundle
+</span><span class='line'>git clone https://github.com/zeis/vim-kolor</span></code></pre></td></tr></table></div></figure>
+
+
+<p>と実行し、プラグインをダウンロードします。次に、Vim を起動して <code>:colorscheme kolor</code> と入力します<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>。Vim の見た目が黒っぽくなればOKです。</p>
+
+<p>少し長くなったので、「日本語文字化け対策」は別の記事にします。</p>
+
+<hr />
+
+<p>&lt;&lt; <a href="http://blog.harupong.com/2014/02/vim-fu-2/">2. Vim のインストール</a> | 2.1 Git を使ったプラグイン導入 | 2.2 日本語テキストファイルの文字化け対策 >></p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>こうしないとインストール先のフォルダが PATH に追加されず、使い勝手悪い<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p><code>C:\users\&lt;username&gt;\vim</code> 配下にあるはずです<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>先頭の <code>:</code> はコマンドモードに移行するために必要なので、必ず入力する<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+    </div>
+  </div>
+
+
+
+  <footer>
+    <hr>
+    
+    <div class="row-fluid">
+      
+      <div class="span6">
+        <p class="meta">
+        
+        
+
+
+        </p>
+      </div>
+      
+      <div class="span6 social-sharing">
+        <div class="sharing">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+      </div>
+      
+      
+    </div>
+    
+    <div class="row-fluid">
+      <div class="span12">
+        <p class="meta">
+          
+            <a class="basic-alignment left" href="/2014/02/lightbulb.ja/" title="Previous Post: 【翻訳】ソフトウェア開発者が何人いれば電球を替えられる？(2014年版)">&laquo; 【翻訳】ソフトウェア開発者が何人いれば電球を替えられる？(2014年版)</a>
+          
+          
+            <a class="basic-alignment right" href="/2014/02/11-22-63-stephen-king/" title="Next Post: 「11/22/63」 Stephen King">「11/22/63」 Stephen King &raquo;</a>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+</article>
+
+</div>
+
+
+
+        </div>
+      </div>
+      <div class="row-fluid">
+        <footer class="footer-page" role="contentinfo">
+          <p>
+  Copyright &copy; 2015 - harupong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - Theme by <a href="http://alexgaribay.com">Alex Garibay</a>
+</p>
+
+
+        </footer>
+      </div>
+  </div>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

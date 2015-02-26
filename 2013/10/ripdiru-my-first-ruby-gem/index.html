@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>NHKラジオのネット配信「らじる★らじる」を録音するツールを Ruby で作った - Pieces Of Peace</title>
+  <meta name="author" content="harupong">
+
+   
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.harupong.com/2013/10/ripdiru-my-first-ruby-gem">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Pieces Of Peace" type="application/atom+xml">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap-collapse.js"></script>
+  <script src="/js/modernizr-2.0.js"></script>
+  <script src="/js/octopress.js" type="text/javascript"></script>
+  <script src="/js/application.js"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <div class="navbar navbar-inverse navbar-static-top">
+  	<div class="navbar-inner">
+  	  <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="fui-menu-24"></span>
+        </a>
+  	  	<div class="nav-collapse collapse navbar-responsive-collapse" style="height:0;">
+  	      <ul class="nav">
+    
+        <li ><a href="/">Home</a></li>
+    
+        <li ><a href="/archives/">Archives</a></li>
+    
+        <li ><a href="/feed/">Feed</a></li>
+    
+</ul>
+
+<ul class="nav pull-right">
+    
+    
+    
+    
+    <li><a href="http://twitter.com/harupong" title="Twitter Profile"><i class="icon-twitter-sign social-navbar"></i></a></li>
+    
+    
+    
+    
+
+    
+</ul>
+
+  	    </div>
+  	  </div>
+  	</div>
+  </div>
+  <div class="container" id="main">
+      <div class="row-fluid">
+        <div id="content">
+          <div>
+<article class="hentry" role="article">
+  
+
+  <header>
+  <div class="jumbotron">
+    NHKラジオのネット配信「らじる★らじる」を録音するツールを Ruby で作った
+	<h5>
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-10-21T00:00:00+00:00" pubdate data-updated="true">Oct 21<span>st</span>, 2013</time></h5>
+  </div>
+</header>
+  <div class="row-fluid">
+    <div class="span12">
+      <p>構想ここ数か月(？)、作業は夜な夜なエンドレス&hellip;思い立ったが吉日の結果がようやくまとまった！で勢い余って公開してみた。</p>
+
+<p>名前は ripdiru。勢い余ったことには後悔してないけど、名前は未だしっくり来ず。。ツッコミ大歓迎。</p>
+
+<p><a href="https://rubygems.org/gems/ripdiru">ripdiru | RubyGems.org | your community gem host</a></p>
+
+<h2>何が出来るの？</h2>
+
+<p><a href="http://www3.nhk.or.jp/netradio/">らじる★らじる　NHKネットラジオ</a>のライブ配信を MP3 ファイルに録音してくれます。<a href="http://www.nhk.or.jp/r1/">ラジオ第1</a>、<a href="http://www.nhk.or.jp/r2/">ラジオ第2</a>、<a href="http://www.nhk.or.jp/fm/">NHK-FM</a>に対応しています。</p>
+
+<p>番組表と連動しているので、録音を自動停止させたり、番組情報をタグとして MP3 ファイルに埋め込んだりすることもできます。</p>
+
+<h2>インストールと使い方</h2>
+
+<ul>
+<li>Ruby 1.9</li>
+<li>rtmpdump</li>
+<li>ffmpeg</li>
+</ul>
+
+
+<p>上記3つは不可欠なので入れておきましょう。ffmpeg は曲者なので、<a href="http://ffmpeg.org/download.html">本家からリンクされてるビルド済みファイル</a>を使ってる OS に合わせてダウンロードするのが吉です。</p>
+
+<p>それらのインストールが完了したら、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ gem install ripdiru</span></code></pre></td></tr></table></div></figure>
+
+
+<p>を実行すれば ripdiru のインストール完了！あとは</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ ripdiru NHK1</span></code></pre></td></tr></table></div></figure>
+
+
+<p>などと局を指定して ripdiru を起動してやれば、自動で録音開始→終了。<code>~/Music/Ripdiru</code> 配下に MP3 ファイルが保存されているはずです。</p>
+
+<h3>ありがちなエラーと対策</h3>
+
+<ol>
+<li>libmp3lame がない</li>
+</ol>
+
+
+<p>続きは後で書きます&hellip;(書くよ、うん。)</p>
+
+<h2>名前の由来</h2>
+
+<p><del>モロパクリ</del>多くのヒントをもらった @<a href="https://twitter.com/miyagawa">miyagawa</a>さんのツール <a href="https://github.com/miyagawa/ripdiko">ripdiko</a> にちなんだ名前です。らじる★らじるは公式な英語表記が見当たらないのだけど、サイトのソースなどと見てると RADIRU という表記がちらほら。RADIRU を rip するツールということで、ripdiru です。</p>
+
+<h2>感謝の意</h2>
+
+<ul>
+<li><p><a href="https://github.com/miyagawa/">miyagawa (Tatsuhiko Miyagawa)</a> <a href="https://github.com/miyagawa/ripdiko">ripdiko</a> からのコピペがなければとうてい形にならなかったと思います。感謝。</p></li>
+<li><p><a href="https://github.com/matchy2">matchy2 (MACHIDA Hideki)</a> <a href="https://gist.github.com/5310409.git">らじる★らじる録音のシェルスクリプト</a>の rtmpdump まわりの記述を参考にしました。感謝。</p></li>
+<li><p><a href="https://github.com/riocampos/">riocampos</a> ブログにアップされている<a href="http://d.hatena.ne.jp/riocampos+tech/">らじる★らじるのあれこれ</a>が参考になりました。感謝。</p></li>
+</ul>
+
+
+<hr />
+
+<p>需要はまったくないでしょうが、プログラミングの近道は「自分がほしい物を作る」らしいので自分にとっては大きな第一歩です。使ってみた！うまくいかない！ここ直して！などなど、ご意見ご感想ありましたら、ぜひ Twitter で @<a href="https://twitter.com/harupong">harupong</a> までお願いします。</p>
+
+    </div>
+  </div>
+
+
+
+  <footer>
+    <hr>
+    
+    <div class="row-fluid">
+      
+      <div class="span6">
+        <p class="meta">
+        
+        
+
+
+        </p>
+      </div>
+      
+      <div class="span6 social-sharing">
+        <div class="sharing">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+      </div>
+      
+      
+    </div>
+    
+    <div class="row-fluid">
+      <div class="span12">
+        <p class="meta">
+          
+            <a class="basic-alignment left" href="/2013/10/amazon-profits/" title="Previous Post: 【翻訳】Amazon にとっての「利益」">&laquo; 【翻訳】Amazon にとっての「利益」</a>
+          
+          
+            <a class="basic-alignment right" href="/2013/10/radiru-metadata/" title="Next Post: らじる★らじるの番組情報等メタデータ">らじる★らじるの番組情報等メタデータ &raquo;</a>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+</article>
+
+</div>
+
+
+
+        </div>
+      </div>
+      <div class="row-fluid">
+        <footer class="footer-page" role="contentinfo">
+          <p>
+  Copyright &copy; 2015 - harupong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - Theme by <a href="http://alexgaribay.com">Alex Garibay</a>
+</p>
+
+
+        </footer>
+      </div>
+  </div>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

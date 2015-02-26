@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Git とファイルサーバーを使って小規模な分散バージョン管理システムを構築する -Windows 編- - Pieces Of Peace</title>
+  <meta name="author" content="harupong">
+
+   
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.harupong.com/2013/07/git-repo-on-file-server">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Pieces Of Peace" type="application/atom+xml">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap-collapse.js"></script>
+  <script src="/js/modernizr-2.0.js"></script>
+  <script src="/js/octopress.js" type="text/javascript"></script>
+  <script src="/js/application.js"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <div class="navbar navbar-inverse navbar-static-top">
+  	<div class="navbar-inner">
+  	  <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="fui-menu-24"></span>
+        </a>
+  	  	<div class="nav-collapse collapse navbar-responsive-collapse" style="height:0;">
+  	      <ul class="nav">
+    
+        <li ><a href="/">Home</a></li>
+    
+        <li ><a href="/archives/">Archives</a></li>
+    
+        <li ><a href="/feed/">Feed</a></li>
+    
+</ul>
+
+<ul class="nav pull-right">
+    
+    
+    
+    
+    <li><a href="http://twitter.com/harupong" title="Twitter Profile"><i class="icon-twitter-sign social-navbar"></i></a></li>
+    
+    
+    
+    
+
+    
+</ul>
+
+  	    </div>
+  	  </div>
+  	</div>
+  </div>
+  <div class="container" id="main">
+      <div class="row-fluid">
+        <div id="content">
+          <div>
+<article class="hentry" role="article">
+  
+
+  <header>
+  <div class="jumbotron">
+    Git とファイルサーバーを使って小規模な分散バージョン管理システムを構築する -Windows 編-
+	<h5>
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-07-29T06:39:00+00:00" pubdate data-updated="true">Jul 29<span>th</span>, 2013</time></h5>
+  </div>
+</header>
+  <div class="row-fluid">
+    <div class="span12">
+      <p>ブログのテーマががっつり偏ってきた気がしますが、自分の興味関心のままに書いているので大目に見てくださいまし。</p>
+
+<p>なお、Mac 編はありませんのであしからず<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>。</p>
+
+<h2>やりたいこと</h2>
+
+<ol>
+<li>Windows オンリーなネットワーク環境で</li>
+<li>インターネットへはアクセスせずに</li>
+<li>Git とファイルサーバーだけで</li>
+<li>分散バージョン管理システムを</li>
+</ol>
+
+
+<p>簡単に作ってみましょう。</p>
+
+<h2>想定読者</h2>
+
+<ul>
+<li>ソースコードのバックアップに不満がある</li>
+<li>プログラミングを Windows で行なっている</li>
+<li>非公開であっても、ソースコードを他者のサーバーやサービスに保存したくない、できない</li>
+<li>Git を使ったことがある、もしくは Git を使ってみる気がある</li>
+</ul>
+
+
+<h2>事前準備</h2>
+
+<!--more-->
+
+
+<p>まず、ファイルを読み書きできるファイルサーバーを用意しましょう。今回は Windows なので共有フォルダってやつですね<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>。</p>
+
+<p>次に、<a href="http://www.sourcetreeapp.com/">SourceTree</a> をインストール、起動し、初期設定しておきましょう。Git 本体のインストールも行なってくれるので楽ちんです。</p>
+
+<p>詳しい手順は -> <a href="http://dameleon.hatenablog.com/entry/2013/03/21/185412">Gitアプリの決定版！SourceTree for windowsがやってきた！ ヤァ！ヤァ！ヤァ！ - damelog</a> を。今回の手順では使用しないので、<strong>「鍵を作る」</strong>の部分は飛ばしてしまいましょう。</p>
+
+<h2>分散バージョン管理システムを簡単に作ってみる手順</h2>
+
+<ol>
+<li>パソコン上に Git リポジトリを作る</li>
+<li>リポジトリ内のファイルをコミットする</li>
+<li>パソコン上のリポジトリをファイルサーバーにクローンする</li>
+</ol>
+
+
+<p>大きく分けると以上の3ステップです。順番に説明していきます。</p>
+
+<h3>パソコン上にリポジトリを作る</h3>
+
+<p><img src="http://lh5.ggpht.com/-IL8-Eo-rmQ8/UfIMvjjkCkI/AAAAAAAABAg/NEPdbgRli0I/s512/ScreenClip%25252520%2525255B0%2525255D.jpeg" alt="" /><br/>
+↑Git でバージョン管理するフォルダを作って<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup></p>
+
+<p><img src="http://lh5.ggpht.com/-yVmkPsly7io/UfIMxJRywTI/AAAAAAAABAw/0eBBwbuSt7w/s512/ScreenClip%25252520%2525255B1%2525255D.jpeg" alt="" /><br/>
+↑SourceTree で Clone/New ボタンを押して出てくるウィンドウからそのフォルダを追加すると</p>
+
+<p><img src="http://lh5.ggpht.com/-qB2DpSylaG8/UfIMxNrOEeI/AAAAAAAABAs/Ql0ks-6Z3qE/s512/ScreenClip%25252520%2525255B2%2525255D.jpeg" alt="" /><br/>
+↑Git リポジトリができあがります。SourceTree だとこんな表示</p>
+
+<p><img src="http://lh3.ggpht.com/-RAyCDPUtZb0/UfIMyQs7NlI/AAAAAAAABBE/DJwp8qAz-sM/s512/ScreenClip%25252520%2525255B3%2525255D.jpeg" alt="" /><br/>
+↑出来上がった Git リポジトリをエクスプローラーで表示させたところ。 .git というフォルダができていれば OK 。</p>
+
+<h3>リポジトリ内のファイルをコミットする</h3>
+
+<p><img src="http://lh6.ggpht.com/-yHv4ai9VBpQ/UfIMyWaiBkI/AAAAAAAABBA/vD2l4k-WG7o/s512/ScreenClip%25252520%2525255B4%2525255D.jpeg" alt="" /><br/>
+↑フォルダ内にバージョン管理したいファイルを作って</p>
+
+<p><img src="http://lh3.ggpht.com/-Afr4nBJhiH4/UfIMykam5dI/AAAAAAAABBI/0DKEaCQDuRo/s512/ScreenClip%25252520%2525255B5%2525255D.jpeg" alt="" /><br/>
+↑Add ボタンを使ってステージングエリアに追加して</p>
+
+<p><img src="http://lh5.ggpht.com/-_MTiFGyC_NA/UfIM0NJauxI/AAAAAAAABBU/YEo9i-xVC9U/s512/ScreenClip%25252520%2525255B6%2525255D.jpeg" alt="" /><br/>
+↑Commit ボタンでコミットっ！！</p>
+
+<p><img src="http://lh5.ggpht.com/-FH5-9Nxo8mQ/UfIM0NpOizI/AAAAAAAABBY/4vx0RT76zNs/s512/ScreenClip%25252520%2525255B8%2525255D.jpeg" alt="" /><br/>
+↑変更の履歴が残り、めでたくコミット完了です。</p>
+
+<h3>パソコン上のリポジトリをファイルサーバーにクローンする</h3>
+
+<p><img src="http://lh4.ggpht.com/-TE_asiXbFX8/UfIQbhXr9TI/AAAAAAAABBw/Z8JUDAX31K4/s512/ScreenClip.jpeg" alt="" /><br/>
+↑SourceTree 画面右上の歯車アイコンをクリック、ターミナルを起動して</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git clone --bare . //&lt;サーバーの>/&lt;リポジトリにしたい>/&lt;フォルダ>.git
+</span><span class='line'>$ git remote add origin //&lt;サーバーの>/&lt;リポジトリにしたい>/&lt;フォルダ>.git</span></code></pre></td></tr></table></div></figure>
+
+
+<p>↑Git のコマンドを入力していきます。コマンドの内容を説明しておくと</p>
+
+<ol>
+<li>パソコン上に作成したリポジトリをサーバー上に複写</li>
+<li>パソコン上にあるリポジトリの分散先として、サーバー上に複写されたリポジトリを追加</li>
+</ol>
+
+
+<p>となります。注意点として、まずはフォルダのパス。今回の例だと <code>C:\easy_dvcs\</code> ですが、これは <code>/c/easy_dvcs</code> と読み替えるようにしてください。日本語含むとうまくいかないこともあるので気をつけましょう。</p>
+
+<p>また、パスの末尾が <code>.git</code> となっていますが、これは Git のお作法なのでそのようにしておきましょう。<code>&lt;フォルダ&gt;.git</code> という名前のファイルが作られるわけではないのでお間違いなく。</p>
+
+<p>続いて、ちゃんと追加できてるか確認しましょう。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git remote show origin
+</span><span class='line'>$ git push origin master</span></code></pre></td></tr></table></div></figure>
+
+
+<p>これらのコマンドを実行して以下のように表示されれば</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git remote show origin
+</span><span class='line'>* remote origin
+</span><span class='line'>  Fetch URL: //&lt;サーバーの>/&lt;リポジトリ>/&lt;フォルダ>.git
+</span><span class='line'>  Push  URL: //&lt;サーバーの>/&lt;リポジトリ>/&lt;フォルダ>.git
+</span><span class='line'>  HEAD branch: master
+</span><span class='line'>  Remote branch:
+</span><span class='line'>    master new (next fetch will store in remotes/origin)
+</span><span class='line'>  Local ref configured for 'git push':
+</span><span class='line'>    master pushes to master (up to date)
+</span><span class='line'>
+</span><span class='line'>$ git push origin master
+</span><span class='line'>everything up-to-date</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>完成！！！</h3>
+
+<p>お疲れさまでした。あとは<a href="http://www.backlog.jp/git-guide/">サルでもわかるGit入門 〜バージョン管理を使いこなそう〜 | どこでもプロジェクト管理バックログ</a>など眺めつつ、プッシュしたりリセットしたりしてみましょう。</p>
+
+<h2>つまづきやすいところ</h2>
+
+<ol>
+<li><p>フォルダのアドレスに円マーク(\)<br/>
+文字化けの根源である Windows の円マーク(\)ですが、 Unix/Linux フレンドリーな Git でもそこが問題になります。SourceTree の<a href="https://jira.atlassian.com/browse/SRCTREEWIN-858">開発元も認識はしている</a>ようですが、Git の問題でもあるので進展はなさそう&hellip;<br/>
+とりあえず、円マーク(\)はスラッシュ(/)で置き換えましょう。</p></li>
+<li><p>リポジトリに追加したファイルが、ファイルサーバー上に見当たらない<br/>
+Git のリモートリポジトリにはファイルの実体のみが圧縮され保存されています。サーバーのディスクスペースを節約する賢いやり方です。<br/>
+コミットし、プッシュしたはずのファイルがファイルサーバー上に見当たらず、「 Git つかえねー」と早とちりしたそこのあなた！<code>git clone //&lt;サーバーの&gt;/&lt;リポジトリ&gt;/&lt;フォルダ&gt;.git</code> して確認してみましょう。</p></li>
+</ol>
+
+
+<h2>蛇足</h2>
+
+<p><img src="http://lh6.ggpht.com/-Pjo7PNj_i88/UfIj9qy9l6I/AAAAAAAABCI/E8Z-ZvzWcM4/capture_intro1_1_1.jpeg" alt="" /><br/>
+↑<a href="http://www.backlog.jp/git-guide/intro/intro1_1.html">サルでもわかるGit入門</a> つらい、つらいのぅ</p>
+
+<p>データの管理は一切合切こんな状態、その他諸般の事情により「GitHub でソーシャルコーディングヽ(・∀・ )ﾉ ｷｬｯ ｷｬｯ」 などということが夢のまた夢状態&hellip;</p>
+
+<p>泣きを見るのは自分なのでソースコードだけは Git でバージョン管理してきましたが、データのありかは開発機のハードディスク。なんとか角を立てずにこのリポジトリを<strong>分散型</strong>に持っていきたいっ！！</p>
+
+<p>ということで調べてみたら思ったより簡単に実現したのでちょっと拍子抜けしておりますが、これでこれからはゆっくり寝られそうです。ありがとう Git!!</p>
+
+<h2>参考</h2>
+
+<ul>
+<li><p><a href="http://git-scm.com/book/ja/Git-%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC-%E3%83%97%E3%83%AD%E3%83%88%E3%82%B3%E3%83%AB#Local-%E3%83%97%E3%83%AD%E3%83%88%E3%82%B3%E3%83%AB">Git - プロトコル</a><br/>
+Pro Git 本でも、Git でリポジトリのリモートとしてファイルサーバーを使用する方法が解説されてます。</p></li>
+<li><p><a href="https://gist.github.com/trey/2722927">Using Dropbox to Share Git Repositories</a><br/>
+Dropbox を Git リポジトリのリモートとする方法が説明されてます。</p></li>
+</ul>
+
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>同じようにやれば Mac でも問題ない、というかむしろ Mac の方が確実に作業できるはず<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>個人なら NAS とか外付けハードディスク、法人なら社内向けのファイルサーバーってとこでしょうか<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>この例ではCドライブ直下に <code>easy_dvcs</code> というフォルダを作りました<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+    </div>
+  </div>
+
+
+
+  <footer>
+    <hr>
+    
+    <div class="row-fluid">
+      
+      <div class="span6">
+        <p class="meta">
+        
+        
+
+
+
+  <a href="/blog/categories/git/"><span class="badge">git</span></a>
+
+
+
+
+        </p>
+      </div>
+      
+      <div class="span6 social-sharing">
+        <div class="sharing">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+      </div>
+      
+      
+    </div>
+    
+    <div class="row-fluid">
+      <div class="span12">
+        <p class="meta">
+          
+            <a class="basic-alignment left" href="/2013/07/vagrant_up_without_provisioning/" title="Previous Post: Vagrant でプロビジョニングを実行せずに VM を立ち上げる方法">&laquo; Vagrant でプロビジョニングを実行せずに VM を立ち上げる方法</a>
+          
+          
+            <a class="basic-alignment right" href="/2013/08/books-i-read-on-july-2013/" title="Next Post: 2013年7月に読んだ本">2013年7月に読んだ本 &raquo;</a>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+</article>
+
+</div>
+
+
+
+        </div>
+      </div>
+      <div class="row-fluid">
+        <footer class="footer-page" role="contentinfo">
+          <p>
+  Copyright &copy; 2015 - harupong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - Theme by <a href="http://alexgaribay.com">Alex Garibay</a>
+</p>
+
+
+        </footer>
+      </div>
+  </div>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

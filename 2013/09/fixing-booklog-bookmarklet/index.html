@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ブクログの bookmarklet だと Kindle 本が本棚に追加できないので直してみた - Pieces Of Peace</title>
+  <meta name="author" content="harupong">
+
+   
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.harupong.com/2013/09/fixing-booklog-bookmarklet">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Pieces Of Peace" type="application/atom+xml">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap-collapse.js"></script>
+  <script src="/js/modernizr-2.0.js"></script>
+  <script src="/js/octopress.js" type="text/javascript"></script>
+  <script src="/js/application.js"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <div class="navbar navbar-inverse navbar-static-top">
+  	<div class="navbar-inner">
+  	  <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="fui-menu-24"></span>
+        </a>
+  	  	<div class="nav-collapse collapse navbar-responsive-collapse" style="height:0;">
+  	      <ul class="nav">
+    
+        <li ><a href="/">Home</a></li>
+    
+        <li ><a href="/archives/">Archives</a></li>
+    
+        <li ><a href="/feed/">Feed</a></li>
+    
+</ul>
+
+<ul class="nav pull-right">
+    
+    
+    
+    
+    <li><a href="http://twitter.com/harupong" title="Twitter Profile"><i class="icon-twitter-sign social-navbar"></i></a></li>
+    
+    
+    
+    
+
+    
+</ul>
+
+  	    </div>
+  	  </div>
+  	</div>
+  </div>
+  <div class="container" id="main">
+      <div class="row-fluid">
+        <div id="content">
+          <div>
+<article class="hentry" role="article">
+  
+
+  <header>
+  <div class="jumbotron">
+    ブクログの Bookmarklet だと Kindle 本が本棚に追加できないので直してみた
+	<h5>
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-09-10T00:00:00+00:00" pubdate data-updated="true">Sep 10<span>th</span>, 2013</time></h5>
+  </div>
+</header>
+  <div class="row-fluid">
+    <div class="span12">
+      <p>このブログの<a href="http://blog.harupong.com/2013/09/books-i-read-on-august-2013/">読んだ本</a>シリーズは、<a href="http://booklog.jp/">ブクログ</a>に登録してあるデータを引っ張ってきている。きっかけは@<a href="https://twitter.com/kentaro">kentaro さん</a>のブログの<a href="http://blog.kentarok.org/entry/2013/09/09/221958">読んだ本をブクログでふりかえる</a>シリーズ<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>。</p>
+
+<p>ブクログは登録データの編集がやりやすくて気に入ってる<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>のだけれど、唯一残念なのがタイトルにも挙げた「Kindle 本が bookmarklet で登録できない」というところ。<a href="http://info.booklog.jp/?eid=535">ブクログ Kindle ストア対応が2012年10月</a>で以後ずっとできてないっぽいし、<a href="https://chrome.google.com/webstore/detail/%E3%83%96%E3%82%AF%E3%83%AD%E3%82%B0/iafmiijigjljooijdlehfidpoajlcpjd?hl=ja">Chrome 拡張</a>もあるしでこのままだと対応の望み薄か！？</p>
+
+<p>ということで、重い腰をあげて javascript を眺めてみることに。なお当方、これが初の javascript いじり。</p>
+
+<p>以下、調査経過を含め結構な長文なので、修正した bookmarklet が欲しい方は以下をどうぞ。</p>
+
+<p><a href="javascript:var d=document, w=window, e=w.getSelection, k=d.getSelection, x=d.selection, s=(e?e():(k)?k():(x?x.createRange().text:0)), f='http://booklog.jp/blet', l=d.location, g=d.getElementById('ASIN')||d.getElementsByName('ASIN.0')[0], a=(g?g.value:''), e=encodeURIComponent, p='?v=2&u='+e(l.href)+'&s='+e(s)+'&a='+e(a), u=f+p, a=function(){w.open(u,'_blank')};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0); else a(); void(0);">ブクログ bookmarklet Kindle 本対応版</a></p>
+
+<!--more-->
+
+
+<h2>直してみた(1) 状況証拠集め</h2>
+
+<h3>bookmarklet 実行時挙動の違い</h3>
+
+<p><a href="http://www.amazon.co.jp/%E5%89%A3%E5%AE%A2%E5%95%86%E5%A3%B2-%E6%96%B0%E6%BD%AE%E6%96%87%E5%BA%AB%E2%80%95%E5%89%A3%E5%AE%A2%E5%95%86%E5%A3%B2-%E6%B1%A0%E6%B3%A2-%E6%AD%A3%E5%A4%AA%E9%83%8E/dp/4101157316/ref=tmm_bunko_meta_binding_title_0?ie=UTF8&amp;qid=1378786293&amp;sr=1-2">Amazon.co.jp： 剣客商売 (新潮文庫―剣客商売): 池波 正太郎: 本</a>と<a href="http://www.amazon.co.jp/%E5%89%A3%E5%AE%A2%E5%95%86%E5%A3%B2%E4%B8%80-%E5%89%A3%E5%AE%A2%E5%95%86%E5%A3%B2-1-ebook/dp/B0096PE57E/ref=tmm_kin_title_0?ie=UTF8&amp;qid=1378786293&amp;sr=1-2">Amazon.co.jp： 剣客商売一　剣客商売: 1 eBook: 池波 正太郎: Kindleストア</a>で bookmarklet を実行し、挙動を調べたところ、URLクエリパラメータ<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>の部分に違いが一つ見つかった。</p>
+
+<p>クエリパラメータは全部で4つあるのだけど、<code>a=</code> で定義されているパラメータが Kindle 本の場合だけ存在しない。a で始まってるし、このパラメータ、おそらく ASIN だろうなぁ、と。で、Amazon での検索に不可欠な ASIN が URLクエリパラメータ として渡されてないのでは！</p>
+
+<p>詳細は以下の通り。</p>
+
+<h4>うまくいくケース(紙の本の場合)</h4>
+
+<ol>
+<li><a href="http://www.amazon.co.jp/%E5%89%A3%E5%AE%A2%E5%95%86%E5%A3%B2-%E6%96%B0%E6%BD%AE%E6%96%87%E5%BA%AB%E2%80%95%E5%89%A3%E5%AE%A2%E5%95%86%E5%A3%B2-%E6%B1%A0%E6%B3%A2-%E6%AD%A3%E5%A4%AA%E9%83%8E/dp/4101157316/ref=tmm_bunko_meta_binding_title_0?ie=UTF8&amp;qid=1378786293&amp;sr=1-2">Amazon.co.jp： 剣客商売 (新潮文庫―剣客商売): 池波 正太郎: 本</a>を表示した状態で bookmarklet を実行</li>
+<li>処理用の新しいタブが開く</li>
+<li>2.のタブが、1.の本が選択された状態のブクログ登録画面へと遷移</li>
+<li>本を登録する</li>
+</ol>
+
+
+<p>なお、手順2. で開くタブの URL は以下の通り。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>http://booklog.jp/blet?v=2&u=http%3A%2F%2Fwww.amazon.co.jp%2F%25E5%2589%25A3%25E5%25AE%25A2%25E5%2595%2586%25E5%25A3%25B2-%25E6%2596%25B0%25E6%25BD%25AE%25E6%2596%2587%25E5%25BA%25AB%25E2%2580%2595%25E5%2589%25A3%25E5%25AE%25A2%25E5%2595%2586%25E5%25A3%25B2-%25E6%25B1%25A0%25E6%25B3%25A2-%25E6%25AD%25A3%25E5%25A4%25AA%25E9%2583%258E%2Fdp%2F4101157316%2Fref%3Dtmm_bunko_meta_binding_title_0%3Fie%3DUTF8%26qid%3D1378786293%26sr%3D1-2&s=&a=4101157316</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>うまくいかないケース(Kindle 本の場合)</h4>
+
+<ol>
+<li><a href="http://www.amazon.co.jp/%E5%89%A3%E5%AE%A2%E5%95%86%E5%A3%B2%E4%B8%80-%E5%89%A3%E5%AE%A2%E5%95%86%E5%A3%B2-1-ebook/dp/B0096PE57E/ref=tmm_kin_title_0?ie=UTF8&amp;qid=1378786293&amp;sr=1-2">Amazon.co.jp： 剣客商売一　剣客商売: 1 eBook: 池波 正太郎: Kindleストア</a>を表示した状態で bookmarklet を実行</li>
+<li>処理用の新しいタブが開く</li>
+<li>画面が遷移せず、ブランクなタブが開いたままになる</li>
+</ol>
+
+
+<p>なお、手順2. で開くタブの URL は以下の通り。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>http://booklog.jp/blet?v=2&u=http%3A%2F%2Fwww.amazon.co.jp%2F%25E5%2589%25A3%25E5%25AE%25A2%25E5%2595%2586%25E5%25A3%25B2%25E4%25B8%2580-%25E5%2589%25A3%25E5%25AE%25A2%25E5%2595%2586%25E5%25A3%25B2-1-ebook%2Fdp%2FB0096PE57E%2Fref%3Dsr_1_2%3Fs%3Dbooks%26ie%3DUTF8%26qid%3D1378786293%26sr%3D1-2%26keywords%3D%25E6%25B1%25A0%25E6%25B3%25A2%25E6%25AD%25A3%25E5%25A4%25AA%25E9%2583%258E&s=&a=</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>ブクログ提供の bookmarklet</h3>
+
+<p>2013/09/10 時点で<a href="http://booklog.jp/bookmarklet">公式に提供されている bookmarklet </a>は以下の通り。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>javascript:var d=document,w=window,e=w.getSelection,k=d.getSelection,x=d.selection,s=(e?e():(k)?k():(x?x.createRange().text:0)),f='http://booklog.jp/blet',l=d.location,g=d.getElementById('ASIN'),a=(g?g.value:''),e=encodeURIComponent,p='?v=2&u='+e(l.href)+'&s='+e(s)+'&a='+e(a),u=f+p,a=function(){w.open(u,'_blank')};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0); else a(); void(0);</span></code></pre></td></tr></table></div></figure>
+
+
+<p>冒頭の <code>var</code> で始まる変数宣言部分がセミコロンのところまで延々と続き、そのあとに <code>if - else</code> な一文がきて、最後はおまじない的な <code>void(0)</code> でおしまい、と。javascript はセミコロンで文と文を区切るそうなので、以後は改行を入れつつ眺めていく。</p>
+
+<h2>直してみた(2) if - else 部分を眺める</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);
+</span><span class='line'>else a();</span></code></pre></td></tr></table></div></figure>
+
+
+<p>先に2行目を見てみると、</p>
+
+<p><strong>1行目の条件に当てはまらない場合は関数 a を実行する</strong></p>
+
+<p>ということらしい。で、1行目の条件って何かというと、どうも Firefox のみが対象みたい。<a href="http://www.w3schools.com/jsref/met_win_settimeout.asp">setTimeout() </a>というメソッドを使って、<strong>Firefox のときだけ、0ミリセカンドの遅延を発生させたあとに関数 a を実行する</strong>ってことになってる。</p>
+
+<p>なんでこんなことしてるんだろ&hellip;不具合対策？</p>
+
+<p>ともかく、if - else 部分で関数 a を実行したいってのは分かった。で、肝心の関数 a ってなんなのよ！というのはこの次で。</p>
+
+<h2>直してみた(3) 関数 a の正体とは？変数宣言部分を眺める</h2>
+
+<p>javascript の変数宣言はカンマで区切れば一括してできるそうなので、カンマごとに改行してみる。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var d=document,
+</span><span class='line'>w=window,
+</span><span class='line'>e=w.getSelection,
+</span><span class='line'>k=d.getSelection,
+</span><span class='line'>x=d.selection,
+</span><span class='line'>s=(e?e():(k)?k():(x?x.createRange().text:0)),
+</span><span class='line'>f='http://booklog.jp/blet',
+</span><span class='line'>l=d.location,
+</span><span class='line'>g=d.getElementById('ASIN'),
+</span><span class='line'>a=(g?g.value:''),
+</span><span class='line'>e=encodeURIComponent,
+</span><span class='line'>p='?v=2&u='+e(l.href)+'&s='+e(s)+'&a='+e(a),
+</span><span class='line'>u=f+p,
+</span><span class='line'>a=function(){w.open(u,'_blank')};</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>関数 a キターーー！！ASIN キターーー！！</strong></p>
+
+<p>ということで、ググっと近づいてきた。</p>
+
+<h3>関数 a の正体</h3>
+
+<p>上記14行目が関数 a の正体。<code>function()</code> で記述が始まる関数を匿名関数といい、このケースでは <code>{</code> 以降に続くその中身は <code>open</code> メソッド。新しいタブで <code>u</code> を開いてね、という意味みたい。</p>
+
+<p>んで、その <code>u</code> だけど、13行目にある <code>f+p</code>、つまり <code>http://booklog.jp/blet?v=2&amp;u='+e(l.href)+'&amp;s='+e(s)+'&amp;a='+e(a)</code> のこと。URLクエリパラメータきましたよっ！！Kindle 本の場合だけ存在しなかった <code>a=</code> の部分を見てみると、<code>e(a)</code> となってる。</p>
+
+<ul>
+<li><code>e</code> は <code>encodeURIComponent</code> の省略(11行目)</li>
+<li><code>a</code> は 12行目時点では <code>(g?g.value:'')</code> (10行目で定義されてる)</li>
+</ul>
+
+
+<p>もう、<code>g</code> って何よ！正解は9行目の <code>d.getElementById('ASIN')</code>。文章内から指定した ID の要素を取得するメソッドで、このケースでは1行目の <code>d</code>、開いているページのソースから ASIN という ID がつけられている要素をとってくることになる。</p>
+
+<p>で、とってきた要素使って10行目で条件分岐させてるのだけど、ここでよくある if 文じゃなくて <code>?:</code> を使ってる。これは、<code>?</code> の左側が <code>true</code> なら <code>:</code> の左側を、<code>false</code> なら <code>:</code> の右側を、という書き方。それを踏まえてさきほどの <code>e(a)</code> を読み直すと、</p>
+
+<ul>
+<li>ID がASIN の要素があればその値を <code>encodeURIComponent</code> でエンコードした値</li>
+<li>そんな要素がない場合は <code>''</code> を <code>encodeURIComponent</code> でエンコードした値</li>
+</ul>
+
+
+<p>が返ってくることになる。これ、後者の場合は何も返ってこないことになる。Kindle 本の場合URLクエリパラメータが <code>a=</code> だけで返ってきていたのは、10行目の条件分岐処理の結果のようだ。</p>
+
+<h3>消えたASIN を探せ！</h3>
+
+<p><a href="http://www.amazon.co.jp/%E5%89%A3%E5%AE%A2%E5%95%86%E5%A3%B2-%E6%96%B0%E6%BD%AE%E6%96%87%E5%BA%AB%E2%80%95%E5%89%A3%E5%AE%A2%E5%95%86%E5%A3%B2-%E6%B1%A0%E6%B3%A2-%E6%AD%A3%E5%A4%AA%E9%83%8E/dp/4101157316/ref=tmm_bunko_meta_binding_title_0?ie=UTF8&amp;qid=1378786293&amp;sr=1-2">紙の本のページ</a>の HTML ソースで ID が ASIN の要素を探すと</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;input type="hidden" id="ASIN" name="ASIN" value="4101157316" /></span></code></pre></td></tr></table></div></figure>
+
+
+<p>というのが見つかる。おお、ASIN という ID で取得した要素の値、value、がURLクエリパラメータのそれと一致しとる！！</p>
+
+<p>で、次に<a href="http://www.amazon.co.jp/%E5%89%A3%E5%AE%A2%E5%95%86%E5%A3%B2%E4%B8%80-%E5%89%A3%E5%AE%A2%E5%95%86%E5%A3%B2-1-ebook/dp/B0096PE57E/ref=tmm_kin_title_0?ie=UTF8&amp;qid=1378786293&amp;sr=1-2">Kindle 本のページ</a>の HTML ソースを見てみる。思った通り、ASIN という ID が付与された要素が存在しない。代わりに使えそうなものはないのかっ！！ソースを行ったり来たりしてると、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;input type="hidden" name="ASIN.0" value="B0096PE57E" /></span></code></pre></td></tr></table></div></figure>
+
+
+<p>というのが見つかった。ASIN.0 って何ですか&hellip; ID はないけれど NAME があるので、<code>getElementsByName</code> というメソッドが使えそう。これは、指定した NAME と合致する要素をリスト形式で返すメソッドらしい。NAME を指定する記述のあと、<code>[0]</code> といった具合でリスト内の位置を指定するとその位置の要素だけ返ってくるようなので、今回のケースでは <code>d.getElementsByName('ASIN.0')[0]</code> とすればよさそうだ。</p>
+
+<h2>直してみた(4) ASIN の値を取得、変数に代入する方法を見直す</h2>
+
+<p>変数 g に紙の本の ASINコードを含む要素が入ってるのだから&hellip;</p>
+
+<ol>
+<li>変数 gk を作る</li>
+<li><code>d.getElementsByName('ASIN.0')[0]</code> で取得した要素を代入する</li>
+<li><code>?:</code> の条件分岐を、g の値か gk の値か、という分岐に変える</li>
+</ol>
+
+
+<p>という修正方法がパッと浮かんだのだけど、変数増やすのイマイチだなぁと一思案。<a href="http://getpocket.com/add">Pocket の bookmarklet</a> に、「 <code>||</code> で論理和」な以下の記述を見つけた。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var o=t.getElementsByTagName('head')[0]||t.documentElement;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>この例だと、 <code>t.getElementsByTagName('head')[0]</code> が <code>true</code> ならそれを、<code>false</code> なら <code>t.documentElement</code> を変数 o に代入する、という書き方で、これを修正案として採用。ブクログ bookmarklet の ASIN 要素取得部分</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>g=d.getElementById('ASIN'),</span></code></pre></td></tr></table></div></figure>
+
+
+<p>を、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>g=d.getElementById('ASIN')||d.getElementsByName('ASIN.0')[0],</span></code></pre></td></tr></table></div></figure>
+
+
+<p>に直してみた ↓ 。</p>
+
+<p><a href="javascript:var d=document, w=window, e=w.getSelection, k=d.getSelection, x=d.selection, s=(e?e():(k)?k():(x?x.createRange().text:0)), f='http://booklog.jp/blet', l=d.location, g=d.getElementById('ASIN')||d.getElementsByName('ASIN.0')[0], a=(g?g.value:''), e=encodeURIComponent, p='?v=2&u='+e(l.href)+'&s='+e(s)+'&a='+e(a), u=f+p, a=function(){w.open(u,'_blank')};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0); else a(); void(0);">ブクログ bookmarklet Kindle 本対応版</a></p>
+
+<h2>直してみた(5) おまじない void(0) 部分</h2>
+
+<p>ここまでで当初の目的は達成してるのだけど、せっかくなので最後の一文、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>void(0);</span></code></pre></td></tr></table></div></figure>
+
+
+<p>も見ておく。<a href="http://www.2ality.com/2011/05/void-operator.html">The void operator in JavaScript</a> によると、</p>
+
+<blockquote><p>bookmarklet を実行して <code>undefined</code> 以外が返された場合、開いているページがその返された内容で上書きされる。<code>void(0)</code> と書くことで、返る値が <code>undefined</code> になり、開いているページに変更が生じなくなる。</p></blockquote>
+
+<p>とのこと。<code>void(0)</code> なしでも Chrome では影響なかったけど、Firefox だと画面が数字の羅列に変わってしまった。その対策ってことなんでしょう。</p>
+
+<hr />
+
+<p>調べてゴリゴリと直すだけでも大変だけど、経過や背景を文章にまとめるのはもっと大変だ&hellip;とりあえず直せてよかった。思わぬ形だったけど、少しは javascript を理解できて満足しとります。</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>やり方<del>丸パクリ</del>が参考になりました。ありがとうございます。<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>データ編集後にいちいち保存しなくても、よしなにやってくれるのはマジ便利<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>検索等の問い合わせ時にパラメータを URL で渡すための仕組みで、URL の <code>?</code> 以降がそれに当たる。複数指定でき、その場合は <code>&amp;</code> で区切る。<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+    </div>
+  </div>
+
+
+
+  <footer>
+    <hr>
+    
+    <div class="row-fluid">
+      
+      <div class="span6">
+        <p class="meta">
+        
+        
+
+
+        </p>
+      </div>
+      
+      <div class="span6 social-sharing">
+        <div class="sharing">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+      </div>
+      
+      
+    </div>
+    
+    <div class="row-fluid">
+      <div class="span12">
+        <p class="meta">
+          
+            <a class="basic-alignment left" href="/2013/09/translation-and-copyright/" title="Previous Post: 翻訳物を公開するときは著作者に了解をもらおう、という自戒">&laquo; 翻訳物を公開するときは著作者に了解をもらおう、という自戒</a>
+          
+          
+            <a class="basic-alignment right" href="/2013/09/ladee-frog-photobomb/" title="Next Post: カエルが NASA の月探査機を爆破未遂？NASA 曰く「カエルの状態は定かではない」">カエルが NASA の月探査機を爆破未遂？NASA 曰く「カエルの状態は定かではない」 &raquo;</a>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+</article>
+
+</div>
+
+
+
+        </div>
+      </div>
+      <div class="row-fluid">
+        <footer class="footer-page" role="contentinfo">
+          <p>
+  Copyright &copy; 2015 - harupong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - Theme by <a href="http://alexgaribay.com">Alex Garibay</a>
+</p>
+
+
+        </footer>
+      </div>
+  </div>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

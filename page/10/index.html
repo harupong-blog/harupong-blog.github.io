@@ -1,0 +1,1450 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Pieces Of Peace</title>
+  <meta name="author" content="harupong">
+
+   
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.harupong.com/page/10">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Pieces Of Peace" type="application/atom+xml">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap-collapse.js"></script>
+  <script src="/js/modernizr-2.0.js"></script>
+  <script src="/js/octopress.js" type="text/javascript"></script>
+  <script src="/js/application.js"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <div class="navbar navbar-inverse navbar-static-top">
+  	<div class="navbar-inner">
+  	  <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="fui-menu-24"></span>
+        </a>
+  	  	<div class="nav-collapse collapse navbar-responsive-collapse" style="height:0;">
+  	      <ul class="nav">
+    
+        <li ><a href="/">Home</a></li>
+    
+        <li ><a href="/archives/">Archives</a></li>
+    
+        <li ><a href="/feed/">Feed</a></li>
+    
+</ul>
+
+<ul class="nav pull-right">
+    
+    
+    
+    
+    <li><a href="http://twitter.com/harupong" title="Twitter Profile"><i class="icon-twitter-sign social-navbar"></i></a></li>
+    
+    
+    
+    
+
+    
+</ul>
+
+  	    </div>
+  	  </div>
+  	</div>
+  </div>
+  <div class="container" id="main">
+      <div class="row-fluid">
+        <div id="content">
+          <div class="jumbotron">
+  <div class="container">
+    
+      Pieces Of Peace
+    
+    <h3 class="tagline">
+      
+        Journal to me in the future
+      
+    </h3>
+  </div>
+</div>
+
+
+<div class="blog-index">
+  
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2012-08-28T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2012/08/how-twitter-user-cap-applies/">【翻訳】Twitterクライアントの利用者トークン数制限はどのように適用される？</a></h1>
+      <h2>非公式Twitterクライアント界隈がプチ炎上中</h2>
+
+
+
+
+<p>8月16日に<a href="https://dev.twitter.com/blog/changes-coming-to-twitter-api">Twitter APIのルール変更が発表</a>されて以来､非公式Twitterクライアントに今後課される制限について､開発者の方を中心に喧々諤々のやりとりが行われます｡発表された情報が断片的であるため､様々な憶測･誤解･誤報が流れているようです｡</p>
+
+
+<p>有名サードパーティ製TwitterクライアントTweetbotの<a href="http://tapbots.com/blog/">開発者ブログ</a>に､｢誤解を解こう｣としてルール適用の具体例が記載されていました<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>｡開発者のみならず､利用者も知っておくべき内容が含まれていると思うので､以下に翻訳を掲載します｡</p>
+
+<p>あなたがiPhone/Androidで愛用しているSOICHA/ついっぷる/twiccaなどにも関係がある話です<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>｡一読することを強くオススメします｡</p>
+
+<h2>【翻訳】Twitterクライアントの利用者トークン数制限はどのように適用される？</h2>
+
+
+
+
+<blockquote>
+  <ol>
+  <li>2012年8月16日をもって､Twitterのサードパーティ製クライアントには利用者トークン数上限が課されます｡その上限は10万トークンとし､もし利用者トークンが既に10万を超えている場合は､同日時点のトークン数の2倍を上限とします｡</li>
+  <li>これらの上限はサードパーティ製クライアントにのみ課されます｡クライアントアプリケーション以外に上限は課されません｡</li>
+  <li>これらの上限は｢アプリケーション毎｣に課されるため､1開発者が複数のアプリを開発している場合､アプリ毎に上限が課されます｡</li>
+  <li>同じアプリ､同じアカウントで複数の端末からログインした場合､利用したアプリが有するトークン数の一つを消費することになります｡</li>
+  <li>同じアプリから複数のアカウントでログインした場合､利用したアプリが有するトークン数の複数を消費することになります｡</li>
+  <li>Twitter Web版の 設定 -> アプリ連携 から｢許可を取り消す｣をクリックすると､消費したトークンを返却することができます｡</li>
+  <li>現時点において､トークンに有効期限はありません｡一度アプリ連携を許可すると､｢許可を取り消す｣を実行しない限りそのトークンは使用中と認識されます｡</li>
+  </ol>
+</blockquote>
+
+
+
+
+<p>(翻訳終わり｡<a href="http://tapbots.com/blog/news/where-did-the-tweetbot-for-mac-alpha-go">原文</a>)</p>
+
+
+
+
+<h2>ユーザーが意識すべきことは？</h2>
+
+
+<p>トークン<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>は</p>
+
+<ul>
+<li>有効期限がない</li>
+<li>連携許可を取り消すと返却できる</li>
+</ul>
+
+
+
+
+<p>ので､非公式Twitterクライアントのユーザーとしては､</p>
+
+
+<ul>
+<li>アプリ開発者のために､使わなくなったアプリのトークンは上記6.の手順で返却すること<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup></li>
+<li>利用中アプリの連携許可を間違って取り消さないこと<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup></li>
+</ul>
+
+
+<p>を心がければよさそうです｡iPhoneアプリ探しが好きで過去にあれこれTwitterアプリを試したことがある方､そもそもTwitter Web版の設定画面なんて一度も開いたことがないという方､今すぐ<a href="https://twitter.com/settings/applications">アプリ連携の画面</a>にアクセスして設定を見直しましょう｡</p>
+
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>自社製Mac版クライアントのパブリックベータ版におけるトークン数制限を巡ってTwitter社とやりとりしたうえで得た情報とのことです｡<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>スマフォアプリに限らず､WindowsやMacで使うようなクライアントアプリも全て対象です｡<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>使用権､とでも訳せばよいのかな？<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>そのアプリで利用可能なトークンが増える->新規ユーザーが増やせる､という流れが出来ます｡<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+<li id="fn:5">
+<p>トークン数が上限に達してしまい再度連携させられない恐れがある<a href="#fnref:5" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2012-08-22T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2012/08/grandfather-clause/">名付け親はお茶目に違いない！英語表現”grandfathered”の意味</a></h1>
+      <p><a href="http://5by5.tv/hypercritical/81">とある英語ポッドキャストを聞いていたら、</a>頻繁に ”.. is grandfathered ..&#8221;という表現を耳にしました。</p>
+
+
+<p>「grandfather」って動詞があるの！？と調べてみると、由来は<a href="http://en.wikipedia.org/wiki/Grandfather_clause">法律用語&#8221;Grandfather clause”</a><sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>で、その派生として&#8221;Existing rule will be grandfahtered&#8221;といった具合で使うみたい｡</p>
+
+<p>最近だと携帯の料金プランなど、「変更されて新規契約はできないけど既存契約はそのまま有効」なものをGrandfathered Plan A などと言ったりもするようです。この方が多くの方には馴染み深いのでは。</p>
+
+
+<p>びしっとした日本語訳が思いつかない/見当たらないのですが、直訳である「祖父条項」をそのまま使ったり、建築業界だと「既存不適格<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>」という訳をあててるようです。法律用語と「おじいちゃん」という組み合わせが妙にかわいい語感だと思いませんか？</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>直訳は祖父条項。「新ルールAは今後の新規案件に、現行ルールBは現状にのみ適用される」ようなケースを示す<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>当時の規制に沿って建てられた既存の建築物は新しいルールには不適格でも良しとする、という意で使われる。耐震基準など。<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2012-08-21T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2012/08/making-all-passwords-unique-still-worries-me/">「パスワードは全て異なるものにするしかない」でも不安になる現状</a></h1>
+      <p>副題「一元管理は、適切に扱っても｢諸刃の剣｣になりうる」</p>
+
+
+
+
+<h2>前提：共通パスワードはやはり危険｡これはもう異論の余地なし</h2>
+
+
+
+
+<p><a href="http://www.akiyan.com/blog/archives/2012/05/password-unique.html">この記事</a>にある<a href="https://twitter.com/akiyan">@akiyanさん</a>の例え</p>
+
+
+
+
+<blockquote>
+  <p>これを現実世界の鍵に例えると、「家の鍵と、貸しロッカーの鍵が同じ」みたいなものです。こう思うとヤバいでしょ？家の鍵穴は秘密でも、貸しロッカーには管理者が別にいて、信用できるかどうかは謎です。</p>
+</blockquote>
+
+
+
+
+<p>が秀逸で､鍵が同じということは､</p>
+
+
+
+
+<ul>
+<li>貸しロッカーの管理者は他人の家の鍵をいつでも開けられる</li>
+<li>自分がいくら家の鍵を厳重に管理しても､貸しロッカーの管理者が鍵を失くしたらどうしようもない</li>
+</ul>
+
+
+
+
+<p>というリスクに自らを晒してることに他なりません｡メールやSNS､オンラインバンキングなど､実生活に多大な影響を与えるネット上のツールやサービスを使うための鍵､パスワードに同じ物を使いまわすということは､上述のリスクに自らをネット上でも晒してることになるわけです｡これはまず危険すぎます｡</p>
+
+
+<p><a href="http://www.akiyan.com/blog/archives/2012/05/password-unique.html">上に引用した記事</a>を読んで改めてこの事に気付き､同記事で紹介されているような方法にパスワード管理を一元化<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>｡ここ数ヶ月は<strong>多少の不便さ･手間と引換に大きな安心を得て</strong>各種Webサービスを使ってきました｡</p>
+
+<h2>一元管理≒SPOF(単一障害点)ということの危うさ</h2>
+
+
+
+
+<p>今月に入り一部で大騒ぎになったこの話題→<a href="http://fladdict.net/blog/2012/08/icloud-hack.html">iCloudハック事件の手口がガード不能すぎてヤバイ | fladdict</a> ｡被害者自身による事の顛末記録(英語)は<a href="http://www.wired.com/gadgetlab/2012/08/apple-amazon-mat-honan-hacking/">こちら</a>｡</p>
+
+
+
+
+<p>被害者が有名なネットメディアの記者であったため関係者の動きも早く､結果的には失われたデータ等被害の大部分は復旧することができたようです｡<a href="http://www.wired.com/gadgetlab/2012/08/mat-honan-data-recovery/all/">復旧の様子を被害者自らが綴っている</a>のですが特に印象的だったのが以下の一節｡</p>
+
+
+
+
+<blockquote>
+  <p>My Dropbox password was itself a 1password-generated litany of nonsense. Without access to Dropbox, I couldn’t get my keychain. Without my keychain, I couldn’t get into Dropbox.</p>
+  
+  <p>(訳)僕のDropboxのパスワードも､パスワード管理ツールが生成した無意味な文字の羅列だったんだよね｡Dropboxなしではパスワード管理ツールのデータにもアクセスできないし､パスワード管理ツールのデータなしではDropboxにもアクセスできない｡</p>
+</blockquote>
+
+
+
+
+<h3>自分も同じ状況！！！</h3>
+
+
+
+
+<p>ということで対策ですが、</p>
+
+
+
+
+<ol>
+<li>パスワード管理ツール周りのパスワードだけは暗記する</li>
+<li>必須のパスワードのみ印刷して保管</li>
+</ol>
+
+
+
+
+<p>の2つくらいしか思いつきません。当面は1.でしのごうと思っていますが、それもいつまでもつのやら。利便性がもたらした新たなイタチごっこ、今後頭の片隅に置いとく必要がありそうです。</p>
+
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>KeePassでランダムなパスワードを生成･管理､Dropboxに保存したKeePassデータファイルで複数デバイス間連携<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2012-08-10T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2012/08/how-i-plan-to-prepare-for-next-marathon/">2回目のフルマラソンで悔いを残さないための準備</a></h1>
+      <p><a href="http://www.tsukuba-marathon.com/" ><img src="http://lh6.ggpht.com/-q9WInNJzZPA/UCSZV2sytEI/AAAAAAAAAOE/o2Mrsa4kZaA/w640/tsukuba-marathon.JPG" alt="tsukuba-marathon.JPG" title="tsukuba-marathon.JPG" class="aligncenter" width="640" /></a></p>
+
+
+<p><a href="http://blog.harupong.com/2011/11/my_first_full_marathon_at_syonan/">初めてのフルマラソンからはや9ヶ月</a>､秋以降のシーズンに向けた大会エントリー合戦が本格化してきました｡今シーズンは11月の筑波マラソン､翌年2月の東京マラソンにエントリー済みです<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>｡その他にもハーフを数度走る予定｡</p>
+
+<p><a href="http://blog.harupong.com/2011/11/good_bad_first_fullmarathon/">前回の反省も踏まえつつ</a>､トレーニング方法､事前の調整方法､直前･当日･直後の心得をメモしておきます｡</p>
+
+
+<h2>トレーニング方法</h2>
+
+<p>割ける時間に応じてメニューを変えてみる｡気乗りしない､時間が合わない場合は筋トレ･ストレッチを行う｡<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
+
+<ol>
+<li><p>～0.5時間メニュー：筋トレ･ストレッチ</p>
+
+<p>ふくらはぎ･太ももの筋肉をスクワットなどで鍛える｡ウォームアップ･クールダウンを意識したストレッチ<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>を行う｡</p></li>
+<li><p>0.5時間～メニュー：インターバル・トレーニング</p>
+
+<p>最大酸素摂取量<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>の引き上げを目標とし､ダッシュとジョギングを繰り返すトレーニング法｡</p>
+
+<ol>
+<li>6:00~7:00/kmで1km</li>
+<li>～4:00/kmで1km</li>
+</ol>
+
+
+<p>を繰り返す｡</p></li>
+<li><p>～1.0時間メニュー：ビルド・アップ走</p>
+
+<p>無酸素性代謝閾値<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup>の引き上げを目標とし､ペースを徐々に上げるトレーニング法｡</p>
+
+<ol>
+<li>最初の5kmは30:00(6:00/km)</li>
+<li>次の5kmは27:30(5:30/km)</li>
+<li>最後の5kmは25:00(5:00/km)</li>
+</ol>
+
+
+<p>といった具合に｢同一距離｣｢3セット｣｢休憩なし｣｢1セットごとにペースアップ｣する｡ペースはジョギング→無酸素性代謝閾値(喋りながら走れる最速ペース)→きついペース､とすると効果的で､かつ30秒以上の差とするとペース調整がしやすい｡目標タイムを踏まえてペースは検討する｡</p></li>
+<li><p>2.0時間～メニュー：LSD</p>
+
+<p>言わずと知れたLong Slow Distanceトレーニングですが､長い時間走らないと効果は薄いと考えているので､しっかり時間を作れるときだけやることにする｡目標は3時間以上を月に1度以上｡</p></li>
+</ol>
+
+
+<h2>直前の準備方法</h2>
+
+
+
+
+<h3>一週間前</h3>
+
+
+
+
+<ol>
+<li><p>練習</p>
+
+<p>身体を本番に向けて休める時期。まとまったトレーニングはここまでに済ませ、休息を意識する。</p></li>
+<li><p>食事</p>
+
+<p>疲労回復のため栄養バランスのとれた食事をする。カーボローディング的なものは調整が難しいので、この期間は主食を多めに摂ることを意識すれば十分。</p></li>
+</ol>
+
+
+<h3>前日</h3>
+
+<ol>
+<li><p>荷造り</p>
+
+<p>荷物リストの通り用意する｡カバンに詰めるのは当日の朝にする｡<sup id="fnref:6"><a href="#fn:6" rel="footnote">6</a></sup></p></li>
+<li><p>就寝時刻</p>
+
+<p>6～7時間の睡眠が確保できるよう早めに寝る｡</p></li>
+</ol>
+
+
+<h2>大会当日の心得</h2>
+
+
+
+
+<h3>スタートまで</h3>
+
+
+
+
+<ol>
+<li><p>4:00 起床→食事(1)→出発</p>
+
+<p>身支度･食事･移動をしてスタート2時間前に会場入りできるよう逆算して起きる｡前泊するならスタート3時間前には起きる｡</p>
+
+<p>朝食は御飯特盛(炭水化物)と味噌汁(塩分)｡</p></li>
+<li><p>～7:00 会場入り</p>
+
+<p>なるべく早い段階で一度トイレに行っておくこと｡電車移動なら最寄り駅で行っておくのが良いかも｡</p></li>
+<li><p>～8:00 食事(2)</p>
+
+<p>移動中～スタート1時間前くらいに追加で炭水化物を補給しておく｡おにぎり3つくらいでもいいと思う｡具は梅干しなど､塩分補給ができそうなのを選ぶ｡</p></li>
+<li><p>9:00 スタート</p></li>
+</ol>
+
+
+<h3>スタート以降</h3>
+
+<ol>
+<li><p>レース運び</p>
+
+<p>42.195kmを三分割<sup id="fnref:7"><a href="#fn:7" rel="footnote">7</a></sup>して､ビルドアップ走で掴んだペース感覚で走る｡前半抑えて後半あげていくイメージ｡</p>
+
+<p>5:45×16km､5:15×16km､4:45×10kmで3時間45分をひとつの目安にする｡</p></li>
+<li><p>ペースの測り方</p>
+
+<p>コース脇のkm標識を目印に､1km毎に腕時計でタイム計測する｡iPhoneは携行するが､正確さに不安があるのとイヤフォンが邪魔なのでペース計測には使わない｡</p></li>
+<li><p>こむら返り対策</p></li>
+</ol>
+
+
+<p>こむら返りという症状の原因自体がはっきりしてないようなので対策も手探りだけど､朝食やエイドでの塩分補給､ふくらはぎサポーターで対策する｡中盤以降で唐突な動作(スキップや急停止)をすると足がつる傾向があるので気をつける｡</p>
+
+<ol>
+<li><p>30km以降の足の重さ対策</p>
+
+<p><a href="http://blog.harupong.com/2012/07/running-and-sugar/">前回猛烈に苦しかった足の重さ糖分不足が原因である</a>という仮説を立てているので､今回は果糖を中心に糖分を補給していく予定｡携行食としてShotz､パワーバーのジェル､後は給水地点で干しぶどう系の糖分を随時補給していく｡<sup id="fnref:8"><a href="#fn:8" rel="footnote">8</a></sup></p></li>
+</ol>
+
+
+<h3>ゴール以降</h3>
+
+
+<p>痛いほどにアイシングをしっかりやる｡それが終わったら会場内をブラブラする｡<sup id="fnref:9"><a href="#fn:9" rel="footnote">9</a></sup></p>
+
+<h2>教科書</h2>
+
+
+
+
+<ol>
+<li><p><a href="http://www.amazon.co.jp/gp/product/4797361387/ref=as_li_ss_tl?ie=UTF8&amp;tag=harupong-22&amp;linkCode=as2&amp;camp=247&amp;creative=7399&amp;creativeASIN=4797361387">非常識マラソンメソッド ヘビースモーカーの元キャバ嬢がたった9ヵ月で3時間13分！ (ソフトバンク新書)</a></p></li>
+<li><p><a href="http://www.amazon.co.jp/gp/product/4797366486/ref=as_li_ss_tl?ie=UTF8&amp;tag=harupong-22&amp;linkCode=as2&amp;camp=247&amp;creative=7399&amp;creativeASIN=4797366486">非常識マラソンマネジメント レース直前24時間で30分速くなる！ (ソフトバンク新書)</a></p></li>
+<li><p><a href="http://www.amazon.co.jp/gp/product/4797364416/ref=as_li_ss_tl?ie=UTF8&amp;tag=harupong-22&amp;linkCode=as2&amp;camp=247&amp;creative=7399&amp;creativeASIN=4797364416">毎日長い距離を走らなくてもマラソンは速くなる！ 月間たった80㎞で2時間46分！ 超効率的トレーニング法 (ソフトバンク新書)</a></p></li>
+</ol>
+
+
+
+
+<hr />
+
+
+
+
+<p>自分用メモとは言え随分長くなってしまった．．頭でっかちにならぬよう､しっかり準備して本番を迎えたいとおもいます｡</p>
+
+
+
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>筑波確定､は東京は例によって抽選の結果待ち｡<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>30分あるから軽く走るか～､はしない｡<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>レース時に自然とできるように｡<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>筋肉に取り込める酸素の量。体重1kgあたり1分間に酸素Xmlで表す。平均：成人男性 43ml 女性35ml｡ボルグスケール19｡<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+<li id="fn:5">
+<p>酸素を使ったエネルギーの生成経路ではエネルギーが足りなくなるポイント｡ここを超えると糖分がエネルギーとして動員→糖はすぐ切れる→足が重くなり失速､の残念なパターン｡主観としては､しゃべりながら走れる強度の上限｡ボルグスケール13｡<a href="#fnref:5" rev="footnote">&#8617;</a></p></li>
+<li id="fn:6">
+<p>どこに何を入れたか分からなくなるので<a href="#fnref:6" rev="footnote">&#8617;</a></p></li>
+<li id="fn:7">
+<p>最後が短くなるような不等分割<a href="#fnref:7" rev="footnote">&#8617;</a></p></li>
+<li id="fn:8">
+<p>果糖補給に良い､とされるオレンジジュースの携行はどうしようか迷ってるところ<a href="#fnref:8" rev="footnote">&#8617;</a></p></li>
+<li id="fn:9">
+<p>一ヶ所にとどまってしまいがちなので｡ストレッチ代わり｡<a href="#fnref:9" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2012-08-08T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2012/08/ongoing-gmail-account-theft/">「フィリピンで財布をなくしてしまった」Gmailのアカウント乗っ取り発生中！</a></h1>
+      <blockquote class="twitter-tweet tw-align-center"><p>皆様、モレスキナリーのメールでオレオレ詐欺メールが送られています。私はフィリピンにはおりませんのでご安心を！ご迷惑をおかけして本当に申し訳ありません。追ってご報告します！</p>&mdash; YOKO (@YOKOnotes) <a href="https://twitter.com/YOKOnotes/status/232364227581579264" data-datetime="2012-08-06T06:35:23+00:00">August 6, 2012</a></blockquote>
+
+
+
+
+<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<p>被害者がネットに詳しい知人一人だけなら､と思っていたのですが､どうやらそうでもなさそうなので纏めておきます｡</p>
+
+
+
+
+<h3>2012/10/4 10:23追記：被害続報</h3>
+
+
+
+
+<p>一部で有名な池田信夫先生も被害に合われたようです｡</p>
+
+
+
+
+<p><a href="http://kirik.tea-nifty.com/diary/2012/10/post-1031.html">池田信夫、自らのメールアカウントを乗っ取られ今日も見事な醜態を晒す: やまもといちろうBLOG（ブログ）</a></p>
+
+
+
+
+<p>被害にあってしまった場合は慌てず騒がず､<a href="http://accounts.google.com/RecoverAccount?fpOnly=1">アカウント情報のリセット</a>を行いましょう｡</p>
+
+
+
+
+<h2>スパムメール本文と実被害</h2>
+
+
+
+
+<blockquote>
+  <p>Title:Hello from 【Gmailで設定してるファーストネーム】</p>
+  
+  <p>Hope you had a good sleep. I&#8217;m so unhappy to tell you that things are
+  not fine with me right now. I just want you to know what I am passing
+  through right here in the Philippines. I came down here for a Seminar,
+  but unfortunately for me I lost my wallet in a taxi where my money and
+  other valuable things were kept. I made a report to the police about
+  the incident. I would be so happy if you can lend me $3200 USD or
+  whatever you can afford urgently to sort-out my bills and get myself
+  back home. I promise to pay you back as soon as i returned, Kindly let
+  me know if you can assist.</p>
+  
+  <p>Sincerely,
+  【Gmailで設定してるフルネーム】</p>
+  
+  <p>【Gmailで設定してる署名】</p>
+</blockquote>
+
+
+<p>上記のような内容の英文スパムメールが8月に入ってから出回っているようです｡よくあるスパムメール風の文面ですが､どうやらGmailのアカウントを乗っ取って一斉送信されており､受信者よりも送信者<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>に被害が出ている模様<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>｡</p>
+
+<p>知人のコメントによると、このアカウント乗っ取りの実行犯は</p>
+
+
+
+
+<ol>
+<li>乗っ取ったアカウントのパスワードを変更</li>
+<li>パスワードリセットのための予備メールアドレス・電話番号を変更</li>
+<li>メール転送設定の変更</li>
+</ol>
+
+
+
+
+<p>と､アカウント乗っ取りにとどまらず､本来の持ち主がアカウントを利用できなくするためにあれこれやってくるみたいです。</p>
+
+
+
+
+<h2>このメールを受け取ったらすべきこと</h2>
+
+
+
+
+<p>送信者欄に友人･知人のアドレスが表示されている可能性が高いですが､その方がアカウント乗っ取りの被害者です｡なので乗っ取りの件を本人に伝えるのがまず第一｡</p>
+
+
+
+
+<ol>
+<li><p>送信者にGmail以外の手段で連絡をとる</p>
+
+<p>連絡先が分かるなら電話や携帯メール､そうでなければTwitterやFacebookなどで連絡をとりましょう｡送信者はGmailアカウントを乗っ取られた状態なので､Gmailで連絡を取ろうとしても意味がありません｡</p></li>
+<li><p>メールには返信しない</p>
+
+<p>このメールには返信しないでください｡送信メールが細工されているので､送信者には届きません｡</p></li>
+<li><p>リセットの方法を知らせる</p>
+
+<p>以下の通り､アカウントを乗っ取られた後でもパスワードをリセットする方法はあります｡被害者に対策法を伝え､一刻も早く対応してもらうようにしましょう｡</p></li>
+</ol>
+
+
+
+
+<h2>アカウントを乗っ取られたらすべきこと</h2>
+
+
+
+
+<ol>
+<li><p>アカウント情報をリセットする</p>
+
+<p><a href="http://accounts.google.com/RecoverAccount?fpOnly=1">このページ</a>で質問に答えると仮のアドレスにリセットメールを送ることができるので､パスワードを再発行してGmailにログインしましょう｡</p></li>
+<li><p>Gmailの設定を見直す</p>
+
+<p>転送設定や予備アドレスの設定など､ひと通り見直しましょう｡Gmailとの連携を認証済みのサービスを見なおしたり､他に利用してるWebサービスのパスワードを変更するのもよいと思います｡Gmailのログインを2段階認証方式に変えると､今後の不正利用の可能性を大きく下げられるのでオススメです｡</p></li>
+</ol>
+
+
+
+
+<hr />
+
+
+<p>欧米ではあまり被害が出ているように見えない<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>のでこのまま何も対策されずに終わっちゃうのかな．．日本人アカウントのパスワードが実際に盗まれてるのが怖いので､パスワード変更等対策を検討することをオススメします｡</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Gmailのアカウントを乗っ取られた人<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>事象としては､昔流行った｢Outlook Expressのアドレス帳に迷惑メールを一斉送信するウィルス｣のGmail版と言ってもいいのかも<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>スパムメール文面を検索すると､Weiboで被害を訴える系のやりとりとブログ投稿アドレスが使われて全文が投稿されてる日本語ブログがいくつか見つかるだけ<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2012-08-01T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2012/08/infants-travel-make-life-richer/">きっとその子の人生が豊かになるから、子どもをどんどん旅行につれていけばいいと思った</a></h1>
+      <p>親業1年目だった2009年､子育て絡みのことなら何でも気になってた時期に｢乳幼児を旅行に連れて行っても百害あって一利なし｣みたいな文章をネットでみかけました｡子どもは長時間移動で疲れるし､小さいため現地でできる事は限られるし､何より大きくなったら忘れちゃうよ､という論調｡当時の自分は｢それも一理あるな｣と肯定的で､どちらかと言うと奥さんの｢旅行したい！！｣欲を満たすためにしぶしぶ付き合ってたところもあったと思います｡</p>
+
+
+
+
+<p>が､3歳半になったうちの息子が､最近よく1～2年前の話をするのです｡1歳半くらいまでの間よく通ってた児童館のお遊戯でじっと聞き耳をたてていた歌を口ずさんだり､1年ほど前に泊りで行った鴨川シーワールドで見た動物の話をしたり｡3歳児が思い出話！？と思われるかもしれませんが､実際とても楽しそうに思い出話をする息子を見ていると､上述した<strong>乳幼児を伴う旅行に否定的な自分</strong>に疑問を覚えてきています｡</p>
+
+
+
+
+<p>5歳、10歳､15歳､20歳と成長してしまえば､きっと乳幼児の頃に行った旅行のことなんて綺麗サッパリ忘れてしまってるはずです｡けれど､その旅行が彼に与えたものが、成長過程の土台となって人格を形成していくこともあるんだろうな､と思ったりしました｡</p>
+
+
+
+
+<p>ということで､事情が許す限り今後は積極的に家族であちこち出かけようと思います｡</p>
+
+
+
+
+<h3>補足</h3>
+
+
+
+
+<p>タイトルが釣り気味なので補足しておくと､もちろんながら｢子どもが旅行の負担･負荷を処理できる体力がないうちは行かない｣が大前提です｡特に病弱な子どもにとって長距離移動やいつもと違う生活環境は強い苦痛を伴うだろうし､旅行先は逃げていかないのだから｡</p>
+
+
+
+
+<h3>併せて読みたい</h3>
+
+
+
+
+<p><a href="http://iori3.cocolog-nifty.com/tenkannichijo/2012/02/post-8089.html">弱い子どもはそのように育てるしかない: 天漢日乗</a></p>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2012-07-30T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2012/07/great-review-on-dark-knight-rises/">「ダークナイト･トライジング」を見に行かざるを得なくなった素晴らしいレビューに出会った</a></h1>
+      <p><a href="http://wwws.warnerbros.co.jp/batman3/" ><img src="http://lh5.ggpht.com/-1HqIU1OA6V0/UBXpUWRCsXI/AAAAAAAAAN0/HrWxqpcLTOc/w640/1280x1024_01.jpg" alt="1280x1024_01.jpg" class="aligncenter" width="640" height="512" /></a></p>
+
+
+
+
+<p><a href="http://ryumurakami.jmm.co.jp/dynamic/report/report3_2983.html">「呪われたバットマン映画公開、惨劇を乗り越えるだけの内容はあるのか？」from ９１１/ＵＳＡレポート／冷泉 彰彦</a></p>
+
+
+
+
+<blockquote>
+  <p>ヒース・レジャーの死、そして主演のクリスチャン・ベールの家庭内トラブル、更には今回のコロラドの上映中乱射事件と、ある種の「呪い」を感じさせるのは事実ですが、その「呪い」は全て第二作『ダークナイト』の「呪い」であり、具体的にはジョーカーの「呪い」であったというべきだと思います。本作、第三作の『ダークナイト・ライジング』は、その「呪い」を解き放つだけの希望とバランス、そして完結感を持った傑作であると私は思います。
+  昨晩のコロラドの事件で犠牲になった方々、そのご家族に対しては言葉もありません。アメリカに住む多くの人がそう思っていると思います。ですが、本作が呪われたわけではない、私はそう思いますし、興行としても予想通りの成功を収めるのではないかと思います。それはそれで許されるように思います。それだけの価値のある作品だからです。</p>
+</blockquote>
+
+
+
+
+<p>第二作に衝撃を受け､その日のうちに第一作も鑑賞｡今か今かと完結編である第三作の公開を待っていたら､先日痛ましい事件が起こりました｡</p>
+
+
+
+
+<p><a href="http://jp.reuters.com/article/worldNews/idJPTYE86K00U20120721">米銃乱射容疑者は博士課程の医学生、映画の悪役名乗る | ワールド | Reuters</a></p>
+
+
+<p>上記レビューはこの事件の後に公開されています｡容疑者に強い影響を与えた第二作の｢呪い｣<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>を解き放つだけの力､完結感があると締められるとこれはもう気になって仕方ありません｡</p>
+
+<p>時間を作って前2作を見なおした後､ダークナイト･ライジングを見に行こうと思います｡</p>
+
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="http://ryumurakami.jmm.co.jp/dynamic/report/report3_1328.html">こちら</a>に冷泉氏の第二作レビューがあります｡<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2012-07-23T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2012/07/iwatani-cartridge-lantern/">緊急時照明兼暖房としてカセットボンベ式のランタンを一台備えておこうと思った</a></h1>
+      <p><a href="http://www.i-cg.jp/cf/outdoor/cb-jrl-2/index.html" ><img src="http://lh3.ggpht.com/-EzaQDqztB2k/UAz1AB4mwmI/AAAAAAAAALY/sqs2oJLilas/iwatani-cartridge-lantern.jpg" alt="iwatani-cartridge-lantern.jpg" title="iwatani-cartridge-lantern.jpg" class="aligncenter" /></a></p>
+
+
+<p>先日家族3人でキャンプに行った<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>際､キャンプ場でランタンを借りました｡夕食は外でBBQだから暗いと不便だろうな､と思って｡</p>
+
+<p>20年ほど前､ボーイスカウトでしょっちゅうキャンプに行ってた自分の記憶だと<strong>『とにかく明るい｡が､しかし』</strong></p>
+
+
+
+
+<ol>
+<li>燃料が灯油か専用カセットで高い</li>
+<li>燃料の扱いが難しい</li>
+<li>着火も難しい</li>
+</ol>
+
+
+
+
+<p>とランタンの印象は最悪で､当時はもっぱらローソクのお世話になってました｡が､今回借りたランタンがなんとカセットボンベ式｡しかもカセットコンロでお馴染み､信頼の<a href="http://www.i-cg.jp/cf/outdoor/cb-jrl-2/index.html">Iwatani製</a>｡着火もコンロと同じノブ式で楽だし､燃料の交換も簡単だしといいことずくめ｡</p>
+
+
+<p>唯一の難点がマッチ棒のような細長デザイン<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>だったのですが､上記写真にもあるように最新式はデザインも随分スマートになっているようです｡</p>
+
+<h2>非常時専用に備えるアレコレは維持管理が大変だ</h2>
+
+
+
+
+<p>昨年の大震災時は懐中電灯用単1電池の品切れが話題になりました｡とは言え､めったに使わない単1電池を大量に備えメンテするのは大変です｡買い置きした電池がいつの間にか放電していざって時に使えないこともありえます｡</p>
+
+
+
+
+<p>少なくとも我が家では､鍋などでちょくちょく使うカセットボンベを日常備品兼非常時蓄えとして蓄え維持していくのが無理がなさそう｡このランタンはうってつけの道具になりそうです｡</p>
+
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>妻と息子は初めてのキャンプ｡その時の様子は長文になりすぎてて未だ纏めきれず．．<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>細長いカセットボンベを縦にしてその上に発光部を載せたような形状｡高さが出て不安定でした｡<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2012-07-21T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2012/07/great-outdoor-in-hadano/">都心から車で1.5時間！秦野のキャンプ場滝沢園でがっつりアウトドアしてきた</a></h1>
+      <h2>きっかけはアド街ック天国</h2>
+
+
+
+
+<p>家族で行く事だけは早い段階で決まっていた｢海の日連休でキャンプ計画｣｡千葉東部の海岸沿い､那須方面など行き先候補は挙がるもなかなか煮詰まらず．．</p>
+
+
+
+
+<p>そんな我が家に光明となったのが<a href="http://www.tv-tokyo.co.jp/adomachi/backnumber/20120630/">6月最後のアド街ック天国 神奈川県秦野特集</a>｡都心から車で1.5時間､いくつもあるオートキャンプ場､有名ラーメン店など美味しいものも沢山､今の時期なら野生のホタルも見れるかも！？もうここしかないじゃないかーーっ！！と一気に盛り上がりキャンプ場を予約｡</p>
+
+
+
+
+<p>グッズなども買い揃え家族三人意気揚々出かけてきましたので､楽しかった夏の思い出を記録しておきます｡</p>
+
+
+
+
+<ul>
+<li>日程：2012年7月16日(月･祝)～7月17日(火)</li>
+<li>天候：両日とも快晴(真夏日)</li>
+<li>交通手段：車</li>
+</ul>
+
+
+
+
+<h2>初日</h2>
+
+
+
+
+<h3>キャンプ場まで寄り道三昧</h3>
+
+
+
+
+<ol>
+<li><p><a href="http://www.kanagawa-park.or.jp/hadanotokawa/">秦野戸川公園</a></p>
+
+<p><img alt="2012_ 8_21_13_ 0.jpg" src="http://lh5.ggpht.com/-8rH49N-QY3o/UDMH_Ww0CeI/AAAAAAAAAO8/roYUiDZ7OJE/s512/2012_%2525208_21_13_%2525200.jpg" width="512" height="383"></p>
+
+<p>↑まるで子どもの楽園のような公園｡10:30頃の到着でしたが､既に大勢の子どもたちの歓声が響いていました｡</p></li>
+<li><p><a href="http://www.nantsu.sakura.ne.jp/nantsuttei/">なんつッ亭 秦野本店</a></p>
+
+<p><img alt="2012_ 8_21_13_ 1.jpg" src="http://lh6.ggpht.com/-s1err1vJoqA/UDMICsBImWI/AAAAAAAAAPM/LuFYbelm544/s512/2012_%2525208_21_13_%2525201.jpg" width="512" height="341"></p>
+
+<p>↑小さな子どもがいると有名ラーメン店巡りとかできないよね．．ということで､この機会に本店に行ってきました｡ラーメンはもちろんおいしかったですし､繁盛店らしく店員さんたちが元気で良い雰囲気でした｡</p></li>
+<li><p><a href="http://kanagawa.lin.gr.jp/gourmet/hadanoiceprato/index.htm">秦野アイス工房プラート</a></p>
+
+<p><img alt="ScreenClip [5].png" src="http://lh6.ggpht.com/-IZsU2BL7ct0/UDMMfEY-uAI/AAAAAAAAARo/sIrF38hYPLs/s512/ScreenClip%252520%25255B5%25255D.jpg" width="512" height="182"></p>
+
+<p>↑ラーメン終わって14時前､子どもが車内で寝始めたのでしばしの大人タイム｡前評判どおり落花生のジェラートはおいしかった～｡季節のオススメ､ブルーベリーのジェラートも実がゴロゴロ入っていてグッド｡ダブルとトリプルが同じ値段なのもいいですね｡</p></li>
+<li><p><a href="http://www.jakanagawa.gr.jp/hadano/jibasanzu.htm">じばさんず</a></p>
+
+<p><img alt="ScreenClip [7].png" src="http://lh4.ggpht.com/-6TthgKwIcf8/UDMNPfaf6mI/AAAAAAAAAR0/JntcjIya5Xg/s512/ScreenClip%252520%25255B7%25255D.jpg" width="512" height="260"></p>
+
+<p>↑市内を運転してるとあちこちに畑をみかけます｡当然地場の野菜はおいしいよね､ということでとうもろこしとトマトを購入｡息子はここで買ったフルーツジュースが大のお気に入りでした｡</p></li>
+</ol>
+
+
+
+
+<h3>滝沢園キャンプ場でBBQ！！！</h3>
+
+
+
+
+<p>寄り道しすぎた結果､<a href="http://takizawaen.com/">キャンプ場である滝沢園</a>に着いたのが15:30くらい｡荷物を運び､急ぎ夕食の準備をします｡ここのキャンプ場はテントかログハウスかを選べるので､｢キャンプ久しぶりパパ＋初めてママと息子｣だった我々はログハウスを選びました｡</p>
+
+
+
+
+<p><img alt="2012_ 8_21_13_ 1.jpg" src="http://lh3.ggpht.com/-FhNryo3Bows/UDMIEMff5eI/AAAAAAAAAPU/lkvIbikGmk0/s512/2012_%2525208_21_13_%2525201.jpg" width="512" height="384"></p>
+
+
+
+
+<p>↑到着後さっそく夕食準備。新聞とうちわで薪を着火させ父親の威厳を確保したものの､飯盒で炊いたご飯は水加減ミスでおかゆ風．．鉄板で豪快に焼いた肉と野菜がおいしかったので結果オーライってとこでしょうか｡</p>
+
+
+<p>そして食事の後片付けをし､そのまま花火へ｡そこかしこに照明･トイレ･水道があるため､小さな子ども連れにはありがたい環境でした｡<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
+
+<p>もう一つありがたかったのが併設してる民宿でお風呂を借りられたこと｡コインシャワーもありましたが､小さな子どもがいるとやはりちゃんとしたお風呂は助かりました｡そしてこの晩はそのまま就寝｡やはりみんな疲れてたみたいです｡<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
+
+<h2>二日目</h2>
+
+
+
+
+<p>二日目は朝食をキャンプ場で｡帰り道で寄り道をしました｡</p>
+
+
+
+
+<h3>滝沢園キャンプ場の河原で豪快飯盒炊さん！！</h3>
+
+
+
+
+<p><img alt="2012_ 8_21_13_ 1.jpg" src="http://lh3.ggpht.com/-KJ19GhIG0fs/UDMIPEQb_qI/AAAAAAAAAQE/g_lsyiJV8pQ/s512/2012_%2525208_21_13_%2525201.jpg" width="512" height="341"></p>
+
+
+
+
+<p>↑朝食は快晴の空と冷たい水が気持ちいい河原で飯盒炊さん｡前日の失敗を踏まえ少しはましなご飯が炊けました｡</p>
+
+
+
+
+<p><img alt="2012_ 8_21_13_ 1.jpg" src="http://lh3.ggpht.com/-8PqvzQGym-I/UDMIGKR3mJI/AAAAAAAAAPc/l5FoG_FuSsU/s512/2012_%2525208_21_13_%2525201.jpg" width="512" height="341"></p>
+
+
+<p>↑このキャンプ場絡みのレビューやブログエントリーで必ず登場する｢河原の橋｣｡2歳くらいまでのお子さんは抱っこするのが安心です｡川が思ったより深いので､重い荷物がある場合は特に注意が必要かと｡<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup></p>
+
+<p>河原に降りたので当然そちらで遊ぶのかと思いきや､息子はずっと火遊びに夢中でした｡考えてみれば､普段は｢危ないから離れて！｣と言われてしまう火元にぐいぐい近寄れる初の機会なわけで､夢中になるのも無理は無いですね｡<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup></p>
+
+<p><img alt="2012_ 8_21_13_ 1.jpg" src="http://lh6.ggpht.com/-bJrQiM2KMlI/UDMIJrE086I/AAAAAAAAAPs/WNnkPNgS6oA/s512/2012_%2525208_21_13_%2525201.jpg" width="512" height="341"></p>
+
+
+
+
+<p>↑キャンプ場内の炊事場。かまど組み不要なU字ブロックあり、きれいな流しありで楽ちんです。</p>
+
+
+
+
+<p><img alt="2012_ 8_21_13_ 1.jpg" src="http://lh5.ggpht.com/-7XSpI6Yre0A/UDMIH1OO3dI/AAAAAAAAAPk/meV_mCcg9qE/s512/2012_%2525208_21_13_%2525201.jpg" width="512" height="341"></p>
+
+
+
+
+<p>↑水洗トイレ完備。小さい子どもやアウドドア苦手な女性も安心です。</p>
+
+
+
+
+<p><img alt="2012_ 8_21_13_ 1.jpg" src="http://lh3.ggpht.com/-fq2uL8mM_Nc/UDMIM3M4BtI/AAAAAAAAAP8/S6lWAiQn0iU/s512/2012_%2525208_21_13_%2525201.jpg" width="512" height="341"></p>
+
+
+
+
+<p>↑キャンプ場内の自販機。価格は一般的な自販機と同じで良心的でした。お酒もあり。他にも受付が売店になってて色々売ってました。&nbsp;</p>
+
+
+
+
+<h3>最高の寄り道 サザンビーチちがさき！！</h3>
+
+
+
+
+<p><img alt="2012_ 8_21_13_ 2.jpg" src="http://lh6.ggpht.com/-aiQuyVcZsb4/UDMIQpEw-uI/AAAAAAAAAQk/z2wXsvEfgyk/s512/2012_%2525208_21_13_%2525202.jpg" width="512" height="392"></p>
+
+
+
+
+<p>キャンプ場を10時にチェックアウトし、このキャンプ最後の寄り道茅ヶ崎へ向かいました。目的は海！この日は30度を越す快晴で、平日にもかかわらず大勢の人出で賑わっていました。</p>
+
+
+
+
+<p>風がかなり強くて波も高かったのですが、むしろそれが楽しくて仕方ない様子の息子。以前は波打ち際に行く事すら怖がったのに．．キャンプ体験で一回り大きくなったのかも！？</p>
+
+
+
+
+<h2>感想など</h2>
+
+
+
+
+<ol>
+<li><p>近いは正義</p>
+
+当初は那須などの車で片道3時間コースも候補だったのですが､やはり近いのは時間･気持ちの両面で余裕が出来ていいですね｡子どもの突然の「おしっこ！！」や「おなかすいた～」にイライラすることもなく､浮いた時間で気ままにあちこち寄り道も出来ました｡
+
+<p>環境があまり変わった感じがしないことがあるのが近場旅行の難点ですが､しっかりとアウトドア体験できたので今回はその点も問題なしでした｡</p></li>
+<li><p>寄り道は楽しい</p>
+
+<p>まさに｢ぶらり途中下車｣を地で行ったわけですが､これはこれでとても楽しいものでした｡車で行くとこの辺の機動性があがるので良いですね｡</p></li>
+<li><p>持ち物を選ぼう</p>
+
+<p>初めての家族キャンプということもあって計画段階では｢あれもこれも｣とリストアップしましたが､結局多くを現地でレンタルして正解でした｡</p>
+
+<p>荷物多い→身軽くない→寄り道しづらいの流れだと思うので､｢がっつりキャンプ！｣な機会でなければ食材や道具は現地調達の方が旅行が楽しくなると思います｡</p></li>
+</ol>
+
+
+
+
+<p>上記3点はいずれも「秦野」(自宅から車で2時間)、「滝沢園」(充実した設備としっかりアウトドアの両立)の合わせ技ならでは。いや～、いい場所に出会えました。</p>
+
+
+
+
+<hr />
+
+
+
+
+<p>ということで､土壇場で決めた秦野キャンプでしたが､とても楽しく満足な体験になりました｡息子も楽しかったようだし､またぜひ行きたいです｡オススメのキャンプ場などありましたら､ぜひコメントやTwitter <a href="http://twitter.com/harupong">@harupong</a>で教えてください｡</p>
+
+
+
+
+<p>次はうまいご飯を飯盒で炊くぞ！！</p>
+
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>本格的なキャンプをお望みの方向けに河原や奥まったテントサイトもありました｡<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>この近辺では野生のホタルが見られるよ！という話もあったのですが､キャンプ場の方曰く｢シーズンは6月下旬まで｣とのこと｡<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>今回は朝食だけなので楽に渡れました｡<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>よほど楽しかったのか､帰宅後も割り箸を薪に見立てて遊んでいます｡<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2012-07-13T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+          <div class="row-fluid">
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/2012/07/only-parents-can-understand/">3歳男児には伝わらない、親の心は親のみぞ知る</a></h1>
+      <p>育児をしていると</p>
+
+
+
+
+<ul>
+<li>◯◯をしてくれない</li>
+<li>△△ばかりしてしまう</li>
+<li>◇◇ができない</li>
+</ul>
+
+
+
+
+<p>といった悩みを抱くことは日常茶飯｡そして､同い年の子を持つ同世代の親仲間にそれらの悩みを打ち明けると｢うちもうちも！｣となることもまた日常茶飯事｡</p>
+
+
+
+
+<p>悩む→打ち明ける→うちもうちも！パターンのあまりの頻度に､悩んでいたことがバカバカしくなったりもしますが､｢うちの子だけじゃない｡だったら時間が解決してくれるっしょ｣の気付きが気持ちをおおらかにしてくれ､相変わらずな息子と根気よく向き合うことができたりしている今日この頃｡</p>
+
+
+
+
+<p>悩みを打ち明ける井戸端会議をご近所の仲間と開く暇はなくとも､TwitterやFacebookに悩みを書き込めば即席会議が開けるんだな､という今っぽい解決策に気づかせてくれた<a href="https://twitter.com/higepon">某ひげ一家</a>に感謝です｡</p>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+  
+  <div class="pagination">
+    
+    <a class="prev" href="/page/11/">&larr; Older</a>
+    
+
+    
+    <a class="next" href="/page/9/">Newer &rarr;</a>
+    
+  </div>
+</div>
+
+
+        </div>
+      </div>
+      <div class="row-fluid">
+        <footer class="footer-page" role="contentinfo">
+          <p>
+  Copyright &copy; 2015 - harupong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - Theme by <a href="http://alexgaribay.com">Alex Garibay</a>
+</p>
+
+
+        </footer>
+      </div>
+  </div>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

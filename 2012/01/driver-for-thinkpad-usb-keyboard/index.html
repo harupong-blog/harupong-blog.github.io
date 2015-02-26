@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ThinkPad USBトラベルキーボードを会社で使おうとしたらドライバーがなくてハマったので対策まとめ - Pieces Of Peace</title>
+  <meta name="author" content="harupong">
+
+   
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.harupong.com/2012/01/driver-for-thinkpad-usb-keyboard">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Pieces Of Peace" type="application/atom+xml">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap-collapse.js"></script>
+  <script src="/js/modernizr-2.0.js"></script>
+  <script src="/js/octopress.js" type="text/javascript"></script>
+  <script src="/js/application.js"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <div class="navbar navbar-inverse navbar-static-top">
+  	<div class="navbar-inner">
+  	  <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="fui-menu-24"></span>
+        </a>
+  	  	<div class="nav-collapse collapse navbar-responsive-collapse" style="height:0;">
+  	      <ul class="nav">
+    
+        <li ><a href="/">Home</a></li>
+    
+        <li ><a href="/archives/">Archives</a></li>
+    
+        <li ><a href="/feed/">Feed</a></li>
+    
+</ul>
+
+<ul class="nav pull-right">
+    
+    
+    
+    
+    <li><a href="http://twitter.com/harupong" title="Twitter Profile"><i class="icon-twitter-sign social-navbar"></i></a></li>
+    
+    
+    
+    
+
+    
+</ul>
+
+  	    </div>
+  	  </div>
+  	</div>
+  </div>
+  <div class="container" id="main">
+      <div class="row-fluid">
+        <div id="content">
+          <div>
+<article class="hentry" role="article">
+  
+
+  <header>
+  <div class="jumbotron">
+    ThinkPad USBトラベルキーボードを会社で使おうとしたらドライバーがなくてハマったので対策まとめ
+	<h5>
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2012-01-19T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+  </div>
+</header>
+  <div class="row-fluid">
+    <div class="span12">
+      <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:51CF81A4-8F44-4a2c-8837-198C090B9994:e7567e61-ac40-4cd4-9cbe-660a0d082445" class="wlWriterEditableSmartContent"><p><a href="http://nightmare.no-blog.jp/nightmare/2009/09/thinkpad_usb_78.html" atomicselection="true"><img style="border-right: 2px; border-top: 2px; border-left: 2px; border-bottom: 2px" height="450" src="http://lh3.ggpht.com/-wH29HMxHihw/T9XPAPyRD9I/AAAAAAAAAJg/ii8ZLI0yZqk/s600/photo12.jpg" width="600"></a></p></div>
+
+
+<p> <p>新卒で入った会社で最初に支給されたPCがThinkPad､以降トラックポイント(キーボード中央の赤いポッチ､これでマウス操作ができる)から離れられないThinkPad Loverです､こんにちは｡</p> <p>最近支給された会社用のPCがWindows7なDELLのデスクトップ､困ったときの外付けキーボード <a href="http://www.amazon.co.jp/Lenovo-ThinkPlus-USB%E3%83%88%E3%83%A9%E3%83%99%E3%83%AB%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89-%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%8A%E3%83%93%E4%BB%98-31P9514/dp/B0002DOSQW" target="_blank">Thinkpad USBトラベルキーボード ウルトラナビ付[31P9514]</a> で問題なし！と意気揚々接続するもトラックポイント認識せず．．．｢ドライバーが悪いんだろうなぁ｣とグーグル先生が教えてくれた情報はことごとく賞味期限切れ．．．</p> <p>ということで､2012年1月時点で有効な方法をメモ｡Windows 7 32-bitと64-bit両方OK｡他モデルのThinkPad USBキーボードも対応してるようです｡</p> <h2>1. 下記URLから、ドライバーのインストーラーをダウンロード</h2> <p>v2kyb03us17.exeとv5kyb04us17.exeの2ファイル｡<br><a href="http://support.lenovo.com/en_US/downloads/detail.page?DocID=DS004171"><a href="http://support.lenovo.com/en_US/downloads/detail.page?DocID=DS004171">http://support.lenovo.com/en_US/downloads/detail.page?DocID=DS004171</a></a></p> <h2>2. インストール作業は2段階</h2> <p>1.でダウンロードした2ファイルをそれぞれ実行すると必要なファイルがコピーされます｡コピーされたファイルのうち､以下のディレクトリにあるsetup.exeを実行することで、ドライバーがインストールされ､UltraNavメニューがタスクバーに表示されるようになります。</p> <p>1) C:SWTOOLSDRIVERSUnavkeyboardv2kyb03us17<br>2) C:SWTOOLSDRIVERSUnavkeyboardv5kyb04us17</p> <p><a href="http://www.amazon.co.jp/review/R1P7RM1XR39Y3Q/ref=cm_cr_dp_perm?ie=UTF8&amp;ASIN=B0002DOSQW&amp;nodeID=2127209051&amp;tag=&amp;linkCode=" target="_blank">Amazonのレビュー</a>に｢公式ドライバーをインストールしても動かない！｣というのがありましたが､おそらくsetup.exeの方を実行してないんじゃないかなぁ｡</p></p>
+
+    </div>
+  </div>
+
+
+
+  <footer>
+    <hr>
+    
+    <div class="row-fluid">
+      
+      <div class="span6">
+        <p class="meta">
+        
+        
+
+
+        </p>
+      </div>
+      
+      <div class="span6 social-sharing">
+        <div class="sharing">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+      </div>
+      
+      
+    </div>
+    
+    <div class="row-fluid">
+      <div class="span12">
+        <p class="meta">
+          
+            <a class="basic-alignment left" href="/2011/12/books_to_read_on_this_holiday_season/" title="Previous Post: 冬休みの課題図書 -「IN THE PLEX」「小澤征爾さんと､音楽について話をする」「情報共有の未来」-">&laquo; 冬休みの課題図書 -「IN THE PLEX」「小澤征爾さんと､音楽について話をする」「情報共有の未来」-</a>
+          
+          
+            <a class="basic-alignment right" href="/2012/01/how_to_make_mifi_battery_lasts_longer_simplest_way/" title="Next Post: モバイルWi-Fiルーターの電池寿命を画期的に長持ちさせるたった一つの簡単な方法">モバイルWi-Fiルーターの電池寿命を画期的に長持ちさせるたった一つの簡単な方法 &raquo;</a>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+</article>
+
+</div>
+
+
+
+        </div>
+      </div>
+      <div class="row-fluid">
+        <footer class="footer-page" role="contentinfo">
+          <p>
+  Copyright &copy; 2015 - harupong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - Theme by <a href="http://alexgaribay.com">Alex Garibay</a>
+</p>
+
+
+        </footer>
+      </div>
+  </div>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

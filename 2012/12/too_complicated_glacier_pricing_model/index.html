@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ややこしすぎるAmazon Glacierのデータダウンロード料金まとめ - Pieces Of Peace</title>
+  <meta name="author" content="harupong">
+
+   
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.harupong.com/2012/12/too_complicated_glacier_pricing_model">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Pieces Of Peace" type="application/atom+xml">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap-collapse.js"></script>
+  <script src="/js/modernizr-2.0.js"></script>
+  <script src="/js/octopress.js" type="text/javascript"></script>
+  <script src="/js/application.js"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <div class="navbar navbar-inverse navbar-static-top">
+  	<div class="navbar-inner">
+  	  <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="fui-menu-24"></span>
+        </a>
+  	  	<div class="nav-collapse collapse navbar-responsive-collapse" style="height:0;">
+  	      <ul class="nav">
+    
+        <li ><a href="/">Home</a></li>
+    
+        <li ><a href="/archives/">Archives</a></li>
+    
+        <li ><a href="/feed/">Feed</a></li>
+    
+</ul>
+
+<ul class="nav pull-right">
+    
+    
+    
+    
+    <li><a href="http://twitter.com/harupong" title="Twitter Profile"><i class="icon-twitter-sign social-navbar"></i></a></li>
+    
+    
+    
+    
+
+    
+</ul>
+
+  	    </div>
+  	  </div>
+  	</div>
+  </div>
+  <div class="container" id="main">
+      <div class="row-fluid">
+        <div id="content">
+          <div>
+<article class="hentry" role="article">
+  
+
+  <header>
+  <div class="jumbotron">
+    ややこしすぎるAmazon Glacierのデータダウンロード料金まとめ
+	<h5>
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2012-12-17T00:00:00+00:00" pubdate data-updated="true"></time></h5>
+  </div>
+</header>
+  <div class="row-fluid">
+    <div class="span12">
+      <p>まだまだ続くGlacierネタ、もうしばらくお付き合いくださいまし。</p>
+
+<p>1GB/1セント/月の料金で個人向けバックアップサービスとしても注目の<a href="http://aws.amazon.com/jp/glacier/">Amazon Glacier</a>ですが､その安さの仕組みゆえか､ややこしいのが料金体系｡</p>
+
+<p>特にデータダウンロードの方は料金表を見てるだけではいくらかかるかまったく分からない複雑さで､FAQを読み解いてようやく理解しかけてきたところ｡せっかくなのでまとめておきます｡</p>
+
+<h2>時間がない方向け：公式の計算機を使いましょう</h2>
+
+<p><a href="http://calculator.s3.amazonaws.com/calc5.html?lng=ja_JP#">Amazon Web Services Simple Monthly Calculator</a></p>
+
+<p>身も蓋もないですが､金額を把握したいだけならそれが一番手っ取り早いです｡計算しとけばあとで驚く心配なし｡</p>
+
+<p><img src="http://lh4.googleusercontent.com/-MyFMuWS3tyA/UMgG9bbiVKI/AAAAAAAAAbg/WsH6O4faDkE/s512/awscalculator.jpeg" alt="awscalc" /><br/>
+↑200GB保管､50GBを1日でダウンロードの例｡</p>
+
+<p>では次に､データダウンロード料金計算の仕組みを知りたい方向けに､実際に料金体系を分解してみます｡</p>
+
+<h2>データをダウンロードするには､｢データを取り出し｣てから｢データを転送｣する必要がある</h2>
+
+<p>まず､ダウンロードにはデータ取り出しとデータ転送､2つの料金がかかることを理解しましょう｡レンタル倉庫に例えると分かりやすくて､業者が管理する倉庫(Amazon Glacier)から荷物を取り出してもらう(データ取り出し)手間､そして郵送(データ転送)してもらう手間､その2つの手間に対して業者にお金を払うようなイメージです<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>｡</p>
+
+<p>先にシンプルなデータ転送の方から説明すると､こちらは1GBいくらで支払います｡利用するデータンターにもよりますが､概ね12～20セント/GBくらい｡詳しくは<a href="http://aws.amazon.com/jp/glacier/#pricing">公式の料金表</a>を確認してください｡</p>
+
+<h2>データ取り出し料金：大事なのは｢無料枠｣｢ピーク取り出しレート｣</h2>
+
+<p>一方､複雑なのがデータ取り出し料金｡ポイントは｢無料枠｣と｢ピーク取り出しレート｣です｡</p>
+
+<h3>無料枠の｢月平均保管量の5%｣ってどういうこと？</h3>
+
+<blockquote><p>無料で取り出せるのは、1 か月当たり、お客様の月平均保管量の 5% まで（1 日ごとに案分）です。<br/>
+<a href="http://aws.amazon.com/jp/glacier/faqs/#How_will_I_be_charged_when_retrieving_large_amounts_of_data_from_Amazon_Glacier">Amazon Glacier FAQs</a></p></blockquote>
+
+<p>逆に一日あたりどの程度が無料枠になるのかを考えると分かりやすいです｡例えば</p>
+
+<pre><code>200GB(取り出し実行日時点の保管量)
+× 5%(無料枠率)
+÷ 31日(12月なので31｡2月なら28)
+= 0.32GB/日(月平均保管量の 5%)
+</code></pre>
+
+<p>200GB保管していると､12月なら1日あたり0.32GBを無料で取り出すことが出来ます｡1ヶ月30日分なりでこの計算をした値の合計が､<strong>月平均保管量の 5%</strong>となるわけです｡</p>
+
+<h3>個別の取り出しには課金せず､ピーク取り出しレートにのみ課金する</h3>
+
+<blockquote><p>取り出し料金は、毎月の請求可能なピーク取り出しレートに基づいて計算します。<br/>
+<a href="http://aws.amazon.com/jp/glacier/faqs/#How_will_I_be_charged_when_retrieving_large_amounts_of_data_from_Amazon_Glacier">Amazon Glacier FAQs | Q: Amazon Glacier から大量のデータを取り出すときの請求額はどのように計算されるのですか?</a></p></blockquote>
+
+<p><a href="https://forums.aws.amazon.com/message.jspa?messageID=394892#394892">海外フォーラムでも複雑だ！！と話題になっています</a>が､ピーク取り出しレートを用いた計算､というのが一見ピンと来ないわけです<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>｡おそらく､サービスに高い負荷をかけて欲しくないという発想で決められた料金体系だと思います｡</p>
+
+<p>実際のピーク取り出しレートの計算ですが､例えば4GBのデータを取り出す場合､</p>
+
+<pre><code>4GB(4時間あたりの取り出し要求したデータ量)
+÷ 4時間(ピーク取り出しレート算出単位)
+= 1GB/時(ピーク取り出しレート)
+</code></pre>
+
+<p>この計算のポイントは<strong>｢4時間｣</strong>という時間を決め打ちしてるところです｡</p>
+
+<ol>
+<li>1日を4時間ごとに区切った枠<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>内で､取り出しを要求したデータ量の合計を</li>
+<li>データ取り出しに要する時間の4時間(課金用に仮定｡実際は3～5時間)で割る</li>
+</ol>
+
+
+<p>という流れで計算されます<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>｡ややこしくなってきましたね､あと一息です｡ここに､上で算出した無料枠を加味してみます｡</p>
+
+<pre><code>1GB/時(ピーク取り出しレート)
+- 0.32GB/日(無料枠) ÷ 24時間(単位合わせ)
+= 0.986GB/時(ピーク取り出しレートの有料枠)
+</code></pre>
+
+<p>この値がピーク取り出しレートの有料枠になります｡そして料金計算の最後､ここがとても乱暴､かつ従量課金じゃないところなのですが､</p>
+
+<pre><code>0.986GB/時(ピーク取り出しレート有料枠)
+× 0.01米ドル(有料枠1GBあたりの取り出し料)
+× 24時間×30日
+= 7.1米ドル/月
+</code></pre>
+
+<p>求めたピーク取り出しレート有料枠に取り出し料をかけ､かつ1ヶ月間ずっと取り出し続ける仮定で時間をかけて料金を算出します｡この例でいえば､</p>
+
+<ul>
+<li>1ヶ月の間に一度だけ4GBのデータ取り出しを要求しようが</li>
+<li>4時間おきに4GBデータ取り出しを1ヶ月間要求し続けのべで720GBになろうが</li>
+</ul>
+
+
+<p>データ取り出し料金は変わらないということです｡<strong>使った分だけ支払う</strong>が最大の特徴であるはずのAmazon Web Serviceでは異端ともいえる料金体系です。それだけ極端なサービス、とも言えるのかもしれません。</p>
+
+<hr />
+
+<p>(2012/12/18 追記)<br/>
+(2012/12/20 リンク先更新につき再追記)<br/>
+<a href="http://alestic.com/2012/12/s3-glacier-costs">Cost of Transitioning S3 Objects to Glacier - Alestic.com</a></p>
+
+<p>｢S3からGlacierにファイルを転送した場合の料金｣についての記事が話題になってるようです｡ポイントは2つあって､</p>
+
+<ul>
+<li>350GB500万ファイルを転送したら数万円の請求がきたよ(アップロードにも1,000ファイルあたり0.05ドルかかるため)</li>
+<li>サイズが13KB未満のファイルは､Glacierに移すよりS3に置いておくほうが得だよ(631,613/(アップしたファイルサイズの平均-13,011)=元を取るのにかかる月数)</li>
+<li><del datetime="2012-12-20T00:52:11+00:00">1KBのファイル1つを転送すると､元を取るのに50年かかるよ(631,613/アップしたファイルサイズの平均=元を取るのにかかる月数)</del></li>
+</ul>
+
+
+<p>サードパーティソフトウェアが次に組み込むべきは｢Glacierへのアップロード料金計算機｣かも｡<br/>
+(追記おしまい)</p>
+
+<hr />
+
+<p>ざっくりとですがAmazon Glacierのデータダウンロード料金についてまとめてみました。ご利用は計画的に。</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>この例だと実際の輸送料は､ユーザーが支払うネット回線利用料に相当しますね｡Amazonに払う転送料とは別に自己負担です｡<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>完全従量課金なはずのAmazon Web Serviceが､いかにも従量課金しそうなところでそうしない決断をしたところに､Amazon Glacierの異端児感が良く出ている気がします｡<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>時間枠については推測｡00:00:00UTC～03:59:59UTC､16:00:00UTC～19:59:59UTCといった具合｡日本時間は+9時間なので01:00:00～04:59:59や09:00:00～12:59:59で区切られることになるはずです｡<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>データ量は合計なので､例えば3GB､2GB､5GB､2GBと1時間おきに取り出しを要求すると､12GB÷4時間=3GB/時がピーク取り出しレートになります｡<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+    </div>
+  </div>
+
+
+
+  <footer>
+    <hr>
+    
+    <div class="row-fluid">
+      
+      <div class="span6">
+        <p class="meta">
+        
+        
+
+
+        </p>
+      </div>
+      
+      <div class="span6 social-sharing">
+        <div class="sharing">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+      </div>
+      
+      
+    </div>
+    
+    <div class="row-fluid">
+      <div class="span12">
+        <p class="meta">
+          
+            <a class="basic-alignment left" href="/2012/12/be_careful_with_amazon_glacier/" title="Previous Post: 勘違いしないようにしたい、Amazon Glacierのデメリットあれこれ">&laquo; 勘違いしないようにしたい、Amazon Glacierのデメリットあれこれ</a>
+          
+          
+            <a class="basic-alignment right" href="/2012/12/year_end_cleanup_of_my_data_part2/" title="Next Post: 年末データ大掃除(2) ～Amazon S3/Glacierに全てを漏れなく安価に保管できてすっきりした編～">年末データ大掃除(2) ～Amazon S3/Glacierに全てを漏れなく安価に保管できてすっきりした編～ &raquo;</a>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+</article>
+
+</div>
+
+
+
+        </div>
+      </div>
+      <div class="row-fluid">
+        <footer class="footer-page" role="contentinfo">
+          <p>
+  Copyright &copy; 2015 - harupong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - Theme by <a href="http://alexgaribay.com">Alex Garibay</a>
+</p>
+
+
+        </footer>
+      </div>
+  </div>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

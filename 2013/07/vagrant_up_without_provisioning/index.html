@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Vagrant でプロビジョニングを実行せずに VM を立ち上げる方法 - Pieces Of Peace</title>
+  <meta name="author" content="harupong">
+
+   
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.harupong.com/2013/07/vagrant_up_without_provisioning">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Pieces Of Peace" type="application/atom+xml">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap-collapse.js"></script>
+  <script src="/js/modernizr-2.0.js"></script>
+  <script src="/js/octopress.js" type="text/javascript"></script>
+  <script src="/js/application.js"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <div class="navbar navbar-inverse navbar-static-top">
+  	<div class="navbar-inner">
+  	  <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="fui-menu-24"></span>
+        </a>
+  	  	<div class="nav-collapse collapse navbar-responsive-collapse" style="height:0;">
+  	      <ul class="nav">
+    
+        <li ><a href="/">Home</a></li>
+    
+        <li ><a href="/archives/">Archives</a></li>
+    
+        <li ><a href="/feed/">Feed</a></li>
+    
+</ul>
+
+<ul class="nav pull-right">
+    
+    
+    
+    
+    <li><a href="http://twitter.com/harupong" title="Twitter Profile"><i class="icon-twitter-sign social-navbar"></i></a></li>
+    
+    
+    
+    
+
+    
+</ul>
+
+  	    </div>
+  	  </div>
+  	</div>
+  </div>
+  <div class="container" id="main">
+      <div class="row-fluid">
+        <div id="content">
+          <div>
+<article class="hentry" role="article">
+  
+
+  <header>
+  <div class="jumbotron">
+    Vagrant でプロビジョニングを実行せずに VM を立ち上げる方法
+	<h5>
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-07-24T06:28:00+00:00" pubdate data-updated="true">Jul 24<span>th</span>, 2013</time></h5>
+  </div>
+</header>
+  <div class="row-fluid">
+    <div class="span12">
+      <h2>2013/09/13 追記</h2>
+
+<p>2013/09/05 にリリースされた 1.3.0 から、</p>
+
+<blockquote><p><code>vagrant up</code> will now only run provisioning by default the first time it is run.</p></blockquote>
+
+<p>ということで、以下の workaround 的な方法は必要なくなったみたい。やったね！！</p>
+
+<p>詳しい日本語解説記事↓。</p>
+
+<p><a href="http://www.msng.info/archives/2013/09/vagrant-1-3-0-no-provision.php">Vagrant 1.3.0 からは2回目以降の起動時にプロビジョニングが自動で走らないので注意 - 頭ん中</a></p>
+
+<hr />
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ Vagrant up --no-provision</span></code></pre></td></tr></table></div></figure>
+
+
+<p>と、<code>--no-provision</code> を付けて VM をたちあげてやればいい。</p>
+
+<h2>背景</h2>
+
+<p><a href="http://progit-ja.github.io/">Pro Git 日本語版電子書籍公開サイト</a>で配布しているデータを生成するための環境作りとそのメンテナンスをなるべく手抜きするために色々と試行錯誤している。</p>
+
+<p>EC2 やら試してみたけど、今のところ <strong><a href="http://www.vagrantup.com/">Vagrant</a> でローカル環境上に Ubuntu を Pro Git 仕様にプロビジョニングする</strong>、というのが一番しっくり来てるところ<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>。</p>
+
+<p>で、Vagrant といえば <code>Vagrant up</code> なのだけど、Vagrantfile にプロビジョニング設定を書いた状態で <code>Vagrant up</code> すると必ずプロビジョニングが実行されてしまう。</p>
+
+<p>初めて VM を立ち上げる時はそれでも構わないのだけど、プロビジョニング済み VM を一度シャットダウンの、その後立ち上げるときにまたプロビジョニングが行われてしょんぼりしていた。</p>
+
+<p>どちらかと言うと <code>--provision</code> オプションをつけて VM を立ち上げたときだけプロビジョニングを実行する、みたいにして欲しいのだけど..<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>どうやってるかは別途まとめる予定<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>そのようにプロビジョニングを作りこめばいいじゃん、というツッコミはスルーします<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+    </div>
+  </div>
+
+
+
+  <footer>
+    <hr>
+    
+    <div class="row-fluid">
+      
+      <div class="span6">
+        <p class="meta">
+        
+        
+
+
+
+  <a href="/blog/categories/blog/"><span class="badge">blog</span></a>
+
+
+
+
+        </p>
+      </div>
+      
+      <div class="span6 social-sharing">
+        <div class="sharing">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+      </div>
+      
+      
+    </div>
+    
+    <div class="row-fluid">
+      <div class="span12">
+        <p class="meta">
+          
+            <a class="basic-alignment left" href="/2013/07/newblog/" title="Previous Post: ブログを引越した ～ばいばい Wordpress、はじめまして Octopress～">&laquo; ブログを引越した ～ばいばい Wordpress、はじめまして Octopress～</a>
+          
+          
+            <a class="basic-alignment right" href="/2013/07/git-repo-on-file-server/" title="Next Post: Git とファイルサーバーを使って小規模な分散バージョン管理システムを構築する -Windows 編-">Git とファイルサーバーを使って小規模な分散バージョン管理システムを構築する -Windows 編- &raquo;</a>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+</article>
+
+</div>
+
+
+
+        </div>
+      </div>
+      <div class="row-fluid">
+        <footer class="footer-page" role="contentinfo">
+          <p>
+  Copyright &copy; 2015 - harupong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - Theme by <a href="http://alexgaribay.com">Alex Garibay</a>
+</p>
+
+
+        </footer>
+      </div>
+  </div>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
